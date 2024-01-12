@@ -23,54 +23,101 @@ namespace test_base
 
         private void button1_Click(object sender, EventArgs e)// Dashboard 클릭시 호출
         {
+            // Dashboard 인스턴스 생성
             Dashboard DashboardSc = new Dashboard();
+
+            // 폼 테두리 스타일을 없애고
             DashboardSc.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            // TopLevel 속성을 false로 설정하여 다른 컨트롤에 중첩될 수 있도록 함
             DashboardSc.TopLevel = false;
+
+            // Dock 속성을 Fill로 설정하여 부모 컨트롤에 맞게 크기를 조정
             DashboardSc.Dock = DockStyle.Fill;
 
+            // panel4 컨트롤 내의 모든 컨트롤을 제거
             panel4.Controls.Clear();
+
+            // panel4 컨트롤에 Dashboard 폼 추가
             panel4.Controls.Add(DashboardSc);
 
+            // Dashboard 폼을 보여줌
             DashboardSc.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)// Error Management 클릭시 호출
         {
+            // Error 인스턴스 생성
             Error ErrorSc = new Error();
+
+            // 폼 테두리 스타일을 없애고
             ErrorSc.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            // TopLevel 속성을 false로 설정하여 다른 컨트롤에 중첩될 수 있도록 함
             ErrorSc.TopLevel = false;
+
+            // Dock 속성을 Fill로 설정하여 부모 컨트롤에 맞게 크기를 조정
             ErrorSc.Dock = DockStyle.Fill;
 
+            // panel4 컨트롤 내의 모든 컨트롤을 제거
             panel4.Controls.Clear();
+
+            // panel4 컨트롤에 Error 폼 추가
             panel4.Controls.Add(ErrorSc);
 
+            // Error 폼을 보여줌
             ErrorSc.Show();
+
         }
 
         private void button3_Click(object sender, EventArgs e)// ProductData 클릭시 호출
         {
+            // Product 인스턴스 생성
             Product ProductSc = new Product();
+
+            // 폼 테두리 스타일을 없애고
             ProductSc.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            // TopLevel 속성을 false로 설정하여 다른 컨트롤에 중첩될 수 있도록 함
             ProductSc.TopLevel = false;
+
+            // Dock 속성을 Fill로 설정하여 부모 컨트롤에 맞게 크기를 조정
             ProductSc.Dock = DockStyle.Fill;
 
+            // panel4 컨트롤 내의 모든 컨트롤을 제거
             panel4.Controls.Clear();
+
+            // panel4 컨트롤에 Product 폼 추가
             panel4.Controls.Add(ProductSc);
 
+            // Product 폼을 보여줌
             ProductSc.Show();
+
         }
 
         private void button4_Click(object sender, EventArgs e)// Calinder 클릭시 호출
         {
+            // Calinder 인스턴스 생성
             Calinder CalinderSc = new Calinder();
+
+            // 폼 테두리 스타일을 없애고
             CalinderSc.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            // TopLevel 속성을 false로 설정하여 다른 컨트롤에 중첩될 수 있도록 함
             CalinderSc.TopLevel = false;
+
+            // Dock 속성을 Fill로 설정하여 부모 컨트롤에 맞게 크기를 조정
             CalinderSc.Dock = DockStyle.Fill;
 
+            // panel4 컨트롤 내의 모든 컨트롤을 제거
             panel4.Controls.Clear();
+
+            // panel4 컨트롤에 Calinder 폼 추가
             panel4.Controls.Add(CalinderSc);
 
+            // Calinder 폼을 보여줌
             CalinderSc.Show();
+
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
