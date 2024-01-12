@@ -86,7 +86,7 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(200, 961);
             flowLayoutPanel1.TabIndex = 1;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint_1;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // panel3
             // 
@@ -134,7 +134,7 @@
             button1.TabIndex = 4;
             button1.Text = "Dashboard";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click_1;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
