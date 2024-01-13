@@ -122,13 +122,13 @@ namespace test_base
 
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)// side menu base
         {
             // flowLayoutPanel1이 화면에 그려질 때 어떤 동작을 수행할지를 정의할 수 있습니다.
             // 주로 그래픽적인 요소를 커스텀하게 추가하거나 특정 조건에 따라 그림을 변경하는 데 사용됩니다.
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
+        private void panel5_Paint(object sender, PaintEventArgs e)// side menu space
         {
             // Panel 컨트롤이 다시 그려질 때 발생하며, 주로 사용자 지정 그림이나 그래픽을 표시할 때 활용됩니다.
         }
