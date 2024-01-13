@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MQTTnet" Version="4.3.3.952" />
+    <PackageReference Include="MySql.Data" Version="8.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

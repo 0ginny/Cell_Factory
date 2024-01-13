@@ -4,6 +4,8 @@ using System;
 using System.Diagnostics;
 using test_base.Properties;
 using static System.Windows.Forms.DataFormats;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 
 namespace test_base
