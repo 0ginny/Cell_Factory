@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using MQTTnet;
 using MQTTnet.Client;
-using MQTTnet.Client.Options;
+//using MQTTnet.Client.Options;
 using MQTTnet.Protocol;
 
 class Program
@@ -26,7 +26,7 @@ class Program
             .Build();
 
         // MQTT 클라이언트 이벤트 핸들러 설정
-        mqttClient.UseDisconnectedHandler(async e =>
+        //mqttClient.UseDisconnectedHandler(async e =>
         {
             Console.WriteLine("Disconnected from MQTT broker");
             await Task.Delay(TimeSpan.FromSeconds(5));
@@ -40,14 +40,14 @@ class Program
             {
                 Console.WriteLine("Reconnect failed");
             }
-        });
+        };
 
         //  MQTT 클라이언트가 메시지를 수신할 때 실행할 핸들러를 설정
-        mqttClient.UseApplicationMessageReceivedHandler(e =>
+        //mqttClient.UseApplicationMessageReceivedHandler(e =>
         {
             // 수신한 메시지의 내용을 출력
-            Console.WriteLine($"Received message: {e.ApplicationMessage.Payload}");
-        });
+            //Console.WriteLine($"Received message: {e.ApplicationMessage.Payload}");
+        };
 
         // MQTT 브로커에 연결
         await mqttClient.ConnectAsync(options);

@@ -43,5 +43,10 @@ namespace test_base
         {
 
         }
+
+        private void Error_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

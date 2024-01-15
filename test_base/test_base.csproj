@@ -11,6 +11,8 @@
   <ItemGroup>
     <PackageReference Include="MQTTnet" Version="4.3.3.952" />
     <PackageReference Include="MySql.Data" Version="8.2.0" />
+    <PackageReference Include="ReaLTaiizor" Version="3.7.9.8" />
+    <PackageReference Include="WinForms.DataVisualization" Version="1.9.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -6,12 +6,14 @@ using test_base.Properties;
 using static System.Windows.Forms.DataFormats;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 
 
 namespace test_base
 {
     public partial class Form1 : Form
     {
+        
 
         public Form1()
         {
@@ -43,6 +45,18 @@ namespace test_base
             // panel4 컨트롤에 Dashboard 폼 추가
             panel4.Controls.Add(DashboardSc);
 
+            //폰트변경
+            button1.ForeColor = System.Drawing.ColorTranslator.FromHtml("#216BFF");
+            button2.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3C4E71");
+            button3.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3C4E71");
+            button4.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3C4E71");
+
+            //이미지변경
+            button1.Image = Properties.Resources.re대시보드2;
+            button2.Image = Properties.Resources.re불량관리1;
+            button3.Image = Properties.Resources.re제품1;
+            button4.Image = Properties.Resources.re캘린더1;
+
             // Dashboard 폼을 보여줌
             DashboardSc.Show();
         }
@@ -66,6 +80,18 @@ namespace test_base
 
             // panel4 컨트롤에 Error 폼 추가
             panel4.Controls.Add(ErrorSc);
+
+            //폰트변경
+            button2.ForeColor = System.Drawing.ColorTranslator.FromHtml("#216BFF");
+            button3.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3C4E71");
+            button4.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3C4E71");
+            button1.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3C4E71");
+
+            //이미지변경
+            button1.Image = Properties.Resources.re대시보드1;
+            button2.Image = Properties.Resources.re불량관리2;
+            button3.Image = Properties.Resources.re제품1;
+            button4.Image = Properties.Resources.re캘린더1;
 
             // Error 폼을 보여줌
             ErrorSc.Show();
@@ -92,6 +118,17 @@ namespace test_base
             // panel4 컨트롤에 Product 폼 추가
             panel4.Controls.Add(ProductSc);
 
+            //폰트변경
+            button3.ForeColor = System.Drawing.ColorTranslator.FromHtml("#216BFF");
+            button4.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3C4E71");
+            button1.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3C4E71");
+            button2.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3C4E71");
+
+            //이미지변경
+            button1.Image = Properties.Resources.re대시보드1;
+            button2.Image = Properties.Resources.re불량관리1;
+            button3.Image = Properties.Resources.re제품2;
+            button4.Image = Properties.Resources.re캘린더1;
             // Product 폼을 보여줌
             ProductSc.Show();
 
@@ -117,6 +154,17 @@ namespace test_base
             // panel4 컨트롤에 Calinder 폼 추가
             panel4.Controls.Add(CalinderSc);
 
+            //폰트변경
+            button4.ForeColor = System.Drawing.ColorTranslator.FromHtml("#216BFF");
+            button1.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3C4E71");
+            button2.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3C4E71");
+            button3.ForeColor = System.Drawing.ColorTranslator.FromHtml("#3C4E71");
+
+            //이미지변경
+            button1.Image = Properties.Resources.re대시보드1;
+            button2.Image = Properties.Resources.re불량관리1;
+            button3.Image = Properties.Resources.re제품1;
+            button4.Image = Properties.Resources.re캘린더2;
             // Calinder 폼을 보여줌
             CalinderSc.Show();
 

@@ -38,17 +38,17 @@
             button3 = new Button();
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
+            splitContainer3 = new SplitContainer();
             panel2 = new Panel();
             label4 = new Label();
-            splitContainer3 = new SplitContainer();
             panel5 = new Panel();
             dataGridView2 = new DataGridView();
             panel6 = new Panel();
             dataGridView1 = new DataGridView();
             splitContainer4 = new SplitContainer();
+            splitContainer5 = new SplitContainer();
             panel4 = new Panel();
             label5 = new Label();
-            splitContainer5 = new SplitContainer();
             panel7 = new Panel();
             dataGridView3 = new DataGridView();
             panel8 = new Panel();
@@ -62,27 +62,25 @@
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
-            splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer3).BeginInit();
             splitContainer3.Panel1.SuspendLayout();
             splitContainer3.Panel2.SuspendLayout();
             splitContainer3.SuspendLayout();
+            panel2.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
-            splitContainer4.Panel1.SuspendLayout();
             splitContainer4.Panel2.SuspendLayout();
             splitContainer4.SuspendLayout();
-            panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer5).BeginInit();
             splitContainer5.Panel1.SuspendLayout();
             splitContainer5.Panel2.SuspendLayout();
             splitContainer5.SuspendLayout();
+            panel4.SuspendLayout();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             panel8.SuspendLayout();
@@ -101,7 +99,7 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(466, 108);
+            panel1.Size = new Size(466, 106);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -153,7 +151,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.FromArgb(60, 78, 113);
-            button1.Location = new Point(32, 80);
+            button1.Location = new Point(20, 80);
             button1.Name = "button1";
             button1.Size = new Size(86, 28);
             button1.TabIndex = 0;
@@ -164,7 +162,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("맑은 고딕", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label1.Location = new Point(28, 22);
+            label1.Location = new Point(30, 22);
             label1.Name = "label1";
             label1.Size = new Size(228, 32);
             label1.TabIndex = 0;
@@ -185,8 +183,8 @@
             // 
             // splitContainer1
             // 
-            splitContainer1.Dock = DockStyle.Bottom;
-            splitContainer1.Location = new Point(0, 112);
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -196,8 +194,8 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer4);
-            splitContainer1.Size = new Size(1688, 810);
-            splitContainer1.SplitterDistance = 832;
+            splitContainer1.Size = new Size(1720, 1040);
+            splitContainer1.SplitterDistance = 846;
             splitContainer1.TabIndex = 1;
             // 
             // splitContainer2
@@ -210,25 +208,43 @@
             // 
             // splitContainer2.Panel1
             // 
-            splitContainer2.Panel1.Controls.Add(panel2);
             splitContainer2.Panel1.Paint += splitContainer2_Panel1_Paint;
             // 
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(splitContainer3);
             splitContainer2.Panel2.Paint += splitContainer2_Panel2_Paint;
-            splitContainer2.Size = new Size(832, 810);
-            splitContainer2.SplitterDistance = 84;
+            splitContainer2.Size = new Size(846, 1040);
+            splitContainer2.SplitterDistance = 107;
             splitContainer2.TabIndex = 0;
+            // 
+            // splitContainer3
+            // 
+            splitContainer3.Dock = DockStyle.Fill;
+            splitContainer3.Location = new Point(0, 0);
+            splitContainer3.Name = "splitContainer3";
+            splitContainer3.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            splitContainer3.Panel1.Controls.Add(panel2);
+            splitContainer3.Panel1.Controls.Add(panel5);
+            // 
+            // splitContainer3.Panel2
+            // 
+            splitContainer3.Panel2.Controls.Add(panel6);
+            splitContainer3.Size = new Size(846, 929);
+            splitContainer3.SplitterDistance = 593;
+            splitContainer3.TabIndex = 0;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
             panel2.Controls.Add(label4);
-            panel2.Location = new Point(21, 22);
+            panel2.Location = new Point(20, 20);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(811, 69);
+            panel2.Size = new Size(825, 69);
             panel2.TabIndex = 2;
             // 
             // label4
@@ -241,59 +257,41 @@
             label4.TabIndex = 0;
             label4.Text = "셀 불량";
             // 
-            // splitContainer3
-            // 
-            splitContainer3.Dock = DockStyle.Fill;
-            splitContainer3.Location = new Point(0, 0);
-            splitContainer3.Name = "splitContainer3";
-            splitContainer3.Orientation = Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            splitContainer3.Panel1.Controls.Add(panel5);
-            // 
-            // splitContainer3.Panel2
-            // 
-            splitContainer3.Panel2.Controls.Add(panel6);
-            splitContainer3.Size = new Size(832, 722);
-            splitContainer3.SplitterDistance = 386;
-            splitContainer3.TabIndex = 0;
-            // 
             // panel5
             // 
             panel5.BackColor = Color.White;
             panel5.Controls.Add(dataGridView2);
-            panel5.Location = new Point(21, 3);
+            panel5.Location = new Point(20, 88);
             panel5.Margin = new Padding(0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(811, 384);
+            panel5.Size = new Size(825, 505);
             panel5.TabIndex = 3;
             panel5.Paint += panel5_Paint;
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(16, 15);
+            dataGridView2.Location = new Point(16, 16);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(778, 355);
+            dataGridView2.Size = new Size(793, 475);
             dataGridView2.TabIndex = 1;
             // 
             // panel6
             // 
             panel6.BackColor = Color.White;
             panel6.Controls.Add(dataGridView1);
-            panel6.Location = new Point(21, 0);
+            panel6.Location = new Point(20, 0);
             panel6.Margin = new Padding(0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(811, 310);
+            panel6.Size = new Size(825, 312);
             panel6.TabIndex = 4;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(16, 15);
+            dataGridView1.Location = new Point(18, 15);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(778, 281);
+            dataGridView1.Size = new Size(791, 281);
             dataGridView1.TabIndex = 1;
             // 
             // splitContainer4
@@ -304,25 +302,40 @@
             splitContainer4.Name = "splitContainer4";
             splitContainer4.Orientation = Orientation.Horizontal;
             // 
-            // splitContainer4.Panel1
-            // 
-            splitContainer4.Panel1.Controls.Add(panel4);
-            // 
             // splitContainer4.Panel2
             // 
             splitContainer4.Panel2.Controls.Add(splitContainer5);
-            splitContainer4.Size = new Size(852, 810);
-            splitContainer4.SplitterDistance = 87;
+            splitContainer4.Size = new Size(870, 1040);
+            splitContainer4.SplitterDistance = 111;
             splitContainer4.TabIndex = 0;
+            // 
+            // splitContainer5
+            // 
+            splitContainer5.Dock = DockStyle.Fill;
+            splitContainer5.Location = new Point(0, 0);
+            splitContainer5.Name = "splitContainer5";
+            splitContainer5.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer5.Panel1
+            // 
+            splitContainer5.Panel1.Controls.Add(panel4);
+            splitContainer5.Panel1.Controls.Add(panel7);
+            // 
+            // splitContainer5.Panel2
+            // 
+            splitContainer5.Panel2.Controls.Add(panel8);
+            splitContainer5.Size = new Size(870, 925);
+            splitContainer5.SplitterDistance = 589;
+            splitContainer5.TabIndex = 0;
             // 
             // panel4
             // 
             panel4.BackColor = Color.White;
             panel4.Controls.Add(label5);
-            panel4.Location = new Point(28, 22);
+            panel4.Location = new Point(14, 20);
             panel4.Margin = new Padding(0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(798, 66);
+            panel4.Size = new Size(830, 66);
             panel4.TabIndex = 3;
             // 
             // label5
@@ -335,32 +348,14 @@
             label5.TabIndex = 0;
             label5.Text = "용접 불량";
             // 
-            // splitContainer5
-            // 
-            splitContainer5.Dock = DockStyle.Fill;
-            splitContainer5.Location = new Point(0, 0);
-            splitContainer5.Name = "splitContainer5";
-            splitContainer5.Orientation = Orientation.Horizontal;
-            // 
-            // splitContainer5.Panel1
-            // 
-            splitContainer5.Panel1.Controls.Add(panel7);
-            // 
-            // splitContainer5.Panel2
-            // 
-            splitContainer5.Panel2.Controls.Add(panel8);
-            splitContainer5.Size = new Size(852, 719);
-            splitContainer5.SplitterDistance = 381;
-            splitContainer5.TabIndex = 0;
-            // 
             // panel7
             // 
             panel7.BackColor = Color.White;
             panel7.Controls.Add(dataGridView3);
-            panel7.Location = new Point(28, 0);
+            panel7.Location = new Point(14, 84);
             panel7.Margin = new Padding(0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(798, 384);
+            panel7.Size = new Size(830, 505);
             panel7.TabIndex = 4;
             // 
             // dataGridView3
@@ -368,17 +363,17 @@
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Location = new Point(16, 15);
             dataGridView3.Name = "dataGridView3";
-            dataGridView3.Size = new Size(768, 355);
+            dataGridView3.Size = new Size(799, 476);
             dataGridView3.TabIndex = 1;
             // 
             // panel8
             // 
             panel8.BackColor = Color.White;
             panel8.Controls.Add(dataGridView4);
-            panel8.Location = new Point(28, 2);
+            panel8.Location = new Point(14, 0);
             panel8.Margin = new Padding(0);
             panel8.Name = "panel8";
-            panel8.Size = new Size(798, 310);
+            panel8.Size = new Size(830, 310);
             panel8.TabIndex = 5;
             // 
             // dataGridView4
@@ -386,14 +381,14 @@
             dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView4.Location = new Point(16, 15);
             dataGridView4.Name = "dataGridView4";
-            dataGridView4.Size = new Size(768, 281);
+            dataGridView4.Size = new Size(799, 281);
             dataGridView4.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 93.1872F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.812796F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 92.0930252F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7.9069767F));
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
             tableLayoutPanel1.Controls.Add(panel3, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Top;
@@ -401,15 +396,15 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1688, 114);
+            tableLayoutPanel1.Size = new Size(1720, 112);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // panel3
             // 
             panel3.Controls.Add(button3);
-            panel3.Location = new Point(1576, 3);
+            panel3.Location = new Point(1587, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(107, 108);
+            panel3.Size = new Size(107, 106);
             panel3.TabIndex = 1;
             // 
             // Error
@@ -417,42 +412,41 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(235, 238, 244);
-            ClientSize = new Size(1688, 922);
+            ClientSize = new Size(1720, 1040);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(splitContainer1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Error";
             Text = "Error";
+            Load += Error_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             splitContainer3.Panel1.ResumeLayout(false);
             splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer3).EndInit();
             splitContainer3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            splitContainer4.Panel1.ResumeLayout(false);
             splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer4).EndInit();
             splitContainer4.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             splitContainer5.Panel1.ResumeLayout(false);
             splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer5).EndInit();
             splitContainer5.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             panel8.ResumeLayout(false);

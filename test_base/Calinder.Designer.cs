@@ -39,7 +39,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("맑은 고딕", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label1.Location = new Point(24, 19);
+            label1.Location = new Point(30, 20);
             label1.Name = "label1";
             label1.Size = new Size(108, 32);
             label1.TabIndex = 1;
@@ -49,37 +49,40 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("맑은 고딕", 90F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label2.Location = new Point(65, 149);
+            label2.Location = new Point(61, 206);
             label2.Name = "label2";
             label2.Size = new Size(207, 159);
             label2.TabIndex = 2;
             label2.Text = "01";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("맑은 고딕", 18F, FontStyle.Regular, GraphicsUnit.Point, 129);
             label3.ForeColor = Color.FromArgb(60, 78, 113);
-            label3.Location = new Point(134, 324);
+            label3.Location = new Point(130, 381);
             label3.Name = "label3";
             label3.Size = new Size(49, 32);
             label3.TabIndex = 3;
             label3.Text = "Jan";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(128, 548);
+            label4.Location = new Point(130, 670);
             label4.Name = "label4";
             label4.Size = new Size(55, 15);
             label4.TabIndex = 4;
             label4.Text = "공지사항";
+            label4.Click += label4_Click;
             // 
             // button1
             // 
             button1.Location = new Point(304, 84);
             button1.Name = "button1";
-            button1.Size = new Size(1339, 804);
+            button1.Size = new Size(1339, 890);
             button1.TabIndex = 5;
             button1.Text = "달력";
             button1.UseVisualStyleBackColor = true;
@@ -89,7 +92,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(235, 238, 244);
-            ClientSize = new Size(1688, 922);
+            ClientSize = new Size(1720, 1040);
             Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(label3);

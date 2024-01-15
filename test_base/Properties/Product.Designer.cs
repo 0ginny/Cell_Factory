@@ -40,8 +40,8 @@
             label1 = new Label();
             button3 = new Button();
             panel2 = new Panel();
-            label5 = new Label();
             dataGridView1 = new DataGridView();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -69,8 +69,8 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(panel2);
-            splitContainer1.Size = new Size(1688, 922);
-            splitContainer1.SplitterDistance = 119;
+            splitContainer1.Size = new Size(1720, 1040);
+            splitContainer1.SplitterDistance = 134;
             splitContainer1.TabIndex = 0;
             splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
@@ -87,8 +87,8 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(button3);
-            splitContainer2.Size = new Size(1688, 119);
-            splitContainer2.SplitterDistance = 1388;
+            splitContainer2.Size = new Size(1720, 134);
+            splitContainer2.SplitterDistance = 1414;
             splitContainer2.TabIndex = 0;
             // 
             // panel1
@@ -102,7 +102,7 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1382, 116);
+            panel1.Size = new Size(1382, 128);
             panel1.TabIndex = 1;
             // 
             // label4
@@ -163,7 +163,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.FromArgb(60, 78, 113);
-            button1.Location = new Point(32, 80);
+            button1.Location = new Point(20, 79);
             button1.Name = "button1";
             button1.Size = new Size(86, 28);
             button1.TabIndex = 0;
@@ -174,7 +174,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("맑은 고딕", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label1.Location = new Point(28, 22);
+            label1.Location = new Point(30, 20);
             label1.Name = "label1";
             label1.Size = new Size(157, 32);
             label1.TabIndex = 0;
@@ -186,7 +186,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = Color.FromArgb(60, 78, 113);
-            button3.Location = new Point(179, 77);
+            button3.Location = new Point(185, 78);
             button3.Name = "button3";
             button3.Size = new Size(86, 28);
             button3.TabIndex = 2;
@@ -198,10 +198,18 @@
             panel2.BackColor = Color.White;
             panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(label5);
-            panel2.Location = new Point(31, 3);
+            panel2.Location = new Point(20, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1626, 767);
+            panel2.Size = new Size(1680, 890);
             panel2.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(24, 61);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(1635, 806);
+            dataGridView1.TabIndex = 2;
             // 
             // label5
             // 
@@ -213,20 +221,12 @@
             label5.TabIndex = 1;
             label5.Text = "LOT 내역";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(24, 61);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1578, 686);
-            dataGridView1.TabIndex = 2;
-            // 
             // Product
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(235, 238, 244);
-            ClientSize = new Size(1688, 922);
+            ClientSize = new Size(1720, 1040);
             Controls.Add(splitContainer1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Product";
