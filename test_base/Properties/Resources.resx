@@ -121,61 +121,70 @@
   <data name="실시간모니터링 그림" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\실시간모니터링 그림.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="re대시보드1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\re대시보드1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="re대시보드2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\re대시보드2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="re제품1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\re제품1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="파랑 2단" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\파랑 2단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="re캘린더1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\re캘린더1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="re불량관리2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\re불량관리2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="대시보드1-removebg-preview-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\대시보드1-removebg-preview-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="re캘린더2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\re캘린더2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="re제품2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\re제품2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="re불량관리1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\re불량관리1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="대시보드2-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\대시보드2-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="노랑 1단" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\노랑 1단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="노랑 2단" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\노랑 2단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="노랑 3단" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\노랑 3단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="파랑 1단" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\파랑 1단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="파랑 2단" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\파랑 2단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="파랑 3단" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\파랑 3단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="re대시보드2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\re대시보드2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="하양 1단" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\하양 1단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="re대시보드1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\re대시보드1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="re불량관리2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\re불량관리2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="노랑 2단" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\노랑 2단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="하양 2단" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\하양 2단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="하양 3단" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\하양 3단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="re불량관리1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\re불량관리1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="re제품1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\re제품1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="파랑 1단" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\파랑 1단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="노랑 1단" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\노랑 1단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="파랑 3단" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\파랑 3단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="re제품2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\re제품2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="re캘린더2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\re캘린더2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="노랑 3단" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\노랑 3단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="대시보드1-removebg-preview-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\대시보드1-removebg-preview-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="녹색 1단" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\녹색 1단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="녹색 2단" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\녹색 2단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="녹색 3단" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\녹색 3단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

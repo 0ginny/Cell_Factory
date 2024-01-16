@@ -7,6 +7,7 @@ using static System.Windows.Forms.DataFormats;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
+using MES_Project;
 
 
 namespace test_base
@@ -137,7 +138,7 @@ namespace test_base
         private void button4_Click(object sender, EventArgs e)// Calinder 클릭시 호출
         {
             // Calinder 인스턴스 생성
-            Calinder CalinderSc = new Calinder();
+            Calendar_shipmen_status CalinderSc = new Calendar_shipmen_status();
 
             // 폼 테두리 스타일을 없애고
             CalinderSc.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

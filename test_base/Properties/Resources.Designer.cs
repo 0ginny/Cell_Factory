@@ -173,6 +173,36 @@ namespace test_base.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap 녹색_1단 {
+            get {
+                object obj = ResourceManager.GetObject("녹색 1단", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 녹색_2단 {
+            get {
+                object obj = ResourceManager.GetObject("녹색 2단", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 녹색_3단 {
+            get {
+                object obj = ResourceManager.GetObject("녹색 3단", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap 대시보드1_removebg_preview_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("대시보드1-removebg-preview-removebg-preview", resourceCulture);

@@ -186,7 +186,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = Color.FromArgb(60, 78, 113);
-            button3.Location = new Point(185, 78);
+            button3.Location = new Point(196, 82);
             button3.Name = "button3";
             button3.Size = new Size(86, 28);
             button3.TabIndex = 2;
