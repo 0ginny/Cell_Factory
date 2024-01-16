@@ -35,7 +35,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Name = "UserControlBlank";
-            Size = new Size(240, 118);
+            Size = new Size(183, 165);
             ResumeLayout(false);
         }
 

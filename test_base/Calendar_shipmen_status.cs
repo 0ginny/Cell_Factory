@@ -17,6 +17,7 @@ namespace MES_Project
         int month, year;
         //lets create a static variable that we can pass to another form for month and year;
         public static int static_month, static_year;
+        string[] monthAbbreviations = { "", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
         public Calendar_shipmen_status()
         {
             InitializeComponent();
@@ -67,8 +68,11 @@ namespace MES_Project
             month = now.Month;
             year = now.Year;
 
-            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            label11.Text = monthname + " " + year;
+            // Format the month as two digits
+            String monthname = now.ToString("MM");
+            label11.Text = monthname + " ";
+
+            label10.Text = monthAbbreviations[month];
 
             static_month = month;
             static_year = year;
@@ -141,23 +145,22 @@ namespace MES_Project
             static_month = month;
             static_year = year;
 
-            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            label11.Text = monthname + " " + year;
-
+            // Format the month as two digits
             DateTime startofthemonth = new DateTime(year, month, 1);
-            // get the count of days of the month.
-            int days = DateTime.DaysInMonth(year, month);
-            // convert the startofthemonth to integer
+            String monthname = startofthemonth.ToString("MM");
+            label11.Text = monthname + " ";
 
+            label10.Text = monthAbbreviations[month];
+
+            int days = DateTime.DaysInMonth(year, month);
             int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
 
-            // first let's create a blank usercontrol.
             for (int i = 1; i < dayoftheweek; i++)
             {
                 UserControlBlank ucblank = new UserControlBlank();
                 daycontainer.Controls.Add(ucblank);
             }
-            // now let's create usercontrol for days
+
             for (int i = 1; i <= days; i++)
             {
                 UserControlDays ucdays = new UserControlDays();
@@ -215,23 +218,22 @@ namespace MES_Project
             static_month = month;
             static_year = year;
 
-            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            label11.Text = monthname + " " + year;
-
+            // Format the month as two digits
             DateTime startofthemonth = new DateTime(year, month, 1);
-            // get the count of days of the month.
-            int days = DateTime.DaysInMonth(year, month);
-            // convert the startofthemonth to integer
+            String monthname = startofthemonth.ToString("MM");
+            label11.Text = monthname + " ";
 
+            label10.Text = monthAbbreviations[month];
+
+            int days = DateTime.DaysInMonth(year, month);
             int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
 
-            // first let's create a blank usercontrol.
             for (int i = 1; i < dayoftheweek; i++)
             {
                 UserControlBlank ucblank = new UserControlBlank();
                 daycontainer.Controls.Add(ucblank);
             }
-            // now let's create usercontrol for days
+
             for (int i = 1; i <= days; i++)
             {
                 UserControlDays ucdays = new UserControlDays();

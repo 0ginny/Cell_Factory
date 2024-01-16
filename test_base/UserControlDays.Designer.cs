@@ -36,7 +36,7 @@
             // 
             lbdays.AutoSize = true;
             lbdays.Font = new Font("맑은 고딕", 12F);
-            lbdays.Location = new Point(0, 0);
+            lbdays.Location = new Point(77, 0);
             lbdays.Name = "lbdays";
             lbdays.Size = new Size(28, 21);
             lbdays.TabIndex = 0;
@@ -45,9 +45,9 @@
             // lbevent
             // 
             lbevent.Font = new Font("맑은 고딕", 8F);
-            lbevent.Location = new Point(0, 19);
+            lbevent.Location = new Point(22, 35);
             lbevent.Name = "lbevent";
-            lbevent.Size = new Size(140, 64);
+            lbevent.Size = new Size(140, 108);
             lbevent.TabIndex = 1;
             lbevent.TextAlign = ContentAlignment.MiddleCenter;
             lbevent.Click += UserControlDays_Click;
@@ -60,7 +60,7 @@
             Controls.Add(lbevent);
             Controls.Add(lbdays);
             Name = "UserControlDays";
-            Size = new Size(240, 118);
+            Size = new Size(183, 165);
             Load += UserControlDays_Load;
             Click += UserControlDays_Click;
             ResumeLayout(false);
