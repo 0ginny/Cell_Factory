@@ -396,7 +396,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Calendar_shipmen_status";
             Padding = new Padding(20);
-            Text = "Form3";
+            Text = "3";
             Load += Form3_Load;
             splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
