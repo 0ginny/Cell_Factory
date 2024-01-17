@@ -16,18 +16,27 @@ namespace test_base
     public partial class Dashboard : Form
     {
 
+        mysql my; // class 사용 1step
 
         public Dashboard()
         {
             InitializeComponent();
             Load += Dashboard_Load;
             SetHalfDoughnutChart();
+
+            my = new mysql();
         }
+
         private void Dashboard_Load(object sender, EventArgs e)
         {
             // 이미지를 프로젝트 리소스에서 가져와서 PictureBox의 이미지로 설정
             pictureBox1.Image = Properties.Resources.실시간모니터링_그림;
             pictureBox2.Image = Properties.Resources.하양_1단;
+
+            // datagridview1 값 체우기
+            string sql = "";
+            my.fillDataGrid(sql, dataGridView1);
+
         }
         private void SetHalfDoughnutChart()
         {
