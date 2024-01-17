@@ -111,20 +111,17 @@ namespace test_base
                 {
 
                     Console.WriteLine(insertQuery);
-
                     connection.Open();
                     MySqlCommand command = new MySqlCommand(insertQuery, connection);
-
                     // 만약에 내가처리한 Mysql에 정상적으로 들어갔다면 메세지를 보여주라는 뜻이다
                     if (command.ExecuteNonQuery() == 1)
                     {
-                        
+
                     }
                     else
                     {
                         Console.WriteLine("쿼리문 인식 실패");
                     }
-
                 }
             }
             catch
