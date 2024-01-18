@@ -31,16 +31,18 @@
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             panel1 = new Panel();
+            label4 = new Label();
             button2 = new Button();
             label3 = new Label();
             label2 = new Label();
             button1 = new Button();
             label1 = new Label();
+            label6 = new Label();
             button3 = new Button();
             panel2 = new Panel();
+            dataGridView2 = new DataGridView();
             dataGridView1 = new DataGridView();
             label5 = new Label();
-            dataGridView2 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -51,8 +53,8 @@
             splitContainer2.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -86,6 +88,7 @@
             // 
             // splitContainer2.Panel2
             // 
+            splitContainer2.Panel2.Controls.Add(label6);
             splitContainer2.Panel2.Controls.Add(button3);
             splitContainer2.Size = new Size(1720, 134);
             splitContainer2.SplitterDistance = 1414;
@@ -93,6 +96,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
@@ -102,6 +106,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1382, 128);
             panel1.TabIndex = 1;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(342, 72);
+            label4.Name = "label4";
+            label4.Size = new Size(451, 30);
+            label4.TabIndex = 5;
+            label4.Text = "// 버튼으로 달력을 구현한 폼을 불러올지 DateTimePicker를 사용할지 선택해야 함,\r\n 선택한 날짜를 표시해 줄 라벨이 필요한지 결정해야 함";
             // 
             // button2
             // 
@@ -147,6 +161,7 @@
             button1.TabIndex = 0;
             button1.Text = "Today";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -157,6 +172,16 @@
             label1.Size = new Size(157, 32);
             label1.TabIndex = 0;
             label1.Text = "ProductData";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = Color.Red;
+            label6.Location = new Point(61, 62);
+            label6.Name = "label6";
+            label6.Size = new Size(193, 15);
+            label6.TabIndex = 6;
+            label6.Text = "// 검색 버튼이 필요한지 다시 생각";
             // 
             // button3
             // 
@@ -182,6 +207,14 @@
             panel2.Size = new Size(1677, 879);
             panel2.TabIndex = 0;
             // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(1048, 61);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(608, 798);
+            dataGridView2.TabIndex = 3;
+            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -189,6 +222,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(1005, 798);
             dataGridView1.TabIndex = 2;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label5
             // 
@@ -199,14 +233,6 @@
             label5.Size = new Size(127, 25);
             label5.TabIndex = 1;
             label5.Text = "Stacking List";
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(1048, 61);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(608, 798);
-            dataGridView2.TabIndex = 3;
             // 
             // Product
             // 
@@ -224,14 +250,15 @@
             splitContainer1.ResumeLayout(false);
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel2.ResumeLayout(false);
+            splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -250,5 +277,7 @@
         private Label label5;
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
+        private Label label4;
+        private Label label6;
     }
 }

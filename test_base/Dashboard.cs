@@ -15,8 +15,7 @@ namespace test_base
 {
     public partial class Dashboard : Form
     {
-
-        mysql my; // class 사용 1step
+        // 클래스 전역 선언
         Prod_Order order;
 
         public Dashboard()
@@ -25,7 +24,7 @@ namespace test_base
             Load += Dashboard_Load;
             SetHalfDoughnutChart();
 
-            my = new mysql();
+            // 클래스 객체 생성
             order = new Prod_Order();
         }
 
@@ -35,11 +34,10 @@ namespace test_base
             pictureBox1.Image = Properties.Resources.실시간모니터링_그림;
             pictureBox2.Image = Properties.Resources.하양_1단;
 
-            // datagridview1 값 체우기
-            string sql = "";
-            my.fillDataGrid(sql, dataGridView1);
-
+            // 불량 내역 그리드뷰 출력
+            order.fillDataGrid(dataGridView1);
         }
+
         private void SetHalfDoughnutChart()
         {
             // 차트 영역 추가
@@ -60,11 +58,6 @@ namespace test_base
             chart1.Series[0]["PieDrawingStyle"] = "Concave";
         }
 
-        private void label1_Click(object sender, EventArgs e)// label을 클릭해서 사용해야 할 기능이 있는지 의문
-        {
-
-        }
-
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -75,20 +68,14 @@ namespace test_base
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             button1.BackColor = ColorTranslator.FromHtml("#002EDE");
             button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
 
+            // 선택한 제품의 텍스트를 저장
             order.change_state(button1);
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -96,6 +83,9 @@ namespace test_base
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
             button2.BackColor = ColorTranslator.FromHtml("#EBBC00");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
+
+            // 선택한 제품의 텍스트를 저장
+            order.change_state(button2);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -103,6 +93,9 @@ namespace test_base
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
             button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
             button3.BackColor = ColorTranslator.FromHtml("#1AA67D");
+
+            // 선택한 제품의 텍스트를 저장
+            order.change_state(button3);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -111,8 +104,8 @@ namespace test_base
             button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
 
-            order.send_order(textBox1); // 버튼으로 셀 선택한 것, 수량 입력해서 db에 저장하는 함수.
-
+            // 발주제품, 수량 DB에 저장
+            order.send_order(textBox1);
         }
     }
 }

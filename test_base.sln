@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test_base", "test_base\test_base.csproj", "{D17D69ED-C274-46B3-B9C6-F92774E3DB29}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{EC73E3C0-642E-4E42-A6F1-3B2F7BDD60CA}"
-	ProjectSection(SolutionItems) = preProject
-		Order_item.cs = Order_item.cs
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
