@@ -30,6 +30,13 @@ namespace test_base
             // 출력 순서 : 스택킹id / 불량여부 / 스태킹 시작시간 / 프레스 압력 / 양품시 이송완료 시간 / 불량시 처리완료 시간
             string query = $"SELECT stacking, test2, stacking_Sttime, presure, good_Drtime, faulty_Drtime " +
                            $"FROM stacking_test WHERE date = '{date}' ORDER BY stacking_Sttime DESC";
+            /*
+            string query = $@"SELECT A.stacking, A.test2, A.stacking_Sttime, A.presure, A.good_Drtime, A.faulty_Drtime, B.additionalColumn1, B.additionalColumn2
+                              FROM stacking_test AS A
+                              LEFT JOIN otherTable AS B ON A.someForeignKey = B.somePrimaryKey
+                              WHERE A.date = '{date}'
+                              ORDER BY A.stacking_Sttime DESC";
+            */
 
             mysql.fillDataGrid(query, dataGridView);
         }

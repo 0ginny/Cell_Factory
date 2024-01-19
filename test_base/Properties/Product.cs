@@ -31,7 +31,6 @@ namespace test_base.Properties
         private void button1_Click(object sender, EventArgs e)// 날짜를 선택하기 위한 버튼
         {
             // 달력을 호출할 코드 작성
-
             DateTime DateTimePicker.Value.Tostring("yyyy-MM-dd");
 
             // 선택한 날짜를 전달하여 그리드뷰에 스태킹의 정보를 출력
