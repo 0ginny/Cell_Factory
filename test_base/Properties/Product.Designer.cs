@@ -38,9 +38,10 @@
             label1 = new Label();
             button3 = new Button();
             panel2 = new Panel();
+            hopeDatePicker1 = new ReaLTaiizor.Controls.HopeDatePicker();
+            dataGridView2 = new DataGridView();
             dataGridView1 = new DataGridView();
             label5 = new Label();
-            dataGridView2 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -51,8 +52,8 @@
             splitContainer2.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -83,6 +84,7 @@
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.Controls.Add(panel1);
+            splitContainer2.Panel1.Paint += splitContainer2_Panel1_Paint;
             // 
             // splitContainer2.Panel2
             // 
@@ -147,6 +149,7 @@
             button1.TabIndex = 0;
             button1.Text = "Today";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -174,6 +177,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(hopeDatePicker1);
             panel2.Controls.Add(dataGridView2);
             panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(label5);
@@ -181,6 +185,45 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1677, 879);
             panel2.TabIndex = 0;
+            // 
+            // hopeDatePicker1
+            // 
+            hopeDatePicker1.BackColor = Color.White;
+            hopeDatePicker1.BorderColor = Color.FromArgb(220, 223, 230);
+            hopeDatePicker1.Date = new DateTime(2024, 1, 22, 0, 0, 0, 0);
+            hopeDatePicker1.DayNames = "MTWTFSS";
+            hopeDatePicker1.DaysTextColor = Color.FromArgb(96, 98, 102);
+            hopeDatePicker1.DayTextColorA = Color.FromArgb(48, 49, 51);
+            hopeDatePicker1.DayTextColorB = Color.FromArgb(144, 147, 153);
+            hopeDatePicker1.HeaderFormat = "{0} Y - {1} M";
+            hopeDatePicker1.HeaderTextColor = Color.FromArgb(48, 49, 51);
+            hopeDatePicker1.HeadLineColor = Color.FromArgb(228, 231, 237);
+            hopeDatePicker1.HoverColor = Color.FromArgb(235, 238, 245);
+            hopeDatePicker1.Location = new Point(0, 0);
+            hopeDatePicker1.Name = "hopeDatePicker1";
+            hopeDatePicker1.NMColor = Color.FromArgb(192, 196, 204);
+            hopeDatePicker1.NMHoverColor = Color.FromArgb(64, 158, 255);
+            hopeDatePicker1.NYColor = Color.FromArgb(192, 196, 204);
+            hopeDatePicker1.NYHoverColor = Color.FromArgb(64, 158, 255);
+            hopeDatePicker1.PMColor = Color.FromArgb(192, 196, 204);
+            hopeDatePicker1.PMHoverColor = Color.FromArgb(64, 158, 255);
+            hopeDatePicker1.PYColor = Color.FromArgb(192, 196, 204);
+            hopeDatePicker1.PYHoverColor = Color.FromArgb(64, 158, 255);
+            hopeDatePicker1.SelectedBackColor = Color.FromArgb(64, 158, 255);
+            hopeDatePicker1.SelectedTextColor = Color.White;
+            hopeDatePicker1.Size = new Size(250, 270);
+            hopeDatePicker1.TabIndex = 5;
+            hopeDatePicker1.Text = "hopeDatePicker1";
+            hopeDatePicker1.ValueTextColor = Color.FromArgb(43, 133, 228);
+            hopeDatePicker1.Click += hopeDatePicker1_Click;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(1048, 61);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(608, 798);
+            dataGridView2.TabIndex = 3;
             // 
             // dataGridView1
             // 
@@ -200,14 +243,6 @@
             label5.TabIndex = 1;
             label5.Text = "Stacking List";
             // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(1048, 61);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(608, 798);
-            dataGridView2.TabIndex = 3;
-            // 
             // Product
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -218,6 +253,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Product";
             Text = "x`";
+            Load += Product_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
@@ -230,8 +266,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -250,5 +286,6 @@
         private Label label5;
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
+        private ReaLTaiizor.Controls.HopeDatePicker hopeDatePicker1;
     }
 }

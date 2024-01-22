@@ -159,6 +159,7 @@ INNER JOIN tb_products AS C ON A.prod_code = C.prod_code WHERE A.D_day = ?";
                 string prodNum = reader["prod_num"].ToString();
                 string finODate = reader["fin_o_date"] != DBNull.Value ? reader.GetDateTime("fin_o_date").ToString("yyyy-MM-dd") : null;
 
+
                 // Set label text
                 lbevent.Text = $"{companyName} {Environment.NewLine} {prodName} {Environment.NewLine} {prodNum}ea";
 

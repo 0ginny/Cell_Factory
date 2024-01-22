@@ -45,7 +45,7 @@
             // lbevent
             // 
             lbevent.Font = new Font("맑은 고딕", 8F);
-            lbevent.Location = new Point(22, 35);
+            lbevent.Location = new Point(20, 31);
             lbevent.Name = "lbevent";
             lbevent.Size = new Size(140, 108);
             lbevent.TabIndex = 1;
@@ -57,10 +57,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            BackgroundImage = test_base.Properties.Resources.제목_없음;
             Controls.Add(lbevent);
             Controls.Add(lbdays);
             Name = "UserControlDays";
-            Size = new Size(183, 165);
+            Size = new Size(183, 153);
             Load += UserControlDays_Load;
             Click += UserControlDays_Click;
             ResumeLayout(false);

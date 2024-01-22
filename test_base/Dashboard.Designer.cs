@@ -28,38 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             splitContainer1 = new SplitContainer();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel3 = new Panel();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            circleProgressBar1 = new ReaLTaiizor.Controls.CircleProgressBar();
             label3 = new Label();
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
             label2 = new Label();
             splitContainer2 = new SplitContainer();
             panel4 = new Panel();
-            button4 = new Button();
-            label9 = new Label();
-            textBox1 = new TextBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            label4 = new Label();
-            splitContainer3 = new SplitContainer();
-            panel5 = new Panel();
             label8 = new Label();
+            label4 = new Label();
             label7 = new Label();
             pictureBox2 = new PictureBox();
+            splitContainer3 = new SplitContainer();
+            panel5 = new Panel();
+            button4 = new Button();
             label5 = new Label();
+            button1 = new Button();
+            label9 = new Label();
+            button3 = new Button();
+            button2 = new Button();
+            textBox1 = new TextBox();
             panel6 = new Panel();
-            chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            dataGridView2 = new DataGridView();
             label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -69,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
@@ -77,14 +72,14 @@
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer3).BeginInit();
             splitContainer3.Panel1.SuspendLayout();
             splitContainer3.Panel2.SuspendLayout();
             splitContainer3.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chart2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -96,6 +91,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.Controls.Add(panel1);
+            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
             // 
             // splitContainer1.Panel2
             // 
@@ -156,7 +152,7 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(chart1);
+            panel3.Controls.Add(circleProgressBar1);
             panel3.Controls.Add(label3);
             panel3.Location = new Point(20, 314);
             panel3.Margin = new Padding(20, 0, 20, 20);
@@ -164,18 +160,23 @@
             panel3.Size = new Size(643, 302);
             panel3.TabIndex = 3;
             // 
-            // chart1
+            // circleProgressBar1
             // 
-            chartArea1.BorderColor = Color.IndianRed;
-            chartArea1.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chart1.Legends.Add(legend1);
-            chart1.Location = new Point(3, 44);
-            chart1.Name = "chart1";
-            chart1.Size = new Size(637, 255);
-            chart1.TabIndex = 1;
-            chart1.Text = "chart1";
+            circleProgressBar1.BackColor = Color.White;
+            circleProgressBar1.BackgroundImageLayout = ImageLayout.Center;
+            circleProgressBar1.Font = new Font("맑은 고딕", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            circleProgressBar1.ForeColor = Color.White;
+            circleProgressBar1.Location = new Point(183, 3);
+            circleProgressBar1.Maximum = 100L;
+            circleProgressBar1.MinimumSize = new Size(100, 100);
+            circleProgressBar1.Name = "circleProgressBar1";
+            circleProgressBar1.PercentColor = Color.White;
+            circleProgressBar1.ProgressColor1 = Color.Cyan;
+            circleProgressBar1.ProgressColor2 = Color.FromArgb(33, 107, 255);
+            circleProgressBar1.ProgressShape = ReaLTaiizor.Controls.CircleProgressBar._ProgressShape.Round;
+            circleProgressBar1.Size = new Size(296, 296);
+            circleProgressBar1.TabIndex = 2;
+            circleProgressBar1.Value = 0L;
             // 
             // label3
             // 
@@ -236,93 +237,25 @@
             // panel4
             // 
             panel4.BackColor = Color.White;
-            panel4.Controls.Add(button4);
-            panel4.Controls.Add(label9);
-            panel4.Controls.Add(textBox1);
-            panel4.Controls.Add(button3);
-            panel4.Controls.Add(button2);
-            panel4.Controls.Add(button1);
+            panel4.Controls.Add(label8);
             panel4.Controls.Add(label4);
+            panel4.Controls.Add(label7);
+            panel4.Controls.Add(pictureBox2);
             panel4.Location = new Point(20, 0);
             panel4.Margin = new Padding(20, 0, 20, 20);
             panel4.Name = "panel4";
             panel4.Size = new Size(561, 384);
             panel4.TabIndex = 4;
             // 
-            // button4
+            // label8
             // 
-            button4.BackColor = Color.FromArgb(235, 238, 244);
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(311, 236);
-            button4.Name = "button4";
-            button4.Size = new Size(142, 43);
-            button4.TabIndex = 6;
-            button4.Text = "주문추가";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("맑은 고딕", 18F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            label9.Location = new Point(287, 131);
-            label9.Name = "label9";
-            label9.Size = new Size(62, 32);
-            label9.TabIndex = 5;
-            label9.Text = "수량";
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("맑은 고딕", 15F);
-            textBox1.Location = new Point(378, 129);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 34);
-            textBox1.TabIndex = 4;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(31, 198, 149);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            button3.Location = new Point(73, 272);
-            button3.Name = "button3";
-            button3.Size = new Size(142, 43);
-            button3.TabIndex = 3;
-            button3.Text = "C 셀";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(255, 204, 0);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            button2.Location = new Point(73, 198);
-            button2.Name = "button2";
-            button2.Size = new Size(142, 43);
-            button2.TabIndex = 2;
-            button2.Text = "B 셀";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(31, 107, 255);
-            button1.FlatAppearance.BorderColor = Color.FromArgb(31, 107, 255);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            button1.Location = new Point(73, 120);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Size = new Size(142, 43);
-            button1.TabIndex = 0;
-            button1.Text = "A 셀";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            label8.AutoSize = true;
+            label8.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label8.Location = new Point(82, 240);
+            label8.Name = "label8";
+            label8.Size = new Size(111, 28);
+            label8.TabIndex = 3;
+            label8.Text = "작업 설명2";
             // 
             // label4
             // 
@@ -330,9 +263,30 @@
             label4.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
             label4.Location = new Point(18, 16);
             label4.Name = "label4";
-            label4.Size = new Size(88, 25);
+            label4.Size = new Size(69, 25);
             label4.TabIndex = 0;
-            label4.Text = "주문관리";
+            label4.Text = "스택킹";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label7.Location = new Point(82, 168);
+            label7.Name = "label7";
+            label7.Size = new Size(111, 28);
+            label7.TabIndex = 2;
+            label7.Text = "작업 설명1";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.ErrorImage = Properties.Resources.녹색_2단;
+            pictureBox2.Image = Properties.Resources.녹색_1단;
+            pictureBox2.InitialImage = Properties.Resources.녹색_3단;
+            pictureBox2.Location = new Point(24, 60);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(505, 310);
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
             // 
             // splitContainer3
             // 
@@ -354,46 +308,31 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
-            panel5.Controls.Add(label8);
-            panel5.Controls.Add(label7);
-            panel5.Controls.Add(pictureBox2);
+            panel5.Controls.Add(button4);
             panel5.Controls.Add(label5);
+            panel5.Controls.Add(button1);
+            panel5.Controls.Add(label9);
+            panel5.Controls.Add(button3);
+            panel5.Controls.Add(button2);
+            panel5.Controls.Add(textBox1);
             panel5.Location = new Point(20, 0);
             panel5.Margin = new Padding(12, 0, 12, 12);
             panel5.Name = "panel5";
             panel5.Size = new Size(548, 383);
             panel5.TabIndex = 5;
             // 
-            // label8
+            // button4
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label8.Location = new Point(76, 236);
-            label8.Name = "label8";
-            label8.Size = new Size(111, 28);
-            label8.TabIndex = 3;
-            label8.Text = "작업 설명2";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label7.Location = new Point(76, 164);
-            label7.Name = "label7";
-            label7.Size = new Size(111, 28);
-            label7.TabIndex = 2;
-            label7.Text = "작업 설명1";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.ErrorImage = Properties.Resources.녹색_2단;
-            pictureBox2.Image = Properties.Resources.녹색_1단;
-            pictureBox2.InitialImage = Properties.Resources.녹색_3단;
-            pictureBox2.Location = new Point(18, 56);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(505, 310);
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            button4.BackColor = Color.FromArgb(235, 238, 244);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Location = new Point(307, 241);
+            button4.Name = "button4";
+            button4.Size = new Size(142, 43);
+            button4.TabIndex = 6;
+            button4.Text = "주문추가";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label5
             // 
@@ -401,14 +340,76 @@
             label5.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
             label5.Location = new Point(18, 16);
             label5.Name = "label5";
-            label5.Size = new Size(69, 25);
+            label5.Size = new Size(88, 25);
             label5.TabIndex = 0;
-            label5.Text = "스태킹";
+            label5.Text = "주문추가";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(31, 107, 255);
+            button1.FlatAppearance.BorderColor = Color.FromArgb(31, 107, 255);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            button1.Location = new Point(69, 125);
+            button1.Margin = new Padding(0);
+            button1.Name = "button1";
+            button1.Size = new Size(142, 43);
+            button1.TabIndex = 0;
+            button1.Text = "A 셀";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("맑은 고딕", 18F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            label9.Location = new Point(283, 136);
+            label9.Name = "label9";
+            label9.Size = new Size(62, 32);
+            label9.TabIndex = 5;
+            label9.Text = "수량";
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(31, 198, 149);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            button3.Location = new Point(69, 277);
+            button3.Name = "button3";
+            button3.Size = new Size(142, 43);
+            button3.TabIndex = 3;
+            button3.Text = "C 셀";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(255, 204, 0);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            button2.Location = new Point(69, 203);
+            button2.Name = "button2";
+            button2.Size = new Size(142, 43);
+            button2.TabIndex = 2;
+            button2.Text = "B 셀";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("맑은 고딕", 15F);
+            textBox1.Location = new Point(374, 134);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 34);
+            textBox1.TabIndex = 4;
             // 
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(chart2);
+            panel6.Controls.Add(dataGridView2);
             panel6.Controls.Add(label6);
             panel6.Location = new Point(20, 0);
             panel6.Margin = new Padding(12, 0, 12, 12);
@@ -416,18 +417,13 @@
             panel6.Size = new Size(540, 383);
             panel6.TabIndex = 6;
             // 
-            // chart2
+            // dataGridView2
             // 
-            chartArea2.BorderColor = Color.IndianRed;
-            chartArea2.Name = "ChartArea1";
-            chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chart2.Legends.Add(legend2);
-            chart2.Location = new Point(0, 56);
-            chart2.Name = "chart2";
-            chart2.Size = new Size(540, 310);
-            chart2.TabIndex = 2;
-            chart2.Text = "chart2";
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(18, 60);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(504, 310);
+            dataGridView2.TabIndex = 2;
             // 
             // label6
             // 
@@ -437,7 +433,7 @@
             label6.Name = "label6";
             label6.Size = new Size(88, 25);
             label6.TabIndex = 0;
-            label6.Text = "용접온도";
+            label6.Text = "주문관리";
             // 
             // Dashboard
             // 
@@ -461,7 +457,6 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -471,16 +466,16 @@
             splitContainer2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             splitContainer3.Panel1.ResumeLayout(false);
             splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer3).EndInit();
             splitContainer3.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
 
@@ -503,7 +498,6 @@
         private Panel panel6;
         private Label label6;
         private DataGridView dataGridView1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label label8;
@@ -514,6 +508,7 @@
         private Button button4;
         private Label label9;
         private TextBox textBox1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private DataGridView dataGridView2;
+        private ReaLTaiizor.Controls.CircleProgressBar circleProgressBar1;
     }
 }

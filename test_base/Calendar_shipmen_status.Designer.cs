@@ -109,6 +109,7 @@
             label11.TabIndex = 14;
             label11.Text = "01";
             label11.TextAlign = ContentAlignment.MiddleCenter;
+            label11.Click += label11_Click;
             // 
             // label12
             // 
@@ -157,7 +158,7 @@
             // 
             daycontainer.Location = new Point(3, 0);
             daycontainer.Name = "daycontainer";
-            daycontainer.Size = new Size(1332, 829);
+            daycontainer.Size = new Size(1329, 795);
             daycontainer.TabIndex = 0;
             // 
             // flowLayoutPanel1

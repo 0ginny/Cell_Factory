@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-//using static MES_Project.Monitoring;
-//using static MES_Project.MonitoringFacilityOperationStatus;
 
 namespace MES_Project
 {
