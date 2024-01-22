@@ -27,6 +27,7 @@ namespace MES_Project
         {
             displaDays();
         }
+
         /*
         private void displaDays()
         {
@@ -62,6 +63,7 @@ namespace MES_Project
                 daycontainer.Controls.Add(ucdays);
             }
         }*/
+
         private void displaDays()
         {
             DateTime now = DateTime.Now;
@@ -130,6 +132,7 @@ namespace MES_Project
                 daycontainer.Controls.Add(ucdays);
             }
         }*/
+
         private void btnnext_Click(object sender, EventArgs e)
         {
             // clear container
@@ -168,6 +171,7 @@ namespace MES_Project
                 daycontainer.Controls.Add(ucdays);
             }
         }
+
         /*
         private void btnprevious_Click(object sender, EventArgs e)
         {
@@ -203,6 +207,7 @@ namespace MES_Project
                 daycontainer.Controls.Add(ucdays);
             }
         }*/
+
         private void btnprevious_Click(object sender, EventArgs e)
         {
             // clear container

@@ -30,17 +30,22 @@ namespace test_base
             // 셀 불량 그리드뷰
             Cell_Error_Gridview(date, Selectproduct, dataGridView1);
             
-            // 셀 불량 차트
+            // 셀 불량 차트 2개
             Cell_Error_Chart(date, Selectproduct, chart1, chart2);
 
             // 용접 불량 그리드뷰
             Welding_Error_Gridview(date, Selectproduct, dataGridView2);
             
-            // 용접 불량 차트
+            // 용접 불량 차트 2개
             Welding_Error_Chart(date, Selectproduct, chart3, chart4);
         }
 
-        // 셀 불량 그리드뷰
+        /// <summary>
+        /// 셀 불량 그리드뷰
+        /// </summary>
+        /// <param name="Selectdate">선택한 날짜를 받을 변수</param>
+        /// <param name="Selectproduct">선택한 제품을 받을 변수</param>
+        /// <param name="dataGridView">그리드뷰를 그릴 명령</param>
         public void Cell_Error_Gridview(string Selectdate, string Selectproduct, DataGridView dataGridView)
         {
             // 셀 불량의 종류와 시간을 조회할 쿼리
@@ -53,7 +58,7 @@ namespace test_base
             mysql.fillDataGrid(query, dataGridView);
         }
 
-        // 셀 불량 차트
+        // 셀 불량 차트 2개
         public void Cell_Error_Chart(string Selectdate, string Selectproduct, Chart chart1, Chart chart2)
         {
             // 셀 불량의 종류와 시간을 조회할 쿼리
@@ -69,15 +74,21 @@ namespace test_base
         // 용접불량 그리드뷰
         public void Welding_Error_Gridview(string Selectdate, string Selectproduct, DataGridView dataGridView)
         {
-            string query = $"SELECT #### FROM electrode_test WHERE date = '{Selectdate}' AND #### = '{Selectproduct}'";
+            //
+            string query = $"SELECT #### COUNT(*) as count " +
+                           $"FROM stacking_test " +
+                           $"WHERE date = '{Selectdate}' AND #### = '{Selectproduct}' AND test2 = #### ";
 
             mysql.fillDataGrid(query, dataGridView);
         }
 
-        // 용접 불량 차트
+        // 용접 불량 차트 2개
         public void Welding_Error_Chart(string Selectdate, string Selectproduct, Chart chart1, Chart chart2)
         {
-            string query = $"SELECT #### FROM electrode_test WHERE date = '{Selectdate}' AND #### = '{Selectproduct}'";
+            //
+            string query = $"SELECT #### COUNT(*) as count " +
+                           $"FROM stacking_test " +
+                           $"WHERE date = '{Selectdate}' AND #### = '{Selectproduct}' AND test2 = #### ";
 
             mysql.fillDataDualChart(query, chart1, chart2);
         }

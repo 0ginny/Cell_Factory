@@ -58,7 +58,7 @@ namespace test_base
         private void button3_Click(object sender, EventArgs e)// 날짜와 제품의 종류에 대한 불량 검색을 위한 버튼
         {
             // 선택한 날짜와 제품의 종류를 그리드뷰 2개, 차트 4개에 출력
-            error.Error_view(dateTimePicker1.Value, comboBox1.SelectedItem.ToString(), dataGridView1, dataGridView2, chart1, chart2, chart3, chart4);
+            // error.Error_view(dateTimePicker1, comboBox1.SelectedItem.ToString(), dataGridView1, dataGridView2, chart1, chart2, chart3, chart4);
         }
     }
 }

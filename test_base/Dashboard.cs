@@ -16,7 +16,7 @@ namespace test_base
     public partial class Dashboard : Form
     {
         // 클래스 전역 선언
-        Prod_Order order;
+        DashBord_Class dash;
 
         public Dashboard()
         {
@@ -25,7 +25,7 @@ namespace test_base
             SetHalfDoughnutChart();
 
             // 클래스 객체 생성
-            order = new Prod_Order();
+            dash = new DashBord_Class();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -34,8 +34,8 @@ namespace test_base
             pictureBox1.Image = Properties.Resources.실시간모니터링_그림;
             pictureBox2.Image = Properties.Resources.하양_1단;
 
-            // 불량 내역 그리드뷰 출력
-            order.fillDataGrid(dataGridView1);
+            // 불량내역, 생산량, 용접온도 출력 메서드 호출
+            // dash.Display(dataGridView1, chart1, chart2);
         }
 
         private void SetHalfDoughnutChart()
@@ -75,7 +75,7 @@ namespace test_base
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
 
             // 선택한 제품의 텍스트를 저장
-            order.change_state(button1);
+            dash.change_state(button1);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace test_base
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
 
             // 선택한 제품의 텍스트를 저장
-            order.change_state(button2);
+            dash.change_state(button2);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace test_base
             button3.BackColor = ColorTranslator.FromHtml("#1AA67D");
 
             // 선택한 제품의 텍스트를 저장
-            order.change_state(button3);
+            dash.change_state(button3);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace test_base
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
 
             // 발주제품, 수량 DB에 저장
-            order.send_order(textBox1);
+            dash.send_order(textBox1);
         }
     }
 }

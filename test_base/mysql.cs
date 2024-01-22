@@ -45,7 +45,6 @@ namespace test_base
 
             try
             {
-
                 using (MySqlConnection connection = new MySqlConnection(connect_str))
                 {
                     Console.WriteLine(insertQuery);
