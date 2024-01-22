@@ -56,12 +56,13 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.Controls.Add(metroControlBox1);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1920, 40);
+            panel1.Size = new Size(1920, 50);
             panel1.TabIndex = 0;
             // 
             // metroControlBox1
@@ -113,10 +114,10 @@
             flowLayoutPanel1.Controls.Add(button4);
             flowLayoutPanel1.Controls.Add(panel5);
             flowLayoutPanel1.Dock = DockStyle.Left;
-            flowLayoutPanel1.Location = new Point(0, 40);
+            flowLayoutPanel1.Location = new Point(0, 50);
             flowLayoutPanel1.Margin = new Padding(0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(200, 1021);
+            flowLayoutPanel1.Size = new Size(200, 1011);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -259,9 +260,9 @@
             // panel4
             // 
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(200, 40);
+            panel4.Location = new Point(200, 50);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1720, 1021);
+            panel4.Size = new Size(1720, 1011);
             panel4.TabIndex = 2;
             // 
             // contextMenuStrip2

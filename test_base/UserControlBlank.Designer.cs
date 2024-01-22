@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlBlank));
             SuspendLayout();
             // 
             // UserControlBlank
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Name = "UserControlBlank";
-            Size = new Size(183, 165);
+            Size = new Size(183, 153);
             Load += UserControlBlank_Load;
             ResumeLayout(false);
         }

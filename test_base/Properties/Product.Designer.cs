@@ -38,20 +38,10 @@
             label1 = new Label();
             button3 = new Button();
             panel2 = new Panel();
+            hopeDatePicker1 = new ReaLTaiizor.Controls.HopeDatePicker();
             dataGridView2 = new DataGridView();
             dataGridView1 = new DataGridView();
             label5 = new Label();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            label10 = new Label();
-            label11 = new Label();
-            label4 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label12 = new Label();
-            label13 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -64,7 +54,6 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -80,7 +69,6 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(panel3);
             splitContainer1.Panel2.Controls.Add(panel2);
             splitContainer1.Size = new Size(1720, 1040);
             splitContainer1.SplitterDistance = 134;
@@ -96,6 +84,7 @@
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.Controls.Add(panel1);
+            splitContainer2.Panel1.Paint += splitContainer2_Panel1_Paint;
             // 
             // splitContainer2.Panel2
             // 
@@ -160,6 +149,7 @@
             button1.TabIndex = 0;
             button1.Text = "Today";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -187,6 +177,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(hopeDatePicker1);
             panel2.Controls.Add(dataGridView2);
             panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(label5);
@@ -194,6 +185,37 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1677, 879);
             panel2.TabIndex = 0;
+            // 
+            // hopeDatePicker1
+            // 
+            hopeDatePicker1.BackColor = Color.White;
+            hopeDatePicker1.BorderColor = Color.FromArgb(220, 223, 230);
+            hopeDatePicker1.Date = new DateTime(2024, 1, 22, 0, 0, 0, 0);
+            hopeDatePicker1.DayNames = "MTWTFSS";
+            hopeDatePicker1.DaysTextColor = Color.FromArgb(96, 98, 102);
+            hopeDatePicker1.DayTextColorA = Color.FromArgb(48, 49, 51);
+            hopeDatePicker1.DayTextColorB = Color.FromArgb(144, 147, 153);
+            hopeDatePicker1.HeaderFormat = "{0} Y - {1} M";
+            hopeDatePicker1.HeaderTextColor = Color.FromArgb(48, 49, 51);
+            hopeDatePicker1.HeadLineColor = Color.FromArgb(228, 231, 237);
+            hopeDatePicker1.HoverColor = Color.FromArgb(235, 238, 245);
+            hopeDatePicker1.Location = new Point(0, 0);
+            hopeDatePicker1.Name = "hopeDatePicker1";
+            hopeDatePicker1.NMColor = Color.FromArgb(192, 196, 204);
+            hopeDatePicker1.NMHoverColor = Color.FromArgb(64, 158, 255);
+            hopeDatePicker1.NYColor = Color.FromArgb(192, 196, 204);
+            hopeDatePicker1.NYHoverColor = Color.FromArgb(64, 158, 255);
+            hopeDatePicker1.PMColor = Color.FromArgb(192, 196, 204);
+            hopeDatePicker1.PMHoverColor = Color.FromArgb(64, 158, 255);
+            hopeDatePicker1.PYColor = Color.FromArgb(192, 196, 204);
+            hopeDatePicker1.PYHoverColor = Color.FromArgb(64, 158, 255);
+            hopeDatePicker1.SelectedBackColor = Color.FromArgb(64, 158, 255);
+            hopeDatePicker1.SelectedTextColor = Color.White;
+            hopeDatePicker1.Size = new Size(250, 270);
+            hopeDatePicker1.TabIndex = 5;
+            hopeDatePicker1.Text = "hopeDatePicker1";
+            hopeDatePicker1.ValueTextColor = Color.FromArgb(43, 133, 228);
+            hopeDatePicker1.Click += hopeDatePicker1_Click;
             // 
             // dataGridView2
             // 
@@ -221,131 +243,6 @@
             label5.TabIndex = 1;
             label5.Text = "Stacking List";
             // 
-            // panel3
-            // 
-            panel3.BackColor = Color.White;
-            panel3.Controls.Add(label13);
-            panel3.Controls.Add(label12);
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(label8);
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(label10);
-            panel3.Controls.Add(label11);
-            panel3.Controls.Add(panel4);
-            panel3.Location = new Point(23, 2);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(484, 345);
-            panel3.TabIndex = 4;
-            // 
-            // panel4
-            // 
-            panel4.Location = new Point(24, 92);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(435, 232);
-            panel4.TabIndex = 0;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("맑은 고딕", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            label10.ForeColor = Color.Black;
-            label10.Location = new Point(190, 11);
-            label10.Name = "label10";
-            label10.Size = new Size(44, 30);
-            label10.TabIndex = 17;
-            label10.Text = "Jan";
-            label10.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("맑은 고딕", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            label11.Location = new Point(240, 11);
-            label11.Name = "label11";
-            label11.Size = new Size(37, 30);
-            label11.TabIndex = 16;
-            label11.Text = "01";
-            label11.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(36, 61);
-            label4.Name = "label4";
-            label4.Size = new Size(31, 25);
-            label4.TabIndex = 21;
-            label4.Text = "일";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(96, 61);
-            label6.Name = "label6";
-            label6.Size = new Size(31, 25);
-            label6.TabIndex = 22;
-            label6.Text = "월";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            label7.ForeColor = Color.Black;
-            label7.Location = new Point(161, 61);
-            label7.Name = "label7";
-            label7.Size = new Size(31, 25);
-            label7.TabIndex = 23;
-            label7.Text = "화";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            label8.ForeColor = Color.Black;
-            label8.Location = new Point(229, 61);
-            label8.Name = "label8";
-            label8.Size = new Size(31, 25);
-            label8.TabIndex = 24;
-            label8.Text = "수";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            label9.ForeColor = Color.Black;
-            label9.Location = new Point(296, 61);
-            label9.Name = "label9";
-            label9.Size = new Size(31, 25);
-            label9.TabIndex = 25;
-            label9.Text = "목";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            label12.ForeColor = Color.Black;
-            label12.Location = new Point(361, 61);
-            label12.Name = "label12";
-            label12.Size = new Size(31, 25);
-            label12.TabIndex = 26;
-            label12.Text = "금";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            label13.ForeColor = Color.Black;
-            label13.Location = new Point(421, 61);
-            label13.Name = "label13";
-            label13.Size = new Size(31, 25);
-            label13.TabIndex = 27;
-            label13.Text = "토";
-            // 
             // Product
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -356,6 +253,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Product";
             Text = "x`";
+            Load += Product_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
@@ -370,8 +268,6 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -390,16 +286,6 @@
         private Label label5;
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
-        private Panel panel3;
-        private Panel panel4;
-        private Label label10;
-        private Label label11;
-        private Label label13;
-        private Label label12;
-        private Label label9;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private Label label4;
+        private ReaLTaiizor.Controls.HopeDatePicker hopeDatePicker1;
     }
 }

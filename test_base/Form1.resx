@@ -118,6 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAB4AAAAAyCAYAAAC9B8Y2AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAkRJREFUeF7t2cFJQ1EUANHXf2HZuMomInyIYETsIBH1po43nANTxawBAAAAAAAA
+        IMEABgAAAAAAAIgwgAEAAAAAAAAiDGAAAAAAAACACAMYAAAAAAAAIMIABgAAAAAAAIgwgAEAAAAAAAAi
+        DGAAAAAAAACACAMYAAAAAAAAIMIABgAAAAAAAIgwgAEAAAAAAAAiDGAAAAAAAACACAMYAAAAAAAAIMIA
+        BgAAAAAAAIgwgAEAAAAAAAAiDGAAAAAAAACACAMYAAAAAAAAIMIABgAAAAAAAIgwgAEAAAAAAAAiDGAA
+        AAAAAACACAMYAAAAAAAAIMIABgAAAAAAAIgwgAEAAAAAAAAiDGAAAAAAAACACAMYAAAAAAAAIMIABgAA
+        AAAAAIgwgAEAAAAAAAAiDGAAAAAAAACACAMYAAAAAAAAIMIABgAAAAAAAIgwgAEAAAAAAAAiDGAAAAAA
+        AACACAMYAAAAAAAAIMIABgAAAAAAAIgwgAEAAAAAAAAiDGAAAAAAAACACAMYAAAAAAAAIMIABgAAAAAA
+        AIgwgAEAAAAAAAAiDGAAAAAAAACACAMYAAAAAAAAIMIABgAAAAAAAIhYx+eMJEmSJEmSJEmSJGn/1uny
+        P5IkSZIkSZIkSZKk/Vsvb38jSZIkSZIkSZIkSdq/dT5+R5IkSZIkSZIkSZK0f+v1+jOSJEmSJEmSJEmS
+        pP1bx8djJEmSJEmSJEmSJEn7t96/HiNJkiRJkiRJkiRJ2r91+76PJEmSJEmSJEmSJGn37vMEyEnt/VPe
+        nGIAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="flowLayoutPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAAP9CAYAAADIByIdAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

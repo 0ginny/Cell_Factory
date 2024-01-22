@@ -158,7 +158,7 @@
             // 
             daycontainer.Location = new Point(3, 0);
             daycontainer.Name = "daycontainer";
-            daycontainer.Size = new Size(1329, 796);
+            daycontainer.Size = new Size(1329, 795);
             daycontainer.TabIndex = 0;
             // 
             // flowLayoutPanel1
