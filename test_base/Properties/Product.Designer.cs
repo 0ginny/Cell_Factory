@@ -71,7 +71,7 @@
             // 
             splitContainer1.Panel2.Controls.Add(panel2);
             splitContainer1.Size = new Size(1720, 1040);
-            splitContainer1.SplitterDistance = 134;
+            splitContainer1.SplitterDistance = 128;
             splitContainer1.TabIndex = 0;
             splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
@@ -89,7 +89,7 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(button3);
-            splitContainer2.Size = new Size(1720, 134);
+            splitContainer2.Size = new Size(1720, 128);
             splitContainer2.SplitterDistance = 1414;
             splitContainer2.TabIndex = 0;
             // 
@@ -102,7 +102,7 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1382, 128);
+            panel1.Size = new Size(1382, 107);
             panel1.TabIndex = 1;
             // 
             // button2
@@ -122,7 +122,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.FromArgb(134, 139, 150);
-            label3.Location = new Point(203, 36);
+            label3.Location = new Point(201, 32);
             label3.Name = "label3";
             label3.Size = new Size(56, 15);
             label3.TabIndex = 2;
@@ -167,9 +167,9 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = Color.FromArgb(60, 78, 113);
-            button3.Location = new Point(196, 82);
+            button3.Location = new Point(196, 78);
             button3.Name = "button3";
-            button3.Size = new Size(86, 28);
+            button3.Size = new Size(86, 30);
             button3.TabIndex = 2;
             button3.Text = "검색";
             button3.UseVisualStyleBackColor = false;
@@ -183,7 +183,7 @@
             panel2.Controls.Add(label5);
             panel2.Location = new Point(23, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1677, 879);
+            panel2.Size = new Size(1677, 883);
             panel2.TabIndex = 0;
             // 
             // hopeDatePicker1

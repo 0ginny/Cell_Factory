@@ -246,7 +246,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.FromArgb(134, 139, 150);
-            label3.Location = new Point(0, 622);
+            label3.Location = new Point(0, 620);
             label3.Name = "label3";
             label3.Size = new Size(197, 45);
             label3.TabIndex = 8;

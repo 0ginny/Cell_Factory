@@ -122,6 +122,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(86, 29);
             comboBox1.TabIndex = 3;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -160,7 +161,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("맑은 고딕", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label1.Location = new Point(30, 22);
+            label1.Location = new Point(30, 20);
             label1.Name = "label1";
             label1.Size = new Size(228, 32);
             label1.TabIndex = 0;
@@ -172,9 +173,9 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = Color.FromArgb(60, 78, 113);
-            button3.Location = new Point(21, 74);
+            button3.Location = new Point(28, 72);
             button3.Name = "button3";
-            button3.Size = new Size(86, 28);
+            button3.Size = new Size(86, 30);
             button3.TabIndex = 1;
             button3.Text = "검색";
             button3.UseVisualStyleBackColor = false;
@@ -355,7 +356,7 @@
             panel7.Location = new Point(14, 16);
             panel7.Margin = new Padding(0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(830, 573);
+            panel7.Size = new Size(837, 573);
             panel7.TabIndex = 4;
             // 
             // label5
@@ -373,7 +374,7 @@
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Location = new Point(16, 83);
             dataGridView3.Name = "dataGridView3";
-            dataGridView3.Size = new Size(799, 544);
+            dataGridView3.Size = new Size(802, 476);
             dataGridView3.TabIndex = 1;
             // 
             // panel8
@@ -383,7 +384,7 @@
             panel8.Location = new Point(14, 0);
             panel8.Margin = new Padding(0);
             panel8.Name = "panel8";
-            panel8.Size = new Size(830, 310);
+            panel8.Size = new Size(837, 310);
             panel8.TabIndex = 5;
             // 
             // dataGridView4
@@ -391,7 +392,7 @@
             dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView4.Location = new Point(16, 15);
             dataGridView4.Name = "dataGridView4";
-            dataGridView4.Size = new Size(799, 281);
+            dataGridView4.Size = new Size(802, 281);
             dataGridView4.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -414,7 +415,7 @@
             panel3.Controls.Add(button3);
             panel3.Location = new Point(1587, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(107, 106);
+            panel3.Size = new Size(114, 106);
             panel3.TabIndex = 1;
             // 
             // Error

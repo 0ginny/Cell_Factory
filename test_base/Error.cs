@@ -18,6 +18,14 @@ namespace test_base
         {
             InitializeComponent();
             hopeDatePicker1.Visible = false;
+
+            // 초기에 콤보박스에 A셀, B셀, C셀 추가
+            comboBox1.Items.Add("A셀");
+            comboBox1.Items.Add("B셀");
+            comboBox1.Items.Add("C셀");
+
+            // 오늘 날짜를 label2에 표시
+            label2.Text = DateTime.Now.ToString("yyyy년 MM월 dd일");
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -59,6 +67,18 @@ namespace test_base
         {
             hopeDatePicker1.Size = new System.Drawing.Size(250, 270);
             hopeDatePicker1.Visible = true;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // 콤보박스에서 선택한 항목에 대한 동작을 정의
+            string selectedCell = comboBox1.SelectedItem as string;
+
+            if (selectedCell != null)
+            {
+                // 여기에 선택한 항목에 대한 동작을 추가하세요.
+                MessageBox.Show($"선택한 셀: {selectedCell}");
+            }
         }
     }
 }
