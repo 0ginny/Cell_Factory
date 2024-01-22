@@ -38,9 +38,20 @@
             label1 = new Label();
             button3 = new Button();
             panel2 = new Panel();
+            dataGridView2 = new DataGridView();
             dataGridView1 = new DataGridView();
             label5 = new Label();
-            dataGridView2 = new DataGridView();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            label10 = new Label();
+            label11 = new Label();
+            label4 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label12 = new Label();
+            label13 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -51,8 +62,9 @@
             splitContainer2.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -68,6 +80,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.Controls.Add(panel3);
             splitContainer1.Panel2.Controls.Add(panel2);
             splitContainer1.Size = new Size(1720, 1040);
             splitContainer1.SplitterDistance = 134;
@@ -182,6 +195,14 @@
             panel2.Size = new Size(1677, 879);
             panel2.TabIndex = 0;
             // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(1048, 61);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(608, 798);
+            dataGridView2.TabIndex = 3;
+            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -200,13 +221,130 @@
             label5.TabIndex = 1;
             label5.Text = "Stacking List";
             // 
-            // dataGridView2
+            // panel3
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(1048, 61);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(608, 798);
-            dataGridView2.TabIndex = 3;
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(label13);
+            panel3.Controls.Add(label12);
+            panel3.Controls.Add(label9);
+            panel3.Controls.Add(label8);
+            panel3.Controls.Add(label7);
+            panel3.Controls.Add(label6);
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(label10);
+            panel3.Controls.Add(label11);
+            panel3.Controls.Add(panel4);
+            panel3.Location = new Point(23, 2);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(484, 345);
+            panel3.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            panel4.Location = new Point(24, 92);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(435, 232);
+            panel4.TabIndex = 0;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("맑은 고딕", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            label10.ForeColor = Color.Black;
+            label10.Location = new Point(190, 11);
+            label10.Name = "label10";
+            label10.Size = new Size(44, 30);
+            label10.TabIndex = 17;
+            label10.Text = "Jan";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("맑은 고딕", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            label11.Location = new Point(240, 11);
+            label11.Name = "label11";
+            label11.Size = new Size(37, 30);
+            label11.TabIndex = 16;
+            label11.Text = "01";
+            label11.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(36, 61);
+            label4.Name = "label4";
+            label4.Size = new Size(31, 25);
+            label4.TabIndex = 21;
+            label4.Text = "일";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(96, 61);
+            label6.Name = "label6";
+            label6.Size = new Size(31, 25);
+            label6.TabIndex = 22;
+            label6.Text = "월";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            label7.ForeColor = Color.Black;
+            label7.Location = new Point(161, 61);
+            label7.Name = "label7";
+            label7.Size = new Size(31, 25);
+            label7.TabIndex = 23;
+            label7.Text = "화";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            label8.ForeColor = Color.Black;
+            label8.Location = new Point(229, 61);
+            label8.Name = "label8";
+            label8.Size = new Size(31, 25);
+            label8.TabIndex = 24;
+            label8.Text = "수";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(296, 61);
+            label9.Name = "label9";
+            label9.Size = new Size(31, 25);
+            label9.TabIndex = 25;
+            label9.Text = "목";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            label12.ForeColor = Color.Black;
+            label12.Location = new Point(361, 61);
+            label12.Name = "label12";
+            label12.Size = new Size(31, 25);
+            label12.TabIndex = 26;
+            label12.Text = "금";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            label13.ForeColor = Color.Black;
+            label13.Location = new Point(421, 61);
+            label13.Name = "label13";
+            label13.Size = new Size(31, 25);
+            label13.TabIndex = 27;
+            label13.Text = "토";
             // 
             // Product
             // 
@@ -230,8 +368,10 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -250,5 +390,16 @@
         private Label label5;
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
+        private Panel panel3;
+        private Panel panel4;
+        private Label label10;
+        private Label label11;
+        private Label label13;
+        private Label label12;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private Label label4;
     }
 }

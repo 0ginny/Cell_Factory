@@ -21,32 +21,17 @@ namespace test_base
         {
             InitializeComponent();
             Load += Dashboard_Load;
-            SetHalfDoughnutChart();
+            circleProgressBar();
         }
         private void Dashboard_Load(object sender, EventArgs e)
         {
             // 이미지를 프로젝트 리소스에서 가져와서 PictureBox의 이미지로 설정
             pictureBox1.Image = Properties.Resources.실시간모니터링_그림;
-            pictureBox2.Image = Properties.Resources.하양_1단;
+            pictureBox2.Image = Properties.Resources.녹색_1단;
         }
-        private void SetHalfDoughnutChart()
+        private void circleProgressBar()
         {
-            // 차트 영역 추가
-            ChartArea chartArea1 = new ChartArea();
-            chart1.ChartAreas.Add(chartArea1);
-
-            // 시리즈 추가
-            Series series1 = new Series();
-            series1.Points.Add(15);
-            series1.Points.Add(35);
-            chart1.Series.Add(series1);
-
-            // 차트 타입을 반원 차트로 변경
-            chart1.Series[0].ChartType = SeriesChartType.Doughnut;
-
-            // 반원 차트 설정
-            chart1.Series[0]["DoughnutRadius"] = "50";
-            chart1.Series[0]["PieDrawingStyle"] = "Concave";
+            circleProgressBar1.Value = 75;
         }
 
         private void label1_Click(object sender, EventArgs e)// label을 클릭해서 사용해야 할 기능이 있는지 의문
@@ -95,6 +80,11 @@ namespace test_base
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
             button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
