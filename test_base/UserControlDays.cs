@@ -14,9 +14,15 @@ namespace MES_Project
     public partial class UserControlDays : UserControl
     {
         //String connString = "server = localhost;user id=root;database=db_calendar;ssImode=none";
-        String connString = "Server=222.108.180.36;Port=3306;Database=mes_1;UID=EDU_STUDENT;PWD=1234;";
+        String connString = "Server=222.108.180.36;" +
+                            "Port=3306;" +
+                            "Database=mes_1;" +
+                            "UID=EDU_STUDENT;" +
+                            "PWD=1234;";
+
         //let us create another static variable for day;
         public static string static_day;
+        
         public UserControlDays()
         {
             InitializeComponent();
@@ -26,11 +32,13 @@ namespace MES_Project
         {
 
         }
+
         public void days(int numday)
         {
             lbdays.Text = numday + "";
             DisplayEvent();
         }
+
         private void UserControlDays_Click(object sender, EventArgs e)
         {
             static_day = lbdays.Text;
@@ -45,6 +53,7 @@ namespace MES_Project
 
             //eventform.Show();
         }
+
         /*
         private void DisplayEvent()
         {
@@ -86,6 +95,7 @@ namespace MES_Project
             cmd.Dispose();
             conn.Close();
         }*/
+
         /*
         private void DisplayEvent()
         {
@@ -135,6 +145,7 @@ INNER JOIN tb_products AS C ON A.prod_code = C.prod_code WHERE A.D_day = ?";
             cmd.Dispose();
             conn.Close();
         }*/
+
         private void DisplayEvent()
         {
             MySqlConnection conn = new MySqlConnection(connString);
@@ -147,6 +158,7 @@ INNER JOIN tb_products AS C ON A.prod_code = C.prod_code WHERE A.D_day = ?";
 
             string sql = @"SELECT A.p_order_id, A.company_name, A.prod_num, A.D_day, A.prod_code, B.fin_o_date, C.prod_name FROM tb_prod_order AS A left JOIN tb_fin_prod_order AS B ON A.p_order_id = B.p_order_id
                    INNER JOIN tb_products AS C ON A.prod_code = C.prod_code WHERE A.D_day = ?";
+
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("A.D_day", $"{Calendar_shipmen_status.static_year}-{Calendar_shipmen_status.static_month}-{formattedDay}");
 
@@ -185,6 +197,7 @@ INNER JOIN tb_products AS C ON A.prod_code = C.prod_code WHERE A.D_day = ?";
             cmd.Dispose();
             conn.Close();
         }
+
         /*private void DisplayEvent()
         {
             MySqlConnection conn = new MySqlConnection(connString);
@@ -254,12 +267,11 @@ INNER JOIN tb_products AS C ON A.prod_code = C.prod_code WHERE A.D_day = ?";
 
 
         //create a timer for auto display event if new event is added
+
         /*private void timer1_Tick(object sender, EventArgs e)
         {
             //call the displayEvent method
             //displayEvent();
         }*/
-
-
     }
 }

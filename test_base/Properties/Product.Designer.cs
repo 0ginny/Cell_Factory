@@ -38,7 +38,9 @@
             label1 = new Label();
             button3 = new Button();
             panel2 = new Panel();
+
             hopeDatePicker1 = new ReaLTaiizor.Controls.HopeDatePicker();
+
             dataGridView2 = new DataGridView();
             dataGridView1 = new DataGridView();
             label5 = new Label();
@@ -149,7 +151,7 @@
             button1.TabIndex = 0;
             button1.Text = "Today";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            
             // 
             // label1
             // 
@@ -186,6 +188,7 @@
             panel2.Size = new Size(1677, 879);
             panel2.TabIndex = 0;
             // 
+
             // hopeDatePicker1
             // 
             hopeDatePicker1.BackColor = Color.White;
@@ -217,7 +220,7 @@
             hopeDatePicker1.ValueTextColor = Color.FromArgb(43, 133, 228);
             hopeDatePicker1.Click += hopeDatePicker1_Click;
             // 
-            // dataGridView2
+
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(1048, 61);
@@ -232,6 +235,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(1005, 798);
             dataGridView1.TabIndex = 2;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label5
             // 

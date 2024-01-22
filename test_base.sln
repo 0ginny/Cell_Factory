@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_base", "test_base\test_base.csproj", "{D17D69ED-C274-46B3-B9C6-F92774E3DB29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test_base", "test_base\test_base.csproj", "{D17D69ED-C274-46B3-B9C6-F92774E3DB29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{EC73E3C0-642E-4E42-A6F1-3B2F7BDD60CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

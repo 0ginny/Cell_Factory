@@ -120,7 +120,7 @@
             pictureBox1.Size = new Size(976, 521);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+
             // 
             // label1
             // 
@@ -131,7 +131,6 @@
             label1.Size = new Size(152, 25);
             label1.TabIndex = 0;
             label1.Text = "실시간 모니터링";
-            label1.Click += label1_Click;
             // 
             // tableLayoutPanel1
             // 

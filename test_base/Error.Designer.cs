@@ -178,6 +178,7 @@
             button3.TabIndex = 1;
             button3.Text = "검색";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // splitContainer1
             // 

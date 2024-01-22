@@ -6,13 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace test_base
-
 {
     internal class mysql
     {
-        public string connect_str { get; set; } = "Server=222.108.180.36;Port=3306;Database=mes_1;Uid=EDU_STUDENT;Pwd=1234";
+        public string connect_str { get; set; } = "Server=222.108.180.36;" +
+                                                  "Port=3306;" +
+                                                  "Database=mes_1;" +
+                                                  "Uid=EDU_STUDENT;" +
+                                                  "Pwd=1234";
 
         public DataTable GetDataToTable(string SQL)
         {
@@ -28,12 +32,12 @@ namespace test_base
                 da.Fill(dt);
                 conn.Close();
             }
-            catch {
+            catch
+            {
                 Console.WriteLine($"조회실패, {SQL}");
             }
             return dt;
         }
-
 
         public void InsertData(string table_str, string data_str)
         {
@@ -41,7 +45,6 @@ namespace test_base
 
             try
             {
-
                 using (MySqlConnection connection = new MySqlConnection(connect_str))
                 {
                     Console.WriteLine(insertQuery);
@@ -101,7 +104,6 @@ namespace test_base
 
         }
 
-
         public void sendsql(string insertQuery)
         {
 
@@ -111,20 +113,17 @@ namespace test_base
                 {
 
                     Console.WriteLine(insertQuery);
-
                     connection.Open();
                     MySqlCommand command = new MySqlCommand(insertQuery, connection);
-
                     // 만약에 내가처리한 Mysql에 정상적으로 들어갔다면 메세지를 보여주라는 뜻이다
                     if (command.ExecuteNonQuery() == 1)
                     {
-                        
+
                     }
                     else
                     {
                         Console.WriteLine("쿼리문 인식 실패");
                     }
-
                 }
             }
             catch
@@ -138,10 +137,15 @@ namespace test_base
             dgv.DataSource = GetDataToTable(sql);
         }
 
+        public void fillDataChart(string sql, Chart chart)
+        {
+            chart.DataSource = GetDataToTable(sql);
+        }
 
-
-
-
-
+        public void fillDataDualChart(string sql, Chart chart1, Chart chart2)
+        {
+            chart1.DataSource = GetDataToTable(sql);
+            chart2.DataSource = GetDataToTable(sql);
+        }
     }
 }

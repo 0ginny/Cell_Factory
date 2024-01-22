@@ -14,10 +14,18 @@ namespace test_base
 {
     public partial class Error : Form
     {
+        // 클래스 전역 선언
+        Error_Management error;
+
         public Error()
         {
             InitializeComponent();
+
             hopeDatePicker1.Visible = false;
+
+            // 클래스 객체 생성
+            error = new Error_Management();
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -50,6 +58,7 @@ namespace test_base
 
         }
 
+
         private void hopeDatePicker1_Click(object sender, EventArgs e)
         {
             hopeDatePicker1.Visible = false;
@@ -59,6 +68,13 @@ namespace test_base
         {
             hopeDatePicker1.Size = new System.Drawing.Size(250, 270);
             hopeDatePicker1.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)// 날짜와 제품의 종류에 대한 불량 검색을 위한 버튼
+        {
+            // 선택한 날짜와 제품의 종류를 그리드뷰 2개, 차트 4개에 출력
+            // error.Error_view(dateTimePicker1, comboBox1.SelectedItem.ToString(), dataGridView1, dataGridView2, chart1, chart2, chart3, chart4);
+
         }
     }
 }
