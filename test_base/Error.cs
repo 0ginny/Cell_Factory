@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using ReaLTaiizor.Controls;
 
 namespace test_base
 {
@@ -26,6 +27,7 @@ namespace test_base
 
             // 오늘 날짜를 label2에 표시
             label2.Text = DateTime.Now.ToString("yyyy년 MM월 dd일");
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -39,11 +41,6 @@ namespace test_base
         }
 
         private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer3_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -79,6 +76,11 @@ namespace test_base
                 // 여기에 선택한 항목에 대한 동작을 추가하세요.
                 MessageBox.Show($"선택한 셀: {selectedCell}");
             }
+        }
+
+        private void parrotPieGraph1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

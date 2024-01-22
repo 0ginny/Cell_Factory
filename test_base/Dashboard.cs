@@ -28,6 +28,12 @@ namespace test_base
             // 이미지를 프로젝트 리소스에서 가져와서 PictureBox의 이미지로 설정
             pictureBox1.Image = Properties.Resources.실시간모니터링_그림;
             pictureBox2.Image = Properties.Resources.녹색_1단;
+
+            // dataGridView1에 헤더 추가
+            dataGridView1.ColumnCount = 3; // 열의 수 설정
+            dataGridView1.Columns[0].Name = "시간"; // 첫 번째 열의 헤더
+            dataGridView1.Columns[1].Name = "알람"; // 두 번째 열의 헤더
+            dataGridView1.Columns[2].Name = "횟수"; // 세 번째 열의 헤더
         }
         private void circleProgressBar()
         {
