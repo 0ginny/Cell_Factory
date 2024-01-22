@@ -86,7 +86,6 @@
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.Controls.Add(panel1);
-            splitContainer2.Panel1.Paint += splitContainer2_Panel1_Paint;
             // 
             // splitContainer2.Panel2
             // 
@@ -218,7 +217,7 @@
             hopeDatePicker1.TabIndex = 5;
             hopeDatePicker1.Text = "hopeDatePicker1";
             hopeDatePicker1.ValueTextColor = Color.FromArgb(43, 133, 228);
-            hopeDatePicker1.Click += hopeDatePicker1_Click;
+
             // 
 
             // 
@@ -235,7 +234,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(1005, 798);
             dataGridView1.TabIndex = 2;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+
             // 
             // label5
             // 
@@ -257,7 +256,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Product";
             Text = "x`";
-            Load += Product_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
