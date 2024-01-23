@@ -31,17 +31,33 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel3 = new Panel();
-            circleProgressBar1 = new ReaLTaiizor.Controls.CircleProgressBar();
+            dataGridView2 = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewImageColumn();
             label3 = new Label();
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
             label2 = new Label();
+            circleProgressBar1 = new ReaLTaiizor.Controls.CircleProgressBar();
             noderedConnectBindingSource = new BindingSource(components);
             splitContainer2 = new SplitContainer();
             panel4 = new Panel();
@@ -59,7 +75,6 @@
             button2 = new Button();
             textBox1 = new TextBox();
             panel6 = new Panel();
-            dataGridView2 = new DataGridView();
             label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -69,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)noderedConnectBindingSource).BeginInit();
@@ -84,7 +100,6 @@
             splitContainer3.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -103,7 +118,7 @@
             splitContainer1.Panel2.Controls.Add(tableLayoutPanel1);
             splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(1720, 636);
-            splitContainer1.SplitterDistance = 1033;
+            splitContainer1.SplitterDistance = 1136;
             splitContainer1.TabIndex = 0;
             // 
             // panel1
@@ -114,7 +129,7 @@
             panel1.Location = new Point(20, 20);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1013, 596);
+            panel1.Size = new Size(1116, 596);
             panel1.TabIndex = 1;
             // 
             // pictureBox1
@@ -122,7 +137,7 @@
             pictureBox1.ErrorImage = Properties.Resources.실시간모니터링_그림;
             pictureBox1.Location = new Point(18, 57);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(976, 521);
+            pictureBox1.Size = new Size(1080, 521);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -151,37 +166,95 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 49.42085F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50.57915F));
-            tableLayoutPanel1.Size = new Size(683, 636);
+            tableLayoutPanel1.Size = new Size(580, 636);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(circleProgressBar1);
+            panel3.Controls.Add(dataGridView2);
             panel3.Controls.Add(label3);
             panel3.Location = new Point(20, 314);
             panel3.Margin = new Padding(20, 0, 20, 20);
             panel3.Name = "panel3";
-            panel3.Size = new Size(643, 302);
+            panel3.Size = new Size(540, 302);
             panel3.TabIndex = 3;
             // 
-            // circleProgressBar1
+            // dataGridView2
             // 
-            circleProgressBar1.BackColor = Color.White;
-            circleProgressBar1.BackgroundImageLayout = ImageLayout.Center;
-            circleProgressBar1.Font = new Font("맑은 고딕", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            circleProgressBar1.ForeColor = Color.White;
-            circleProgressBar1.Location = new Point(183, 3);
-            circleProgressBar1.Maximum = 100L;
-            circleProgressBar1.MinimumSize = new Size(100, 100);
-            circleProgressBar1.Name = "circleProgressBar1";
-            circleProgressBar1.PercentColor = Color.White;
-            circleProgressBar1.ProgressColor1 = Color.Cyan;
-            circleProgressBar1.ProgressColor2 = Color.FromArgb(33, 107, 255);
-            circleProgressBar1.ProgressShape = ReaLTaiizor.Controls.CircleProgressBar._ProgressShape.Round;
-            circleProgressBar1.Size = new Size(296, 296);
-            circleProgressBar1.TabIndex = 2;
-            circleProgressBar1.Value = 0L;
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView2.BackgroundColor = Color.White;
+            dataGridView2.BorderStyle = BorderStyle.None;
+            dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle2.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView2.ColumnHeadersHeight = 40;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dataGridView2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.GridColor = Color.FromArgb(235, 238, 244);
+            dataGridView2.Location = new Point(18, 53);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
+            dataGridView2.RowHeadersVisible = false;
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle5.SelectionBackColor = Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridView2.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView2.RowTemplate.DefaultCellStyle.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dataGridView2.RowTemplate.DefaultCellStyle.Padding = new Padding(0, 5, 0, 10);
+            dataGridView2.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.White;
+            dataGridView2.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridView2.RowTemplate.DividerHeight = 1;
+            dataGridView2.RowTemplate.Height = 80;
+            dataGridView2.RowTemplate.Resizable = DataGridViewTriState.True;
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.Size = new Size(504, 231);
+            dataGridView2.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewTextBoxColumn1.HeaderText = "주문 목록";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "현재 상태";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Resizable = DataGridViewTriState.True;
+            dataGridViewTextBoxColumn2.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // label3
             // 
@@ -189,9 +262,9 @@
             label3.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
             label3.Location = new Point(18, 16);
             label3.Name = "label3";
-            label3.Size = new Size(69, 25);
+            label3.Size = new Size(95, 25);
             label3.TabIndex = 0;
-            label3.Text = "생산량";
+            label3.Text = "주문 관리";
             // 
             // panel2
             // 
@@ -201,43 +274,95 @@
             panel2.Location = new Point(20, 20);
             panel2.Margin = new Padding(20);
             panel2.Name = "panel2";
-            panel2.Size = new Size(643, 274);
+            panel2.Size = new Size(540, 274);
             panel2.TabIndex = 2;
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle6.SelectionBackColor = Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle7.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle7.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridView1.ColumnHeadersHeight = 40;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = SystemColors.Window;
+            dataGridViewCellStyle11.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle11.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle11.SelectionBackColor = Color.White;
+            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = Color.FromArgb(235, 238, 244);
             dataGridView1.Location = new Point(18, 57);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle12.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle12.SelectionBackColor = Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
             dataGridView1.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.RowTemplate.DefaultCellStyle.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dataGridView1.RowTemplate.DefaultCellStyle.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dataGridView1.RowTemplate.DefaultCellStyle.Padding = new Padding(0, 5, 0, 10);
             dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.White;
-            dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dataGridView1.RowTemplate.ReadOnly = true;
-            dataGridView1.Size = new Size(607, 199);
+            dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridView1.RowTemplate.DividerHeight = 1;
+            dataGridView1.RowTemplate.Height = 80;
+            dataGridView1.RowTemplate.Resizable = DataGridViewTriState.True;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(504, 199);
             dataGridView1.TabIndex = 1;
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = null;
+            Column1.DefaultCellStyle = dataGridViewCellStyle8;
+            Column1.HeaderText = "시간";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Resizable = DataGridViewTriState.True;
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle9;
+            Column2.HeaderText = "알람";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.ForeColor = Color.FromArgb(31, 107, 255);
+            dataGridViewCellStyle10.SelectionBackColor = Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            Column3.DefaultCellStyle = dataGridViewCellStyle10;
+            Column3.HeaderText = "횟수";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
             // 
             // label2
             // 
@@ -248,6 +373,24 @@
             label2.Size = new Size(95, 25);
             label2.TabIndex = 0;
             label2.Text = "불량 내역";
+            // 
+            // circleProgressBar1
+            // 
+            circleProgressBar1.BackColor = Color.White;
+            circleProgressBar1.BackgroundImageLayout = ImageLayout.Center;
+            circleProgressBar1.Font = new Font("맑은 고딕", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            circleProgressBar1.ForeColor = Color.White;
+            circleProgressBar1.Location = new Point(128, 49);
+            circleProgressBar1.Maximum = 100L;
+            circleProgressBar1.MinimumSize = new Size(100, 100);
+            circleProgressBar1.Name = "circleProgressBar1";
+            circleProgressBar1.PercentColor = Color.White;
+            circleProgressBar1.ProgressColor1 = Color.Cyan;
+            circleProgressBar1.ProgressColor2 = Color.FromArgb(33, 107, 255);
+            circleProgressBar1.ProgressShape = ReaLTaiizor.Controls.CircleProgressBar._ProgressShape.Round;
+            circleProgressBar1.Size = new Size(296, 296);
+            circleProgressBar1.TabIndex = 2;
+            circleProgressBar1.Value = 0L;
             // 
             // noderedConnectBindingSource
             // 
@@ -280,7 +423,7 @@
             panel4.Location = new Point(20, 0);
             panel4.Margin = new Padding(20, 0, 20, 20);
             panel4.Name = "panel4";
-            panel4.Size = new Size(561, 384);
+            panel4.Size = new Size(550, 384);
             panel4.TabIndex = 4;
             // 
             // label8
@@ -354,7 +497,7 @@
             panel5.Location = new Point(20, 0);
             panel5.Margin = new Padding(12, 0, 12, 12);
             panel5.Name = "panel5";
-            panel5.Size = new Size(548, 383);
+            panel5.Size = new Size(540, 383);
             panel5.TabIndex = 5;
             // 
             // button4
@@ -445,21 +588,13 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(dataGridView2);
+            panel6.Controls.Add(circleProgressBar1);
             panel6.Controls.Add(label6);
             panel6.Location = new Point(20, 0);
             panel6.Margin = new Padding(12, 0, 12, 12);
             panel6.Name = "panel6";
-            panel6.Size = new Size(540, 383);
+            panel6.Size = new Size(539, 383);
             panel6.TabIndex = 6;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(18, 60);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(504, 310);
-            dataGridView2.TabIndex = 2;
             // 
             // label6
             // 
@@ -467,9 +602,9 @@
             label6.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
             label6.Location = new Point(18, 16);
             label6.Name = "label6";
-            label6.Size = new Size(88, 25);
+            label6.Size = new Size(114, 25);
             label6.TabIndex = 0;
-            label6.Text = "주문관리";
+            label6.Text = "일일 생산량";
             // 
             // Dashboard
             // 
@@ -493,6 +628,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -512,7 +648,6 @@
             panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
 
@@ -545,8 +680,13 @@
         private Button button4;
         private Label label9;
         private TextBox textBox1;
-        private DataGridView dataGridView2;
         private ReaLTaiizor.Controls.CircleProgressBar circleProgressBar1;
         private BindingSource noderedConnectBindingSource;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewImageColumn dataGridViewTextBoxColumn2;
     }
 }

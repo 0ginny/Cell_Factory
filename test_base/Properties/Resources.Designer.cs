@@ -203,6 +203,16 @@ namespace test_base.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap 대기 {
+            get {
+                object obj = ResourceManager.GetObject("대기", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap 대시보드1_removebg_preview_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("대시보드1-removebg-preview-removebg-preview", resourceCulture);
@@ -233,9 +243,39 @@ namespace test_base.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap 에러발생 {
+            get {
+                object obj = ResourceManager.GetObject("에러발생", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 완료 {
+            get {
+                object obj = ResourceManager.GetObject("완료", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap 제목_없음 {
             get {
                 object obj = ResourceManager.GetObject("제목 없음", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 진행중 {
+            get {
+                object obj = ResourceManager.GetObject("진행중", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

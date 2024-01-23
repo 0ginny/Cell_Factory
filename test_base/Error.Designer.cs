@@ -28,18 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
             panel1 = new Panel();
             button2 = new Button();
             comboBox1 = new ComboBox();
@@ -52,23 +64,29 @@
             splitContainer2 = new SplitContainer();
             splitContainer3 = new SplitContainer();
             panel5 = new Panel();
+            chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             hopeDatePicker1 = new ReaLTaiizor.Controls.HopeDatePicker();
             label4 = new Label();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panel6 = new Panel();
-            dataGridView1 = new DataGridView();
+            SellDG = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
             splitContainer4 = new SplitContainer();
             splitContainer5 = new SplitContainer();
             panel7 = new Panel();
+            chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             label5 = new Label();
             panel8 = new Panel();
-            dataGridView4 = new DataGridView();
+            weldingDG = new DataGridView();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel3 = new Panel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -82,8 +100,10 @@
             splitContainer3.Panel2.SuspendLayout();
             splitContainer3.SuspendLayout();
             panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SellDG).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
             splitContainer4.Panel2.SuspendLayout();
             splitContainer4.SuspendLayout();
@@ -92,14 +112,12 @@
             splitContainer5.Panel2.SuspendLayout();
             splitContainer5.SuspendLayout();
             panel7.SuspendLayout();
-            panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
-            tableLayoutPanel1.SuspendLayout();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chart2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart4).BeginInit();
+            panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)weldingDG).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -265,6 +283,22 @@
             panel5.TabIndex = 3;
             panel5.Paint += panel5_Paint;
             // 
+            // chart2
+            // 
+            chartArea5.Name = "ChartArea1";
+            chart2.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            chart2.Legends.Add(legend5);
+            chart2.Location = new Point(579, 83);
+            chart2.Name = "chart2";
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            chart2.Series.Add(series5);
+            chart2.Size = new Size(213, 457);
+            chart2.TabIndex = 8;
+            chart2.Text = "chart2";
+            // 
             // hopeDatePicker1
             // 
             hopeDatePicker1.BackColor = Color.White;
@@ -306,23 +340,114 @@
             label4.TabIndex = 0;
             label4.Text = "셀 불량";
             // 
+            // chart1
+            // 
+            chartArea6.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            chart1.Legends.Add(legend6);
+            chart1.Location = new Point(39, 83);
+            chart1.Name = "chart1";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            chart1.Series.Add(series6);
+            chart1.Size = new Size(488, 457);
+            chart1.TabIndex = 7;
+            chart1.Text = "chart1";
+            // 
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(dataGridView1);
+            panel6.Controls.Add(SellDG);
             panel6.Location = new Point(20, 0);
             panel6.Margin = new Padding(0);
             panel6.Name = "panel6";
             panel6.Size = new Size(825, 312);
             panel6.TabIndex = 4;
             // 
-            // dataGridView1
+            // SellDG
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(18, 15);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(791, 281);
-            dataGridView1.TabIndex = 1;
+            SellDG.AllowUserToAddRows = false;
+            SellDG.AllowUserToDeleteRows = false;
+            SellDG.AllowUserToResizeRows = false;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle13.SelectionBackColor = Color.White;
+            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            SellDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            SellDG.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            SellDG.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            SellDG.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            SellDG.BackgroundColor = Color.White;
+            SellDG.BorderStyle = BorderStyle.None;
+            SellDG.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            SellDG.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle14.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle14.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle14.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
+            SellDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            SellDG.ColumnHeadersHeight = 40;
+            SellDG.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            SellDG.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, Column1 });
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = SystemColors.Window;
+            dataGridViewCellStyle17.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle17.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle17.SelectionBackColor = Color.White;
+            dataGridViewCellStyle17.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.False;
+            SellDG.DefaultCellStyle = dataGridViewCellStyle17;
+            SellDG.EnableHeadersVisualStyles = false;
+            SellDG.GridColor = Color.FromArgb(235, 238, 244);
+            SellDG.Location = new Point(18, 16);
+            SellDG.Name = "SellDG";
+            SellDG.ReadOnly = true;
+            SellDG.RowHeadersVisible = false;
+            dataGridViewCellStyle18.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle18.SelectionBackColor = Color.White;
+            dataGridViewCellStyle18.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            SellDG.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            SellDG.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            SellDG.RowTemplate.DefaultCellStyle.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            SellDG.RowTemplate.DefaultCellStyle.Padding = new Padding(0, 5, 0, 10);
+            SellDG.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.White;
+            SellDG.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            SellDG.RowTemplate.DividerHeight = 1;
+            SellDG.RowTemplate.Height = 80;
+            SellDG.RowTemplate.Resizable = DataGridViewTriState.True;
+            SellDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            SellDG.Size = new Size(789, 281);
+            SellDG.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.NullValue = null;
+            dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewTextBoxColumn1.HeaderText = "종류";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewTextBoxColumn2.HeaderText = "상세정보";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "시간";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // splitContainer4
             // 
@@ -369,6 +494,39 @@
             panel7.Size = new Size(837, 573);
             panel7.TabIndex = 4;
             // 
+            // chart3
+            // 
+            chartArea7.Name = "ChartArea1";
+            chart3.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            chart3.Legends.Add(legend7);
+            chart3.Location = new Point(583, 83);
+            chart3.Name = "chart3";
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            chart3.Series.Add(series7);
+            chart3.Size = new Size(213, 457);
+            chart3.TabIndex = 10;
+            chart3.Text = "chart3";
+            // 
+            // chart4
+            // 
+            chartArea8.Name = "ChartArea1";
+            chart4.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            chart4.Legends.Add(legend8);
+            chart4.Location = new Point(43, 83);
+            chart4.Name = "chart4";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            chart4.Series.Add(series8);
+            chart4.Size = new Size(488, 457);
+            chart4.TabIndex = 9;
+            chart4.Text = "chart4";
+            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -382,20 +540,94 @@
             // panel8
             // 
             panel8.BackColor = Color.White;
-            panel8.Controls.Add(dataGridView4);
+            panel8.Controls.Add(weldingDG);
             panel8.Location = new Point(14, 0);
             panel8.Margin = new Padding(0);
             panel8.Name = "panel8";
             panel8.Size = new Size(837, 310);
             panel8.TabIndex = 5;
             // 
-            // dataGridView4
+            // weldingDG
             // 
-            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(16, 15);
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.Size = new Size(802, 281);
-            dataGridView4.TabIndex = 1;
+            weldingDG.AllowUserToAddRows = false;
+            weldingDG.AllowUserToDeleteRows = false;
+            weldingDG.AllowUserToResizeRows = false;
+            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle19.SelectionBackColor = Color.White;
+            dataGridViewCellStyle19.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            weldingDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            weldingDG.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            weldingDG.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            weldingDG.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            weldingDG.BackgroundColor = Color.White;
+            weldingDG.BorderStyle = BorderStyle.None;
+            weldingDG.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            weldingDG.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle20.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle20.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle20.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.True;
+            weldingDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            weldingDG.ColumnHeadersHeight = 40;
+            weldingDG.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            weldingDG.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column2 });
+            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = SystemColors.Window;
+            dataGridViewCellStyle23.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle23.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle23.SelectionBackColor = Color.White;
+            dataGridViewCellStyle23.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.False;
+            weldingDG.DefaultCellStyle = dataGridViewCellStyle23;
+            weldingDG.EnableHeadersVisualStyles = false;
+            weldingDG.GridColor = Color.FromArgb(235, 238, 244);
+            weldingDG.Location = new Point(21, 16);
+            weldingDG.Name = "weldingDG";
+            weldingDG.ReadOnly = true;
+            weldingDG.RowHeadersVisible = false;
+            dataGridViewCellStyle24.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle24.SelectionBackColor = Color.White;
+            dataGridViewCellStyle24.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            weldingDG.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            weldingDG.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            weldingDG.RowTemplate.DefaultCellStyle.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            weldingDG.RowTemplate.DefaultCellStyle.Padding = new Padding(0, 5, 0, 10);
+            weldingDG.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.White;
+            weldingDG.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            weldingDG.RowTemplate.DividerHeight = 1;
+            weldingDG.RowTemplate.Height = 80;
+            weldingDG.RowTemplate.Resizable = DataGridViewTriState.True;
+            weldingDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            weldingDG.Size = new Size(799, 281);
+            weldingDG.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.NullValue = null;
+            dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewTextBoxColumn3.HeaderText = "종류";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Resizable = DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewTextBoxColumn4.HeaderText = "상세정보";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "시간";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // tableLayoutPanel1
             // 
@@ -419,72 +651,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(114, 106);
             panel3.TabIndex = 1;
-            // 
-            // chart1
-            // 
-            chartArea2.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chart1.Legends.Add(legend2);
-            chart1.Location = new Point(39, 83);
-            chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chart1.Series.Add(series2);
-            chart1.Size = new Size(488, 457);
-            chart1.TabIndex = 7;
-            chart1.Text = "chart1";
-            // 
-            // chart2
-            // 
-            chartArea1.Name = "ChartArea1";
-            chart2.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chart2.Legends.Add(legend1);
-            chart2.Location = new Point(579, 83);
-            chart2.Name = "chart2";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            chart2.Series.Add(series1);
-            chart2.Size = new Size(213, 457);
-            chart2.TabIndex = 8;
-            chart2.Text = "chart2";
-            // 
-            // chart3
-            // 
-            chartArea3.Name = "ChartArea1";
-            chart3.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            chart3.Legends.Add(legend3);
-            chart3.Location = new Point(583, 83);
-            chart3.Name = "chart3";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            chart3.Series.Add(series3);
-            chart3.Size = new Size(213, 457);
-            chart3.TabIndex = 10;
-            chart3.Text = "chart3";
-            // 
-            // chart4
-            // 
-            chartArea4.Name = "ChartArea1";
-            chart4.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            chart4.Legends.Add(legend4);
-            chart4.Location = new Point(43, 83);
-            chart4.Name = "chart4";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            chart4.Series.Add(series4);
-            chart4.Size = new Size(488, 457);
-            chart4.TabIndex = 9;
-            chart4.Text = "chart4";
             // 
             // Error
             // 
@@ -513,8 +679,10 @@
             splitContainer3.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SellDG).EndInit();
             splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer4).EndInit();
             splitContainer4.ResumeLayout(false);
@@ -524,14 +692,12 @@
             splitContainer5.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
-            tableLayoutPanel1.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
             ((System.ComponentModel.ISupportInitialize)chart3).EndInit();
             ((System.ComponentModel.ISupportInitialize)chart4).EndInit();
+            panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)weldingDG).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -555,16 +721,22 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private SplitContainer splitContainer3;
         private Panel panel6;
-        private DataGridView dataGridView1;
         private SplitContainer splitContainer4;
         private SplitContainer splitContainer5;
         private Panel panel7;
         private Panel panel8;
-        private DataGridView dataGridView4;
         private ReaLTaiizor.Controls.HopeDatePicker hopeDatePicker1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
+        private DataGridView SellDG;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridView weldingDG;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn Column2;
     }
 }

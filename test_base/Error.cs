@@ -52,6 +52,14 @@ namespace test_base
 
         private void Error_Load(object sender, EventArgs e)
         {
+            weldingDG.Rows.Add("온도", "1200", "10시 15분 42초");
+            weldingDG.Rows.Add("압력", "50", "11시 15분 42초");
+
+            SellDG.Rows.Add("이물질", "0.04", "09시 15분 42초");
+            SellDG.Rows.Add("전압", "4.2", "15시 15분 42초");
+            SellDG.Rows.Add("표면 결함", "0.12", "17시 15분 42초");
+
+
 
         }
 
