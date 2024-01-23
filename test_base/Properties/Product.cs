@@ -18,7 +18,7 @@ namespace test_base.Properties
         public Product()
         {
             InitializeComponent();
-            hopeDatePicker1.Visible = false;
+            panel17.Visible = false;
         }
 
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
@@ -28,8 +28,8 @@ namespace test_base.Properties
 
         private void button1_Click(object sender, EventArgs e)
         {
-            hopeDatePicker1.Size = new System.Drawing.Size(250, 270);
-            hopeDatePicker1.Visible = true;
+            panel17.Size = new System.Drawing.Size(500, 320);
+            panel17.Visible = true;
         }
 
         private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
@@ -45,6 +45,26 @@ namespace test_base.Properties
         private void hopeDatePicker1_Click(object sender, EventArgs e)
         {
             hopeDatePicker1.Visible = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panel17.Visible = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panel17.Visible = false;
+        }
+
+        private void hopeDatePicker1_Click_1(object sender, EventArgs e)
+        {
+            label10.Text = hopeDatePicker1.Date.ToString("yyyy년 MM월 dd일"); // 날짜 형식은 원하는 대로 설정
+        }
+
+        private void hopeDatePicker2_Click(object sender, EventArgs e)
+        {
+            label9.Text = hopeDatePicker1.Date.ToString("yyyy년 MM월 dd일"); // 날짜 형식은 원하는 대로 설정
         }
     }
 }
