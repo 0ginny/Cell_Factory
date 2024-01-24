@@ -46,7 +46,7 @@ namespace test_base
         {
             // 이미지를 프로젝트 리소스에서 가져와서 PictureBox의 이미지로 설정
 
-            pictureBox1.Image = Properties.Resources.실시간모니터링_그림;
+            //pictureBox1.Image = Properties.Resources.실시간모니터링_그림;
 
 
 
@@ -143,12 +143,24 @@ namespace test_base
         private void button1_Click(object sender, EventArgs e)
         {
 
-            button1.BackColor = ColorTranslator.FromHtml("#002EDE");
+            //button1.BackColor = ColorTranslator.FromHtml("#002EDE");
             //button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
-            button3.BackColor = ColorTranslator.FromHtml("#1FC695");
+            //button3.BackColor = ColorTranslator.FromHtml("#1FC695");
 
             // 선택한 제품의 텍스트를 저장
             //dash.change_state(button1);
+
+            button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
+            //button2.BackColor = ColorTranslator.FromHtml("#EBBC00");
+            button3.BackColor = ColorTranslator.FromHtml("#1FC695");
+
+            // 선택한 제품의 텍스트를 저장
+            //dash.change_state(button2);
+
+            label13.Visible = true;
+            parrotCircleProgressBar1.IsAnimated = true;
+            // 버튼 클릭 시 Label13의 텍스트를 "가동중"으로 변경
+            label13.Text = " 가동중";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -170,15 +182,28 @@ namespace test_base
         private void button3_Click(object sender, EventArgs e)
         {
 
-            button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
+            //button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
             //button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
-            button3.BackColor = ColorTranslator.FromHtml("#1AA67D");
+            //button3.BackColor = ColorTranslator.FromHtml("#1AA67D");
 
             // 선택한 제품의 텍스트를 저장
-           // dash.change_state(button3);
+            // dash.change_state(button3);
+
+
+            button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
+            //button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
+            button3.BackColor = ColorTranslator.FromHtml("#1FC695");
+
+            // 발주제품, 수량 DB에 저장
+            //dash.send_order(textBox1);
+
+            label13.Visible = true;
+            parrotCircleProgressBar1.IsAnimated = false;
+            // 버튼 클릭 시 Label13의 텍스트를 "정지"로 변경
+            label13.Text = "  정지";
         }
 
-        /*
+        
         private void button4_Click(object sender, EventArgs e)
         {
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
@@ -194,7 +219,7 @@ namespace test_base
             label13.Text = "  정지";
 
         }
-        */
+        
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 

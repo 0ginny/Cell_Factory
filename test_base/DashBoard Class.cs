@@ -175,9 +175,7 @@ namespace test_base
                 //dgv.Rows.Add("오전 09시 34분 21초", "전압불량", "A231215001");
                 dgv.Rows.Add(dr[0], dr[1], dr[2]);
             }
-            
-            
-
+            dgv.ClearSelection();
         }
     }
 }
