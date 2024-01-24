@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             panel1 = new Panel();
             metroControlBox1 = new ReaLTaiizor.Controls.MetroControlBox();
             label1 = new Label();
@@ -44,7 +44,6 @@
             panel5 = new Panel();
             label3 = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            panel4 = new Panel();
             contextMenuStrip2 = new ContextMenuStrip(components);
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -257,31 +256,24 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // panel4
-            // 
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(200, 50);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(1720, 1011);
-            panel4.TabIndex = 2;
-            // 
             // contextMenuStrip2
             // 
             contextMenuStrip2.Name = "contextMenuStrip2";
             contextMenuStrip2.Size = new Size(61, 4);
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(235, 238, 244);
             ClientSize = new Size(1920, 1061);
-            Controls.Add(panel4);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            IsMdiContainer = true;
+            Name = "MainForm";
             Text = "Form1";
+            Load += MainForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
@@ -306,7 +298,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
-        private Panel panel4;
         private Label label3;
         private Panel panel5;
         private ContextMenuStrip contextMenuStrip2;

@@ -8,23 +8,24 @@ using System.Windows.Forms;
 
 namespace test_base
 {
-    internal class tabGenerate
+    internal class tabGenerate2
     {
-        private TabControl tabControl;
-        private Dictionary<string, int> tabIndices; // 탭과 인덱스를 저장하는 딕셔너리
+        private static TabControl tabControl;
+
+        private Dictionary<string, int> tabIndices;
         private Point imageLocation = new Point(15, 5);
         private Point imgHitArea = new Point(13, 2);
 
-        // 생성자
-        public tabGenerate(TabControl tabControl)
+        public tabGenerate2(TabControl tabControl)
         {
-            //this.tabControl = tabControl;
-            // 생성자에서 tabControl을 초기화
-            this.tabControl = tabControl ?? throw new ArgumentNullException(nameof(tabControl));
-            this.tabIndices = new Dictionary<string, int>();
+            tabGenerate2.tabControl = tabControl ?? throw new ArgumentNullException(nameof(tabControl));
+            tabGenerate2.tabControl.DrawMode = TabDrawMode.OwnerDrawFixed;
+            tabGenerate2.tabControl.DrawItem += TabControl_DrawItem;
+            tabGenerate2.tabControl.MouseDown += TabControl_MouseClick;
+
+            tabIndices = new Dictionary<string, int>();
         }
 
-        // 탭을 생성하거나 선택하는 메서드
         public void AddOrSelectTabPage(string title, Type formType)
         {
             if (!tabIndices.ContainsKey(title))
@@ -33,7 +34,6 @@ namespace test_base
                 SubscribeToFormCloseEvent(form);
                 form.TopLevel = false;
 
-                // 탭을 추가하고 선택
                 tabControl.TabPages.Add(title);
                 tabControl.TabPages[tabControl.TabPages.Count - 1].Controls.Add(form);
                 tabControl.SelectedIndex = tabControl.TabPages.Count - 1;
@@ -41,27 +41,24 @@ namespace test_base
 
                 if (title == "DefaultTab")
                 {
-                    form.FormSetSize(tabControl.ClientRectangle.Width, tabControl.ClientRectangle.Height);
+                    // Replace with the appropriate method from DefaultForm
+                    form.SetFormSize(tabControl.ClientRectangle.Width, tabControl.ClientRectangle.Height);
                 }
 
-                // 딕셔너리에 탭과 인덱스 추가
                 tabIndices.Add(title, tabControl.SelectedIndex);
 
-                // 탭을 도킹 및 표시
                 form.Dock = DockStyle.Fill;
                 form.Show();
             }
             else
             {
-                // 이미 있는 탭이면 해당 탭으로 이동
                 tabControl.SelectedTab = tabControl.TabPages[tabIndices[title]];
             }
         }
 
-        // 폼의 종료 이벤트에 구독하는 메서드
-        public void SubscribeToFormCloseEvent(dynamic form)
+        private void SubscribeToFormCloseEvent(dynamic form)
         {
-            var eventInfo = form.GetType().GetEvent("FormCloseEvent");
+            var eventInfo = form.GetType().GetEvent("FormClosed");
             if (eventInfo != null)
             {
                 var delegateType = eventInfo.EventHandlerType;
@@ -70,12 +67,39 @@ namespace test_base
             }
         }
 
-        // 탭을 삭제하는 메서드
-        private void DeleteTabpage(string temp)
+        // 탭 페이지 삭제 메서드
+        private void DeleteTabpage(object sender, EventArgs e)
         {
+            // 현재 선택된 탭 페이지의 인덱스를 가져옴
+            int tabIndex = tabControl.SelectedIndex;
+
+            // 현재 선택된 탭 페이지의 제목을 가져옴
+            string tabTitle = tabControl.SelectedTab.Text;
+
+            // 탭 페이지를 제거
+            tabControl.TabPages.RemoveAt(tabIndex);
+
+            // 딕셔너리에서 탭 정보를 제거
+            tabIndices.Remove(tabTitle);
+
+            // 남은 탭의 인덱스를 조정
+            for (int i = tabIndex; i < tabIndices.Count; i++)
+            {
+                string tempTitle = tabIndices.FirstOrDefault(x => x.Value == i + 1).Key;
+                int tempIndex = tabIndices[tempTitle];
+                tabIndices.Remove(tempTitle);
+                tabIndices.Add(tempTitle, tempIndex - 1);
+            }
+
+            // 선택된 탭을 앞 탭으로 변경 (마지막 탭일 경우 마지막 탭을 선택)
+            tabControl.SelectedIndex = (tabIndex > 0) ? tabIndex - 1 : Math.Min(tabIndices.Values.DefaultIfEmpty(0).Min(), tabControl.TabCount - 1);
+
             Console.WriteLine("Called delete tabPage");
 
-            int tabIndex = 0;
+            // 여기에서 사용되지 않는 매개변수 temp 대신에 e를 활용할 수 있습니다.
+            string temp = ((TabPage)sender).Text;
+
+            tabIndex = 0;
             for (int i = 0; i < tabControl.TabPages.Count; i++)
             {
                 if (tabControl.TabPages[i].Text == temp)
@@ -99,9 +123,10 @@ namespace test_base
 
             // 선택된 탭을 앞 탭으로 변경
             tabControl.SelectedIndex = tabIndex - 1;
+
+
         }
 
-        // 탭의 모양을 그리는 이벤트 핸들러
         public void TabControl_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
@@ -154,11 +179,11 @@ namespace test_base
             }
             catch (Exception)
             {
+                // 예외 처리
             }
         }
 
-        // 탭을 클릭하여 닫기 버튼이 눌렸을 때의 이벤트 핸들러
-        public void TabControl_MouseClick(object sender, MouseEventArgs e)
+        private void TabControl_MouseClick(object sender, MouseEventArgs e)
         {
             TabControl tc = (TabControl)sender;
             int tabIndex = tc.SelectedIndex;
@@ -196,15 +221,6 @@ namespace test_base
                     AddOrSelectTabPage("DefaultTab", typeof(DefaultForm));
                 }
             }
-        }
-
-
-        // 초기화 메서드
-        public void Init()
-        {
-            // 필요한 초기화 작업을 수행
-            tabControl.DrawItem += TabControl_DrawItem;
-            tabControl.MouseClick += TabControl_MouseClick;
         }
     }
 }
