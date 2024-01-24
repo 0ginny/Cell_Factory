@@ -13,12 +13,12 @@ namespace MES_Project
 {
     public partial class EventForm : Form
     {
-        
+
         public EventForm()
         {
             InitializeComponent();
             List<string[]> ProdOrderDataTB = getProdOrderData();
-            ProdOrderDatagrid(ProdOrderDataTB, PorbOrderDatagrid);
+            /*ProdOrderDatagrid(ProdOrderDataTB, PorbOrderDatagrid);*/
         }
 
         private void EventForm_Load(object sender, EventArgs e)
@@ -75,79 +75,86 @@ INNER JOIN tb_products AS C ON A.prod_code = C.prod_code;";
             }
             return ProdOrderDataTB;
         }
-        public static void ProdOrderDatagrid(List<string[]> ProdOrderDataTB, DataGridView PorbOrderDatagrid)
+
+        private void button6_Click(object sender, EventArgs e)
         {
-            String ClickDate = Calendar_shipmen_status.static_year + "-" + Calendar_shipmen_status.static_month + "-" + UserControlDays.static_day;
-            //System.Windows.Forms.MessageBox.Show($"클릭한 날짜 : {ClickDate}");
-            // DataGridView 초기화
-            PorbOrderDatagrid.Rows.Clear();
-            PorbOrderDatagrid.Columns.Clear();
-            PorbOrderDatagrid.RowHeadersVisible = false;
+            // 버튼을 클릭할 때마다 DataGridView의 ReadOnly 속성을 토글
+            PorbOrderDatagrid.ReadOnly = !PorbOrderDatagrid.ReadOnly;
 
-            string[] columnNames = { "주문id", "회사명", "주문갯수", "납기일", "제품코드", "제품명", "완료일자" }; // 원하는 컬럼명으로 변경
+            // DataGridView의 ReadOnly 상태에 따라 버튼의 텍스트 변경
+            button6.Text = PorbOrderDatagrid.ReadOnly ? "수정" : "저장";
 
-            // 각 컬럼에 대한 고정된 너비 설정
-            int[] columnWidths = { 80, 100, 60, 100, 60, 100, 100 }; // 원하는 너비로 변경
+            // 수정 가능한 상태일 때는 행 추가 기능도 활성화
+            PorbOrderDatagrid.AllowUserToAddRows = !PorbOrderDatagrid.ReadOnly;
 
-            // 컬럼 추가 및 너비 설정
-            for (int i = 0; i < columnNames.Length; i++)
+            // 행 추가 기능이 활성화되었을 때는 마지막 행으로 스크롤
+            if (PorbOrderDatagrid.AllowUserToAddRows)
             {
-                string columnName = columnNames[i];
-                int columnWidth = columnWidths[i];
-
-                // 컬럼 추가
-                PorbOrderDatagrid.Columns.Add(columnName, columnName);
-
-                // 너비 설정
-                PorbOrderDatagrid.Columns[columnName].Width = columnWidth;
-                PorbOrderDatagrid.Columns[columnName].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                PorbOrderDatagrid.Columns[columnName].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                // 헤더의 텍스트를 가운데 정렬
-            }
-            /*
-            foreach (var rowData in ProdOrderDataTB)
-            {
-                // D_day가 ClickDate와 같으면 데이터그리드에 추가
-                if (DateTime.Parse(rowData[3]) == DateTime.Parse(ClickDate))
+                int lastRowIndex = PorbOrderDatagrid.Rows.Count - 1;
+                if (lastRowIndex >= 0)
                 {
-                    // 행 추가
-                    int rowIndex = PorbOrderDatagrid.Rows.Add(rowData[0], rowData[1], rowData[2], DateTime.Parse(rowData[3]).ToShortDateString(), rowData[4], rowData[5], DateTime.Parse(rowData[6]).ToShortDateString());
-
-                    // 행의 각 셀을 가운데 정렬
-                    foreach (DataGridViewCell cell in PorbOrderDatagrid.Rows[rowIndex].Cells)
-                    {
-                        cell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    }
-                }
-            }*/
-            foreach (var rowData in ProdOrderDataTB)
-            {
-                // D_day가 ClickDate와 같으면 데이터그리드에 추가
-                if (DateTime.Parse(rowData[3]) == DateTime.Parse(ClickDate))
-                {
-                    DateTime finODate;
-
-                    // 파싱이 성공하면 true, 실패하면 false
-                    bool parseSuccess = DateTime.TryParse(rowData[6], out finODate);
-
-                    // 행 추가
-                    int rowIndex = PorbOrderDatagrid.Rows.Add(
-                        rowData[0],
-                        rowData[1],
-                        rowData[2],
-                        DateTime.Parse(rowData[3]).ToShortDateString(),
-                        rowData[4],
-                        rowData[5],
-                        parseSuccess ? finODate.ToShortDateString() : string.Empty
-                    );
-
-                    // 행의 각 셀을 가운데 정렬
-                    foreach (DataGridViewCell cell in PorbOrderDatagrid.Rows[rowIndex].Cells)
-                    {
-                        cell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    }
+                    PorbOrderDatagrid.FirstDisplayedScrollingRowIndex = lastRowIndex;
                 }
             }
         }
+        /*public static void ProdOrderDatagrid(List<string[]> ProdOrderDataTB, DataGridView PorbOrderDatagrid)
+{
+   String ClickDate = Calendar_shipmen_status.static_year + "-" + Calendar_shipmen_status.static_month + "-" + UserControlDays.static_day;
+   //System.Windows.Forms.MessageBox.Show($"클릭한 날짜 : {ClickDate}");
+   // DataGridView 초기화
+   PorbOrderDatagrid.Rows.Clear();
+   PorbOrderDatagrid.Columns.Clear();
+   PorbOrderDatagrid.RowHeadersVisible = false;
+
+   [] columnNames = { "주문id", "회사명", "주문갯수", "납기일", "제품코드", "제품명", "완료일자" }; // 원하는 컬럼명으로 변경
+
+   // 각 컬럼에 대한 고정된 너비 설정
+   int[] columnWidths = { 80, 100, 60, 100, 60, 100, 100 }; // 원하는 너비로 변경
+
+   // 컬럼 추가 및 너비 설정
+   for (int i = 0; i < columnNames.Length; i++)
+   {
+       string columnName = columnNames[i];
+       int columnWidth = columnWidths[i];
+
+       // 컬럼 추가
+       PorbOrderDatagrid.Columns.Add(columnName, columnName);
+
+       // 너비 설정
+       PorbOrderDatagrid.Columns[columnName].Width = columnWidth;
+       PorbOrderDatagrid.Columns[columnName].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+       PorbOrderDatagrid.Columns[columnName].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+       // 헤더의 텍스트를 가운데 정렬
+   }
+
+   foreach (var rowData in ProdOrderDataTB)
+   {
+       // D_day가 ClickDate와 같으면 데이터그리드에 추가
+       if (DateTime.Parse(rowData[3]) == DateTime.Parse(ClickDate))
+       {
+           DateTime finODate;
+
+           // 파싱이 성공하면 true, 실패하면 false
+           bool parseSuccess = DateTime.TryParse(rowData[6], out finODate);
+
+           // 행 추가
+           int rowIndex = PorbOrderDatagrid.Rows.Add(
+               rowData[0],
+               rowData[1],
+               rowData[2],
+               DateTime.Parse(rowData[3]).ToShortDateString(),
+               rowData[4],
+               rowData[5],
+               parseSuccess ? finODate.ToShortDateString() : string.Empty
+           );
+
+           // 행의 각 셀을 가운데 정렬
+           foreach (DataGridViewCell cell in PorbOrderDatagrid.Rows[rowIndex].Cells)
+           {
+               cell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+           }
+       }
+   }
+}*/
     }
 }

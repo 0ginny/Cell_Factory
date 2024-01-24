@@ -19,6 +19,7 @@ namespace test_base
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void label1_Click(object sender, EventArgs e)// 최종프로젝트 3조 Title 클릭시 호출
