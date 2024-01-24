@@ -19,17 +19,17 @@ namespace test_base
     public partial class Error : Form
     {
         // 클래스 전역 선언
-        Error_Management error;
+        Error_Management err;
 
         public Error()
         {
             InitializeComponent();
 
 
-            hopeDatePicker1.Visible = false;
+            //hopeDatePicker1.Visible = false;
 
             // 클래스 객체 생성
-            error = new Error_Management();
+            err = new Error_Management();
 
             panel17.Visible = false;
 
@@ -168,6 +168,9 @@ namespace test_base
             });
 
 
+
+            //---------------------------datagrid
+            err.Cell_Error_list(dgv_cell_error);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -192,12 +195,12 @@ namespace test_base
 
         private void Error_Load(object sender, EventArgs e)
         {
-            weldingDG.Rows.Add("온도", "1200", "10시 15분 42초");
-            weldingDG.Rows.Add("압력", "50", "11시 15분 42초");
+            dgv_stacking_error.Rows.Add("온도", "1200", "10시 15분 42초");
+            dgv_stacking_error.Rows.Add("압력", "50", "11시 15분 42초");
 
-            SellDG.Rows.Add("이물질", "0.04", "09시 15분 42초");
-            SellDG.Rows.Add("전압", "4.2", "15시 15분 42초");
-            SellDG.Rows.Add("표면 결함", "0.12", "17시 15분 42초");
+            //dgv_cell_error.Rows.Add("이물질", "0.04", "09시 15분 42초");
+            //dgv_cell_error.Rows.Add("전압", "4.2", "15시 15분 42초");
+            //dgv_cell_error.Rows.Add("표면 결함", "0.12", "17시 15분 42초");
 
             ApplyRoundedBorder(panel5, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
             ApplyRoundedBorder(panel6, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
@@ -212,7 +215,8 @@ namespace test_base
 
         private void hopeDatePicker1_Click(object sender, EventArgs e)
         {
-            label6.Text = hopeDatePicker1.Date.ToString("yyyy년 MM월 dd일"); // 날짜 형식은 원하는 대로 설정
+            label6.Text = hopeDatePicker1.Date.ToString("yyyy-MM-dd"); // 날짜 형식은 원하는 대로 설정
+     
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -240,7 +244,7 @@ namespace test_base
 
         private void hopeDatePicker2_Click(object sender, EventArgs e)
         {
-            label7.Text = hopeDatePicker2.Date.ToString("yyyy년 MM월 dd일"); // 날짜 형식은 원하는 대로 설정
+            label7.Text = hopeDatePicker2.Date.ToString("yyyy-MM-dd"); // 날짜 형식은 원하는 대로 설정
         }
 
         private void button4_Click(object sender, EventArgs e)

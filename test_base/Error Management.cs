@@ -8,13 +8,22 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using test_base.Properties;
+using System.Data;
 
 namespace test_base
 {
     internal class Error_Management
     {
         // mysql에 접속하기 위한 전역 변수
-        mysql mysql;
+        mysql my;
+
+        public Error_Management()
+        {
+            my = new mysql();
+        }
+
+
+        //----------------------------------지문
 
         // 날짜와 제품의 종류를 선택하고 검색 버튼을 누르면
         // 특정 시간 범위에 발생한 불량의 종류와 횟수를 차트와 그리드뷰에 출력
@@ -55,7 +64,7 @@ namespace test_base
                            $"WHERE date = '{Selectdate}' AND #### = '{Selectproduct}' AND test1 = #### " +
                            $"GROUP BY contaminant, surface, voltage";
 
-            mysql.fillDataGrid(query, dataGridView);
+            my.fillDataGrid(query, dataGridView);
         }
 
         // 셀 불량 차트 2개
@@ -68,7 +77,7 @@ namespace test_base
                            $"WHERE date = '{Selectdate}' AND #### = '{Selectproduct}' AND test1 = #### " +
                            $"GROUP BY contaminant, surface, voltage";
 
-            mysql.fillDataDualChart(query, chart1, chart2);
+            my.fillDataDualChart(query, chart1, chart2);
         }
 
         // 용접불량 그리드뷰
@@ -79,7 +88,7 @@ namespace test_base
                            $"FROM stacking_test " +
                            $"WHERE date = '{Selectdate}' AND #### = '{Selectproduct}' AND test2 = #### ";
 
-            mysql.fillDataGrid(query, dataGridView);
+            my.fillDataGrid(query, dataGridView);
         }
 
         // 용접 불량 차트 2개
@@ -90,7 +99,66 @@ namespace test_base
                            $"FROM stacking_test " +
                            $"WHERE date = '{Selectdate}' AND #### = '{Selectproduct}' AND test2 = #### ";
 
-            mysql.fillDataDualChart(query, chart1, chart2);
+            my.fillDataDualChart(query, chart1, chart2);
         }
+
+
+        //--------------------------------------영진
+        public string cell_start_date = "2024-01-24";
+        public string cell_end_date = "2024-01-24";
+
+
+
+        public void Cell_Error_list(DataGridView dgv)
+        {
+            string sql = $@"select 
+                            cell_id, 
+                            fault_content, 
+                            contain, 
+                            surface, 
+                            voltage, 
+                            fault_test_time  from cell
+                            where 
+                            b_test1 = 1 and
+                            fault_test_time between date('{cell_start_date}') and date('{cell_end_date}')+1;";
+
+            DataTable dt = my.GetDataToTable(sql);
+
+            // DataGridView에 데이터 추가
+            foreach (DataRow dr in dt.Rows)
+            {
+                string cell_id = dr["cell_id"].ToString();
+                string fault_content = dr["fault_content"].ToString();
+                string contain = dr["contain"].ToString();
+                string surface = dr["surface"].ToString();
+                string voltage = dr["voltage"].ToString();
+                string fault_test_time = dr["fault_test_time"].ToString();
+                string detail;
+
+                // 값에 따라 가공
+                switch (fault_content)
+                {
+                    case "전압불량":
+                        detail = $"{voltage} V";
+                        break;
+                    case "이물질불량":
+                        detail =  $"{contain} %";
+                        break;
+                    case "표면결함":
+                        detail = surface + " μm"; // 마이크로미터 기호 추가
+                        break;
+                    // 다른 경우에 대한 추가적인 가공 로직을 여기에 추가할 수 있습니다.
+                    default:
+                        detail = $"{voltage} V";
+                        break;
+                }
+
+                // DataGridView에 행 추가
+                dgv.Rows.Add(cell_id, fault_content, detail, fault_test_time);
+            }
+            dgv.ClearSelection();
+        }
+
+
     }
 }

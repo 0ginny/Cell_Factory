@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
             panel1 = new Panel();
             button2 = new Button();
             comboBox1 = new ComboBox();
@@ -66,7 +66,8 @@
             panel4 = new Panel();
             panel2 = new Panel();
             panel6 = new Panel();
-            SellDG = new DataGridView();
+            dgv_cell_error = new DataGridView();
+            cell = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
@@ -82,7 +83,8 @@
             panel9 = new Panel();
             panel10 = new Panel();
             panel8 = new Panel();
-            weldingDG = new DataGridView();
+            dgv_stacking_error = new DataGridView();
+            스태킹 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -107,7 +109,7 @@
             panel5.SuspendLayout();
             panel17.SuspendLayout();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)SellDG).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_cell_error).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
             splitContainer4.Panel2.SuspendLayout();
             splitContainer4.SuspendLayout();
@@ -117,7 +119,7 @@
             splitContainer5.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)weldingDG).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_stacking_error).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -402,6 +404,7 @@
             hopeDatePicker1.PMHoverColor = Color.FromArgb(64, 158, 255);
             hopeDatePicker1.PYColor = Color.FromArgb(192, 196, 204);
             hopeDatePicker1.PYHoverColor = Color.FromArgb(64, 158, 255);
+            hopeDatePicker1.RightToLeft = RightToLeft.Yes;
             hopeDatePicker1.SelectedBackColor = Color.FromArgb(64, 158, 255);
             hopeDatePicker1.SelectedTextColor = Color.White;
             hopeDatePicker1.Size = new Size(250, 270);
@@ -478,7 +481,7 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(SellDG);
+            panel6.Controls.Add(dgv_cell_error);
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(20, 0);
             panel6.Margin = new Padding(0);
@@ -486,69 +489,75 @@
             panel6.Size = new Size(826, 357);
             panel6.TabIndex = 4;
             // 
-            // SellDG
+            // dgv_cell_error
             // 
-            SellDG.AllowUserToAddRows = false;
-            SellDG.AllowUserToDeleteRows = false;
-            SellDG.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle1.SelectionBackColor = Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            SellDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            SellDG.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SellDG.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            SellDG.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            SellDG.BackgroundColor = Color.White;
-            SellDG.BorderStyle = BorderStyle.None;
-            SellDG.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            SellDG.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(235, 238, 244);
-            dataGridViewCellStyle2.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 238, 244);
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            SellDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            SellDG.ColumnHeadersHeight = 40;
-            SellDG.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            SellDG.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, Column1 });
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle5.SelectionBackColor = Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            SellDG.DefaultCellStyle = dataGridViewCellStyle5;
-            SellDG.EnableHeadersVisualStyles = false;
-            SellDG.GridColor = Color.FromArgb(235, 238, 244);
-            SellDG.Location = new Point(18, 16);
-            SellDG.Name = "SellDG";
-            SellDG.ReadOnly = true;
-            SellDG.RowHeadersVisible = false;
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle6.SelectionBackColor = Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            SellDG.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            SellDG.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            SellDG.RowTemplate.DefaultCellStyle.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            SellDG.RowTemplate.DefaultCellStyle.Padding = new Padding(0, 5, 0, 10);
-            SellDG.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.White;
-            SellDG.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            SellDG.RowTemplate.DividerHeight = 1;
-            SellDG.RowTemplate.Height = 80;
-            SellDG.RowTemplate.Resizable = DataGridViewTriState.True;
-            SellDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            SellDG.Size = new Size(790, 326);
-            SellDG.TabIndex = 3;
+            dgv_cell_error.AllowUserToAddRows = false;
+            dgv_cell_error.AllowUserToDeleteRows = false;
+            dgv_cell_error.AllowUserToResizeRows = false;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle13.SelectionBackColor = Color.White;
+            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dgv_cell_error.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dgv_cell_error.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgv_cell_error.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_cell_error.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgv_cell_error.BackgroundColor = Color.White;
+            dgv_cell_error.BorderStyle = BorderStyle.None;
+            dgv_cell_error.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv_cell_error.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle14.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle14.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle14.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
+            dgv_cell_error.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dgv_cell_error.ColumnHeadersHeight = 40;
+            dgv_cell_error.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgv_cell_error.Columns.AddRange(new DataGridViewColumn[] { cell, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, Column1 });
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = SystemColors.Window;
+            dataGridViewCellStyle17.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle17.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle17.SelectionBackColor = Color.White;
+            dataGridViewCellStyle17.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.False;
+            dgv_cell_error.DefaultCellStyle = dataGridViewCellStyle17;
+            dgv_cell_error.EnableHeadersVisualStyles = false;
+            dgv_cell_error.GridColor = Color.FromArgb(235, 238, 244);
+            dgv_cell_error.Location = new Point(18, 16);
+            dgv_cell_error.Name = "dgv_cell_error";
+            dgv_cell_error.ReadOnly = true;
+            dgv_cell_error.RowHeadersVisible = false;
+            dataGridViewCellStyle18.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle18.SelectionBackColor = Color.White;
+            dataGridViewCellStyle18.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dgv_cell_error.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dgv_cell_error.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_cell_error.RowTemplate.DefaultCellStyle.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dgv_cell_error.RowTemplate.DefaultCellStyle.Padding = new Padding(0, 5, 0, 10);
+            dgv_cell_error.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgv_cell_error.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dgv_cell_error.RowTemplate.DividerHeight = 1;
+            dgv_cell_error.RowTemplate.Height = 80;
+            dgv_cell_error.RowTemplate.Resizable = DataGridViewTriState.True;
+            dgv_cell_error.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_cell_error.Size = new Size(790, 326);
+            dgv_cell_error.TabIndex = 3;
+            // 
+            // cell
+            // 
+            cell.HeaderText = "셀";
+            cell.Name = "cell";
+            cell.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.NullValue = null;
+            dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle15;
             dataGridViewTextBoxColumn1.HeaderText = "종류";
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -556,15 +565,15 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle16;
             dataGridViewTextBoxColumn2.HeaderText = "상세정보";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // Column1
             // 
-            Column1.HeaderText = "시간";
+            Column1.HeaderText = "시각";
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             // 
@@ -689,7 +698,7 @@
             // panel8
             // 
             panel8.BackColor = Color.White;
-            panel8.Controls.Add(weldingDG);
+            panel8.Controls.Add(dgv_stacking_error);
             panel8.Dock = DockStyle.Fill;
             panel8.Location = new Point(20, 0);
             panel8.Margin = new Padding(0);
@@ -697,69 +706,75 @@
             panel8.Size = new Size(830, 357);
             panel8.TabIndex = 5;
             // 
-            // weldingDG
+            // dgv_stacking_error
             // 
-            weldingDG.AllowUserToAddRows = false;
-            weldingDG.AllowUserToDeleteRows = false;
-            weldingDG.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle7.SelectionBackColor = Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            weldingDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            weldingDG.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            weldingDG.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            weldingDG.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            weldingDG.BackgroundColor = Color.White;
-            weldingDG.BorderStyle = BorderStyle.None;
-            weldingDG.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            weldingDG.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(235, 238, 244);
-            dataGridViewCellStyle8.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(235, 238, 244);
-            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            weldingDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            weldingDG.ColumnHeadersHeight = 40;
-            weldingDG.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            weldingDG.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column2 });
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            dataGridViewCellStyle11.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle11.SelectionBackColor = Color.White;
-            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            weldingDG.DefaultCellStyle = dataGridViewCellStyle11;
-            weldingDG.EnableHeadersVisualStyles = false;
-            weldingDG.GridColor = Color.FromArgb(235, 238, 244);
-            weldingDG.Location = new Point(21, 16);
-            weldingDG.Name = "weldingDG";
-            weldingDG.ReadOnly = true;
-            weldingDG.RowHeadersVisible = false;
-            dataGridViewCellStyle12.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle12.SelectionBackColor = Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            weldingDG.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            weldingDG.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            weldingDG.RowTemplate.DefaultCellStyle.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            weldingDG.RowTemplate.DefaultCellStyle.Padding = new Padding(0, 5, 0, 10);
-            weldingDG.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.White;
-            weldingDG.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            weldingDG.RowTemplate.DividerHeight = 1;
-            weldingDG.RowTemplate.Height = 80;
-            weldingDG.RowTemplate.Resizable = DataGridViewTriState.True;
-            weldingDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            weldingDG.Size = new Size(792, 328);
-            weldingDG.TabIndex = 4;
+            dgv_stacking_error.AllowUserToAddRows = false;
+            dgv_stacking_error.AllowUserToDeleteRows = false;
+            dgv_stacking_error.AllowUserToResizeRows = false;
+            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle19.SelectionBackColor = Color.White;
+            dataGridViewCellStyle19.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dgv_stacking_error.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dgv_stacking_error.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgv_stacking_error.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_stacking_error.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgv_stacking_error.BackgroundColor = Color.White;
+            dgv_stacking_error.BorderStyle = BorderStyle.None;
+            dgv_stacking_error.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv_stacking_error.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle20.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle20.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle20.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.True;
+            dgv_stacking_error.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dgv_stacking_error.ColumnHeadersHeight = 40;
+            dgv_stacking_error.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgv_stacking_error.Columns.AddRange(new DataGridViewColumn[] { 스태킹, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column2 });
+            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = SystemColors.Window;
+            dataGridViewCellStyle23.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle23.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle23.SelectionBackColor = Color.White;
+            dataGridViewCellStyle23.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.False;
+            dgv_stacking_error.DefaultCellStyle = dataGridViewCellStyle23;
+            dgv_stacking_error.EnableHeadersVisualStyles = false;
+            dgv_stacking_error.GridColor = Color.FromArgb(235, 238, 244);
+            dgv_stacking_error.Location = new Point(21, 16);
+            dgv_stacking_error.Name = "dgv_stacking_error";
+            dgv_stacking_error.ReadOnly = true;
+            dgv_stacking_error.RowHeadersVisible = false;
+            dataGridViewCellStyle24.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle24.SelectionBackColor = Color.White;
+            dataGridViewCellStyle24.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dgv_stacking_error.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dgv_stacking_error.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_stacking_error.RowTemplate.DefaultCellStyle.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dgv_stacking_error.RowTemplate.DefaultCellStyle.Padding = new Padding(0, 5, 0, 10);
+            dgv_stacking_error.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgv_stacking_error.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dgv_stacking_error.RowTemplate.DividerHeight = 1;
+            dgv_stacking_error.RowTemplate.Height = 80;
+            dgv_stacking_error.RowTemplate.Resizable = DataGridViewTriState.True;
+            dgv_stacking_error.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_stacking_error.Size = new Size(792, 328);
+            dgv_stacking_error.TabIndex = 4;
+            // 
+            // 스태킹
+            // 
+            스태킹.HeaderText = "스태킹";
+            스태킹.Name = "스태킹";
+            스태킹.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.NullValue = null;
-            dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.NullValue = null;
+            dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle21;
             dataGridViewTextBoxColumn3.HeaderText = "종류";
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -767,8 +782,8 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle22;
             dataGridViewTextBoxColumn4.HeaderText = "상세정보";
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -857,7 +872,7 @@
             panel17.ResumeLayout(false);
             panel17.PerformLayout();
             panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)SellDG).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_cell_error).EndInit();
             splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer4).EndInit();
             splitContainer4.ResumeLayout(false);
@@ -868,7 +883,7 @@
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)weldingDG).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_stacking_error).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ResumeLayout(false);
@@ -901,14 +916,8 @@
         private ReaLTaiizor.Controls.HopeDatePicker hopeDatePicker1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
-        private DataGridView SellDG;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridView weldingDG;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn Column2;
+        private DataGridView dgv_cell_error;
+        private DataGridView dgv_stacking_error;
         private Panel panel4;
         private Panel panel2;
         private Panel panel11;
@@ -930,5 +939,13 @@
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private LiveCharts.WinForms.CartesianChart cartesianChart2;
         private LiveCharts.WinForms.PieChart pieChart2;
+        private DataGridViewTextBoxColumn cell;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn 스태킹;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn Column2;
     }
 }
