@@ -27,14 +27,11 @@ namespace test_base
             Load += Dashboard_Load;
 
             circleProgressBar();
-<<<<<<< HEAD
+
 
 
             // 클래스 객체 생성
             dash = new DashBord_Class();
-
-=======
-            
 
             //standard gauge
             solidGauge1.From = 0;
@@ -43,13 +40,12 @@ namespace test_base
             
             // 설비운전 라벨 설정
             label13.Visible = false;
->>>>>>> origin/데이터그리드_test
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
             // 이미지를 프로젝트 리소스에서 가져와서 PictureBox의 이미지로 설정
-<<<<<<< HEAD
+
             pictureBox1.Image = Properties.Resources.실시간모니터링_그림;
 
 
@@ -57,7 +53,7 @@ namespace test_base
 
             pictureBox2.Image = Properties.Resources.녹색_1단;
 
-=======
+
             pictureBox2.Image = Properties.Resources.녹색_1단;
 
             // 이미 생성된 패널1에 둥근 테두리, 테두리 색상, 테두리 굵기 설정
@@ -76,13 +72,8 @@ namespace test_base
             dataGridView1.Rows.Add("오전 09시 34분 21초", "전압불량", "C231215001");
             dataGridView1.Rows.Add("오전 09시 34분 21초", "전압불량", "A231215001");
 
-            dataGridView2.Rows.Add("A셀", " 3개", Properties.Resources.완료);
-            dataGridView2.Rows.Add("B셀", " 3개", Properties.Resources.완료);
-            dataGridView2.Rows.Add("C셀", " 3개", Properties.Resources.진행중 );
-            dataGridView2.Rows.Add("A셀", " 3개", Properties.Resources.에러발생);
-            dataGridView2.Rows.Add("B셀", " 3개", Properties.Resources.대기);
-            dataGridView2.Rows.Add("B셀", " 3개", Properties.Resources.대기);
-            dataGridView2.Rows.Add("A셀", " 3개", Properties.Resources.대기);
+            dash.order_list(dataGridView2);
+
             InitializeSolidGauge();
         }
         private void InitializeSolidGauge()
@@ -132,7 +123,6 @@ namespace test_base
             path.AddArc(bounds.X, bounds.Bottom - radius, radius, radius, 90, 90); // 좌하단
             path.CloseAllFigures();
             return path;
->>>>>>> origin/데이터그리드_test
         }
         private void circleProgressBar() { 
 
@@ -157,56 +147,56 @@ namespace test_base
 
         private void button1_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             button1.BackColor = ColorTranslator.FromHtml("#002EDE");
-            button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
+            //button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
 
             // 선택한 제품의 텍스트를 저장
-            dash.change_state(button1);
+            //dash.change_state(button1);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
-            button2.BackColor = ColorTranslator.FromHtml("#EBBC00");
+            //button2.BackColor = ColorTranslator.FromHtml("#EBBC00");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
 
             // 선택한 제품의 텍스트를 저장
-            dash.change_state(button2);
-=======
+            //dash.change_state(button2);
+
             label13.Visible = true;
             parrotCircleProgressBar1.IsAnimated = true;
             // 버튼 클릭 시 Label13의 텍스트를 "가동중"으로 변경
             label13.Text = " 가동중";
->>>>>>> origin/데이터그리드_test
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
-            button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
+            //button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
             button3.BackColor = ColorTranslator.FromHtml("#1AA67D");
 
             // 선택한 제품의 텍스트를 저장
-            dash.change_state(button3);
+           // dash.change_state(button3);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
-            button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
+            //button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
 
             // 발주제품, 수량 DB에 저장
-            dash.send_order(textBox1);
-=======
+            //dash.send_order(textBox1);
+
             label13.Visible = true;
             parrotCircleProgressBar1.IsAnimated = false;
             // 버튼 클릭 시 Label13의 텍스트를 "가동중"으로 변경
             label13.Text = "  정지";
->>>>>>> origin/데이터그리드_test
+
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)

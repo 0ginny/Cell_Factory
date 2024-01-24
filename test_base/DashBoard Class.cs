@@ -1,20 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace test_base
 {
     internal class DashBord_Class
     {
         // mysql에 접속하기 위한 전역 변수
-        mysql mysql;
+        mysql my;
 
         // 선택한 제품의 종류를 저장하기 위한 변수
         public string btn_state { get; set; } = null;
 
+        public DashBord_Class()
+        {
+            my = new mysql();
+        }
+
+        /*
         /// <summary>
         /// 선택 제품 저장
         /// </summary>
@@ -36,8 +45,9 @@ namespace test_base
             string sql = $@"INSERT INTO #### 
                             VALUES ('{btn_state}','{Int32.Parse(text.Text.ToString())})";
             
-            mysql.sendsql(sql);
+            my.sendsql(sql);
         }
+        */
 
         /// <summary>
         /// 대쉬보드 그리드뷰, 차트 출력 메서드 호출 메서드
@@ -70,7 +80,7 @@ namespace test_base
             string sql = $@"SELECT  COUNT(*) as '횟수'
                             FROM stacking_test";
 
-            mysql.fillDataGrid(sql, dgv);
+            my.fillDataGrid(sql, dgv);
         }
 
         /// <summary>
@@ -82,7 +92,7 @@ namespace test_base
             string query = $@"SELECT #### 
                               FROM ####";
 
-            mysql.fillDataChart(query, chart);
+            my.fillDataChart(query, chart);
         }
 
         /// <summary>
@@ -94,7 +104,61 @@ namespace test_base
             string query = $@"SELECT #### 
                               FROM ####";
 
-            mysql.fillDataChart(query, chart);
+            my.fillDataChart(query, chart);
+        }
+
+
+
+        //---------------------------영진 작성
+        /// <summary>
+        /// 오늘 착수예정인 주문을 보여준다.
+        /// </summary>
+        /// <param name="dgv">주문지시가 나타날 데이터 그리드 뷰</param>
+        public void order_list(DataGridView dgv)
+        {
+
+            string today = "2024-01-24" ;
+
+            string sql = $@"select 
+                            A.ord_id, 
+                            A.company, 
+                            B.prod_name, 
+                            A.ord_num, 
+                            A.i_fin from 
+                            (select * from orders where plan_date = ' {today} ')
+                             as A
+                            inner join product as B
+                            on A.prod_id = B.prod_id;";
+
+            DataTable dt = my.GetDataToTable(sql);
+            foreach (DataRow dr in dt.Rows)
+            {
+                Image imageToShow;
+
+                switch (Int16.Parse(dr[4].ToString()))
+                {
+                    case 1:
+                        imageToShow = Properties.Resources.완료;
+                        break;
+                    case 0:
+                        imageToShow = Properties.Resources.진행중;
+                        break;
+                    case -1:
+                        imageToShow = Properties.Resources.대기;
+                        break;
+                    default:
+                        // 기본값을 설정하거나 예외 처리를 수행할 수 있습니다.
+                        imageToShow = Properties.Resources.에러발생;
+                        break;
+                }
+
+                dgv.Rows.Add(dr[2], dr[3],imageToShow);
+
+            }
+            dgv.ClearSelection();
         }
     }
+
+
+    
 }

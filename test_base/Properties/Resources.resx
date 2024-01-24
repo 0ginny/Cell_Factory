@@ -157,13 +157,13 @@
   <data name="제목 없음" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\제목 없음.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
+
   <data name="Close_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Close_Gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close_Gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="대기" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\대기.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,6 +214,5 @@
   </data>
   <data name="실시간모니터링1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\실시간모니터링2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> origin/데이터그리드_test
   </data>
 </root>

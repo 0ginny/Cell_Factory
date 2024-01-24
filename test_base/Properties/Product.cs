@@ -15,19 +15,18 @@ namespace test_base.Properties
         public Product()
         {
             InitializeComponent();
-<<<<<<< HEAD
-=======
+
+
             panel17.Visible = false;
             dataGridView1.ReadOnly = true; // DataGridView를 초기에 읽기 전용으로 설정
->>>>>>> origin/데이터그리드_test
+
         }
 
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
         {
 
         }
-<<<<<<< HEAD
-=======
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -110,6 +109,5 @@ namespace test_base.Properties
                 }
             }
         }
->>>>>>> origin/데이터그리드_test
     }
 }

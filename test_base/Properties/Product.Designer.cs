@@ -64,12 +64,12 @@
             label1 = new Label();
             panel4 = new Panel();
             button3 = new Button();
-<<<<<<< HEAD
+
             panel2 = new Panel();
 
             hopeDatePicker1 = new ReaLTaiizor.Controls.HopeDatePicker();
 
-=======
+
             tableLayoutPanel1 = new TableLayoutPanel();
             panel6 = new Panel();
             dataGridView4 = new DataGridView();
@@ -89,7 +89,7 @@
             dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
             label6 = new Label();
             panel3 = new Panel();
->>>>>>> origin/데이터그리드_test
+
             dataGridView2 = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             Column9 = new DataGridViewTextBoxColumn();
@@ -654,9 +654,7 @@
             panel2.Size = new Size(1066, 443);
             panel2.TabIndex = 0;
             // 
-<<<<<<< HEAD
 
-=======
             // button6
             // 
             button6.FlatAppearance.BorderSize = 0;
@@ -749,7 +747,7 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
->>>>>>> origin/데이터그리드_test
+
             // hopeDatePicker1
             // 
             hopeDatePicker1.BackColor = Color.White;
@@ -779,15 +777,10 @@
             hopeDatePicker1.TabIndex = 6;
             hopeDatePicker1.Text = "hopeDatePicker1";
             hopeDatePicker1.ValueTextColor = Color.FromArgb(43, 133, 228);
-<<<<<<< HEAD
 
-            // 
-
-=======
             hopeDatePicker1.Click += hopeDatePicker1_Click_1;
             // 
             // hopeDatePicker2
->>>>>>> origin/데이터그리드_test
             // 
             hopeDatePicker2.BackColor = Color.White;
             hopeDatePicker2.BorderColor = Color.FromArgb(220, 223, 230);
@@ -858,11 +851,11 @@
             dataGridView1.GridColor = Color.FromArgb(235, 238, 244);
             dataGridView1.Location = new Point(24, 61);
             dataGridView1.Name = "dataGridView1";
-<<<<<<< HEAD
+
             dataGridView1.Size = new Size(1005, 798);
             dataGridView1.TabIndex = 2;
 
-=======
+
             dataGridView1.RowHeadersVisible = false;
             dataGridViewCellStyle26.ForeColor = Color.FromArgb(60, 78, 113);
             dataGridViewCellStyle26.SelectionBackColor = Color.White;
@@ -920,7 +913,7 @@
             Column2.DefaultCellStyle = dataGridViewCellStyle24;
             Column2.HeaderText = "착수예정일";
             Column2.Name = "Column2";
->>>>>>> origin/데이터그리드_test
+
             // 
             // label5
             // 

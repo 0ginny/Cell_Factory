@@ -14,7 +14,7 @@ namespace test_base
     {
         public string connect_str { get; set; } = "Server=222.108.180.36;" +
                                                   "Port=3306;" +
-                                                  "Database=mes_1;" +
+                                                  "Database=robot_3;" +
                                                   "Uid=EDU_STUDENT;" +
                                                   "Pwd=1234";
 

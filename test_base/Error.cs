@@ -24,13 +24,13 @@ namespace test_base
         public Error()
         {
             InitializeComponent();
-<<<<<<< HEAD
+
 
             hopeDatePicker1.Visible = false;
 
             // 클래스 객체 생성
             error = new Error_Management();
-=======
+
             panel17.Visible = false;
 
 
@@ -166,7 +166,7 @@ namespace test_base
                 Title = "",
                 LabelFormatter = value => value + "개"
             });
->>>>>>> origin/데이터그리드_test
+
 
         }
 
