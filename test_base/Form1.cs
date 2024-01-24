@@ -14,12 +14,12 @@ namespace test_base
 {
     public partial class Form1 : Form
     {
-        
+        PanelDragger pd;
 
         public Form1()
         {
             InitializeComponent();
-
+            pd = new PanelDragger(panel1, this);
         }
 
         private void label1_Click(object sender, EventArgs e)// 최종프로젝트 3조 Title 클릭시 호출
