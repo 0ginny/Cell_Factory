@@ -28,24 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
@@ -64,6 +52,7 @@
             splitContainer2 = new SplitContainer();
             splitContainer3 = new SplitContainer();
             panel5 = new Panel();
+            cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             panel17 = new Panel();
             label8 = new Label();
             label7 = new Label();
@@ -72,9 +61,8 @@
             button4 = new Button();
             hopeDatePicker1 = new ReaLTaiizor.Controls.HopeDatePicker();
             hopeDatePicker2 = new ReaLTaiizor.Controls.HopeDatePicker();
-            chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            pieChart1 = new LiveCharts.WinForms.PieChart();
             label4 = new Label();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panel4 = new Panel();
             panel2 = new Panel();
             panel6 = new Panel();
@@ -87,8 +75,8 @@
             splitContainer4 = new SplitContainer();
             splitContainer5 = new SplitContainer();
             panel7 = new Panel();
-            chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
+            pieChart2 = new LiveCharts.WinForms.PieChart();
             label5 = new Label();
             panel11 = new Panel();
             panel9 = new Panel();
@@ -118,8 +106,6 @@
             splitContainer3.SuspendLayout();
             panel5.SuspendLayout();
             panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chart2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)SellDG).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
@@ -130,8 +116,6 @@
             splitContainer5.Panel2.SuspendLayout();
             splitContainer5.SuspendLayout();
             panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chart3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chart4).BeginInit();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)weldingDG).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -289,23 +273,31 @@
             splitContainer3.Panel2.Controls.Add(panel13);
             splitContainer3.Panel2.Controls.Add(panel12);
             splitContainer3.Size = new Size(846, 929);
-            splitContainer3.SplitterDistance = 593;
+            splitContainer3.SplitterDistance = 548;
             splitContainer3.TabIndex = 0;
             // 
             // panel5
             // 
             panel5.BackColor = Color.White;
+            panel5.Controls.Add(cartesianChart1);
             panel5.Controls.Add(panel17);
-            panel5.Controls.Add(chart2);
+            panel5.Controls.Add(pieChart1);
             panel5.Controls.Add(label4);
-            panel5.Controls.Add(chart1);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(20, 20);
             panel5.Margin = new Padding(0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(826, 573);
+            panel5.Size = new Size(826, 528);
             panel5.TabIndex = 3;
             panel5.Paint += panel5_Paint;
+            // 
+            // cartesianChart1
+            // 
+            cartesianChart1.Location = new Point(605, 83);
+            cartesianChart1.Name = "cartesianChart1";
+            cartesianChart1.Size = new Size(174, 402);
+            cartesianChart1.TabIndex = 12;
+            cartesianChart1.Text = "cartesianChart1";
             // 
             // panel17
             // 
@@ -318,7 +310,7 @@
             panel17.Controls.Add(hopeDatePicker2);
             panel17.Location = new Point(0, 0);
             panel17.Name = "panel17";
-            panel17.Size = new Size(498, 320);
+            panel17.Size = new Size(498, 323);
             panel17.TabIndex = 10;
             // 
             // label8
@@ -327,7 +319,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("맑은 고딕", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
             label8.ForeColor = Color.FromArgb(60, 78, 113);
-            label8.Location = new Point(208, 287);
+            label8.Location = new Point(209, 287);
             label8.Name = "label8";
             label8.Size = new Size(20, 20);
             label8.TabIndex = 14;
@@ -448,21 +440,13 @@
             hopeDatePicker2.ValueTextColor = Color.FromArgb(43, 133, 228);
             hopeDatePicker2.Click += hopeDatePicker2_Click;
             // 
-            // chart2
+            // pieChart1
             // 
-            chartArea1.Name = "ChartArea1";
-            chart2.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chart2.Legends.Add(legend1);
-            chart2.Location = new Point(579, 83);
-            chart2.Name = "chart2";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            chart2.Series.Add(series1);
-            chart2.Size = new Size(213, 457);
-            chart2.TabIndex = 8;
-            chart2.Text = "chart2";
+            pieChart1.Location = new Point(50, 83);
+            pieChart1.Name = "pieChart1";
+            pieChart1.Size = new Size(460, 402);
+            pieChart1.TabIndex = 11;
+            pieChart1.Text = "pieChart1";
             // 
             // label4
             // 
@@ -470,33 +454,16 @@
             label4.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
             label4.Location = new Point(18, 16);
             label4.Name = "label4";
-            label4.Size = new Size(76, 25);
+            label4.Size = new Size(89, 25);
             label4.TabIndex = 0;
-            label4.Text = "셀 불량";
-            // 
-            // chart1
-            // 
-            chartArea2.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chart1.Legends.Add(legend2);
-            chart1.Location = new Point(39, 83);
-            chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chart1.Series.Add(series2);
-            chart1.Size = new Size(488, 457);
-            chart1.TabIndex = 7;
-            chart1.Text = "chart1";
+            label4.Text = "Cell 불량";
             // 
             // panel4
             // 
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 20);
             panel4.Name = "panel4";
-            panel4.Size = new Size(20, 573);
+            panel4.Size = new Size(20, 528);
             panel4.TabIndex = 5;
             // 
             // panel2
@@ -515,7 +482,7 @@
             panel6.Location = new Point(20, 0);
             panel6.Margin = new Padding(0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(826, 312);
+            panel6.Size = new Size(826, 357);
             panel6.TabIndex = 4;
             // 
             // SellDG
@@ -573,7 +540,7 @@
             SellDG.RowTemplate.Height = 80;
             SellDG.RowTemplate.Resizable = DataGridViewTriState.True;
             SellDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            SellDG.Size = new Size(790, 281);
+            SellDG.Size = new Size(790, 326);
             SellDG.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn1
@@ -605,13 +572,13 @@
             panel13.Dock = DockStyle.Left;
             panel13.Location = new Point(0, 0);
             panel13.Name = "panel13";
-            panel13.Size = new Size(20, 312);
+            panel13.Size = new Size(20, 357);
             panel13.TabIndex = 6;
             // 
             // panel12
             // 
             panel12.Dock = DockStyle.Bottom;
-            panel12.Location = new Point(0, 312);
+            panel12.Location = new Point(0, 357);
             panel12.Name = "panel12";
             panel12.Size = new Size(846, 20);
             panel12.TabIndex = 5;
@@ -652,54 +619,37 @@
             splitContainer5.Panel2.Controls.Add(panel14);
             splitContainer5.Panel2.Controls.Add(panel15);
             splitContainer5.Size = new Size(870, 925);
-            splitContainer5.SplitterDistance = 589;
+            splitContainer5.SplitterDistance = 544;
             splitContainer5.TabIndex = 0;
             // 
             // panel7
             // 
             panel7.BackColor = Color.White;
-            panel7.Controls.Add(chart3);
-            panel7.Controls.Add(chart4);
+            panel7.Controls.Add(cartesianChart2);
+            panel7.Controls.Add(pieChart2);
             panel7.Controls.Add(label5);
             panel7.Dock = DockStyle.Fill;
             panel7.Location = new Point(20, 15);
             panel7.Margin = new Padding(0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(830, 574);
+            panel7.Size = new Size(830, 529);
             panel7.TabIndex = 4;
             // 
-            // chart3
+            // cartesianChart2
             // 
-            chartArea3.Name = "ChartArea1";
-            chart3.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            chart3.Legends.Add(legend3);
-            chart3.Location = new Point(583, 83);
-            chart3.Name = "chart3";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            chart3.Series.Add(series3);
-            chart3.Size = new Size(213, 457);
-            chart3.TabIndex = 10;
-            chart3.Text = "chart3";
+            cartesianChart2.Location = new Point(610, 84);
+            cartesianChart2.Name = "cartesianChart2";
+            cartesianChart2.Size = new Size(174, 402);
+            cartesianChart2.TabIndex = 14;
+            cartesianChart2.Text = "cartesianChart2";
             // 
-            // chart4
+            // pieChart2
             // 
-            chartArea4.Name = "ChartArea1";
-            chart4.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            chart4.Legends.Add(legend4);
-            chart4.Location = new Point(43, 83);
-            chart4.Name = "chart4";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            chart4.Series.Add(series4);
-            chart4.Size = new Size(488, 457);
-            chart4.TabIndex = 9;
-            chart4.Text = "chart4";
+            pieChart2.Location = new Point(55, 84);
+            pieChart2.Name = "pieChart2";
+            pieChart2.Size = new Size(460, 402);
+            pieChart2.TabIndex = 13;
+            pieChart2.Text = "pieChart2";
             // 
             // label5
             // 
@@ -707,16 +657,16 @@
             label5.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
             label5.Location = new Point(16, 16);
             label5.Name = "label5";
-            label5.Size = new Size(95, 25);
+            label5.Size = new Size(134, 25);
             label5.TabIndex = 0;
-            label5.Text = "용접 불량";
+            label5.Text = "Stacking 불량";
             // 
             // panel11
             // 
             panel11.Dock = DockStyle.Left;
             panel11.Location = new Point(0, 15);
             panel11.Name = "panel11";
-            panel11.Size = new Size(20, 574);
+            panel11.Size = new Size(20, 529);
             panel11.TabIndex = 8;
             // 
             // panel9
@@ -724,7 +674,7 @@
             panel9.Dock = DockStyle.Right;
             panel9.Location = new Point(850, 15);
             panel9.Name = "panel9";
-            panel9.Size = new Size(20, 574);
+            panel9.Size = new Size(20, 529);
             panel9.TabIndex = 7;
             // 
             // panel10
@@ -743,7 +693,7 @@
             panel8.Location = new Point(20, 0);
             panel8.Margin = new Padding(0);
             panel8.Name = "panel8";
-            panel8.Size = new Size(830, 312);
+            panel8.Size = new Size(830, 357);
             panel8.TabIndex = 5;
             // 
             // weldingDG
@@ -801,7 +751,7 @@
             weldingDG.RowTemplate.Height = 80;
             weldingDG.RowTemplate.Resizable = DataGridViewTriState.True;
             weldingDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            weldingDG.Size = new Size(792, 283);
+            weldingDG.Size = new Size(792, 328);
             weldingDG.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn3
@@ -833,7 +783,7 @@
             panel16.Dock = DockStyle.Right;
             panel16.Location = new Point(850, 0);
             panel16.Name = "panel16";
-            panel16.Size = new Size(20, 312);
+            panel16.Size = new Size(20, 357);
             panel16.TabIndex = 9;
             // 
             // panel14
@@ -841,13 +791,13 @@
             panel14.Dock = DockStyle.Left;
             panel14.Location = new Point(0, 0);
             panel14.Name = "panel14";
-            panel14.Size = new Size(20, 312);
+            panel14.Size = new Size(20, 357);
             panel14.TabIndex = 8;
             // 
             // panel15
             // 
             panel15.Dock = DockStyle.Bottom;
-            panel15.Location = new Point(0, 312);
+            panel15.Location = new Point(0, 357);
             panel15.Name = "panel15";
             panel15.Size = new Size(870, 20);
             panel15.TabIndex = 7;
@@ -905,8 +855,6 @@
             panel5.PerformLayout();
             panel17.ResumeLayout(false);
             panel17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)SellDG).EndInit();
             splitContainer4.Panel2.ResumeLayout(false);
@@ -918,8 +866,6 @@
             splitContainer5.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)chart3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chart4).EndInit();
             panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)weldingDG).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
@@ -952,9 +898,7 @@
         private Panel panel7;
         private Panel panel8;
         private ReaLTaiizor.Controls.HopeDatePicker hopeDatePicker1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
         private DataGridView SellDG;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -981,5 +925,9 @@
         private Label label6;
         private Label label8;
         private Label label7;
+        private LiveCharts.WinForms.PieChart pieChart1;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private LiveCharts.WinForms.CartesianChart cartesianChart2;
+        private LiveCharts.WinForms.PieChart pieChart2;
     }
 }

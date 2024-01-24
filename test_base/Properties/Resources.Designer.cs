@@ -233,9 +233,29 @@ namespace test_base.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap 실시간모니터링 {
+            get {
+                object obj = ResourceManager.GetObject("실시간모니터링", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap 실시간모니터링_그림 {
             get {
                 object obj = ResourceManager.GetObject("실시간모니터링 그림", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 실시간모니터링1 {
+            get {
+                object obj = ResourceManager.GetObject("실시간모니터링1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

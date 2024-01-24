@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LiveCharts.Wpf;
+using LiveCharts;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using ReaLTaiizor.Controls;
@@ -29,6 +31,131 @@ namespace test_base
 
             // 오늘 날짜를 label2에 표시
             label2.Text = DateTime.Now.ToString("yyyy년 MM월 dd일");
+
+            //pie 차트1
+            Func<ChartPoint, string> labelPoint = chartPoint =>
+                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+
+            pieChart1.Series = new SeriesCollection
+            {
+                new PieSeries
+                {
+                    Title = "이물질",
+                    Values = new ChartValues<double> {3},
+                    PushOut = 15,
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                },
+                new PieSeries
+                {
+                    Title = "전압",
+                    Values = new ChartValues<double> {4},
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                },
+                new PieSeries
+                {
+                    Title = "표면 결함",
+                    Values = new ChartValues<double> {6},
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                }
+            };
+            //파이차트2
+            Func<ChartPoint, string> labelPoint1 = chartPoint1 =>
+                string.Format("{0} ({1:P})", chartPoint1.Y, chartPoint1.Participation);
+
+            pieChart2.Series = new SeriesCollection
+            {
+                new PieSeries
+                {
+                    Title = "용접",
+                    Values = new ChartValues<double> {4},
+                    PushOut = 15,
+                    DataLabels = true,
+                    LabelPoint = labelPoint1
+                },
+                new PieSeries
+                {
+                    Title = "온도",
+                    Values = new ChartValues<double> {2},
+                    DataLabels = true,
+                    LabelPoint = labelPoint1
+                }
+            };
+
+            pieChart2.LegendLocation = LegendLocation.Bottom;
+
+            //막대차트1
+            cartesianChart1.Series = new SeriesCollection
+            {
+                new StackedColumnSeries
+                {
+                    Title = "이물질",
+                    Values = new ChartValues<double> {3},
+                    StackMode = StackMode.Values, // this is not necessary, values is the default stack mode
+                    DataLabels = true
+                },
+                new StackedColumnSeries
+                {
+                    Title = "전압",
+                    Values = new ChartValues<double> {4},
+                    StackMode = StackMode.Values,
+                    DataLabels = true
+                },
+                new StackedColumnSeries
+                {
+                    Title = "표면 결함",
+                    Values = new ChartValues<double> {6},
+                    StackMode = StackMode.Values,
+                    DataLabels = true
+                }
+
+            };
+
+            cartesianChart1.AxisX.Add(new Axis
+            {
+                Title = "Cell 불량",
+                Labels = new[] { "" },
+                Separator = DefaultAxes.CleanSeparator
+            });
+
+            cartesianChart1.AxisY.Add(new Axis
+            {
+                Title = "",
+                LabelFormatter = value => value + "개"
+            });
+            //막대차트2
+            cartesianChart2.Series = new SeriesCollection
+            {
+                new StackedColumnSeries
+                {
+                    Title = "용접",
+                    Values = new ChartValues<double> {4},
+                    StackMode = StackMode.Values, // this is not necessary, values is the default stack mode
+                    DataLabels = true
+                },
+                new StackedColumnSeries
+                {
+                    Title = "온도",
+                    Values = new ChartValues<double> {2},
+                    StackMode = StackMode.Values,
+                    DataLabels = true
+                }
+            };
+
+            cartesianChart2.AxisX.Add(new Axis
+            {
+                Title = "Stacking 불량",
+                Labels = new[] { "" },
+                Separator = DefaultAxes.CleanSeparator
+            });
+
+            cartesianChart2.AxisY.Add(new Axis
+            {
+                Title = "",
+                LabelFormatter = value => value + "개"
+            });
 
         }
 
