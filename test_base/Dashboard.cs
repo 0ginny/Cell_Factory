@@ -64,15 +64,10 @@ namespace test_base
             ApplyRoundedBorder(panel5, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
             ApplyRoundedBorder(panel6, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
 
-            dataGridView1.Rows.Add("오전 09시 34분 21초", "전압불량", "A231215001");
-            dataGridView1.Rows.Add("오전 09시 34분 21초", "이물질불량", "B231215001");
-            dataGridView1.Rows.Add("오전 09시 34분 21초", "표면불량", "C231215001");
-            dataGridView1.Rows.Add("오전 09시 34분 21초", "전압불량", "A231215001");
-            dataGridView1.Rows.Add("오전 09시 34분 21초", "전압불량", "B20231215");
-            dataGridView1.Rows.Add("오전 09시 34분 21초", "전압불량", "C231215001");
-            dataGridView1.Rows.Add("오전 09시 34분 21초", "전압불량", "A231215001");
-
-            dash.order_list(dataGridView2);
+            // 금일 발생 에러 리스트 표시
+            dash.today_error_list(dataGridView1);
+            // 금일 착수 예정 리스트 표시
+            dash.plan_order_list(dataGridView2);
 
             InitializeSolidGauge();
         }
@@ -183,6 +178,7 @@ namespace test_base
            // dash.change_state(button3);
         }
 
+        /*
         private void button4_Click(object sender, EventArgs e)
         {
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
@@ -198,7 +194,7 @@ namespace test_base
             label13.Text = "  정지";
 
         }
-
+        */
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 

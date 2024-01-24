@@ -15,6 +15,7 @@ namespace test_base
         // mysql에 접속하기 위한 전역 변수
         mysql my;
 
+        public string today { get; set; } = "2024-01-24";
         // 선택한 제품의 종류를 저장하기 위한 변수
         public string btn_state { get; set; } = null;
 
@@ -114,10 +115,8 @@ namespace test_base
         /// 오늘 착수예정인 주문을 보여준다.
         /// </summary>
         /// <param name="dgv">주문지시가 나타날 데이터 그리드 뷰</param>
-        public void order_list(DataGridView dgv)
+        public void plan_order_list(DataGridView dgv)
         {
-
-            string today = "2024-01-24" ;
 
             string sql = $@"select 
                             A.ord_id, 
@@ -157,8 +156,28 @@ namespace test_base
             }
             dgv.ClearSelection();
         }
+
+        public void today_error_list(DataGridView dgv)
+        {
+            string sql = $@"select 
+                    DATE_FORMAT(fault_test_time,'%H:%i:%s'),
+                    fault_content,
+                    cell_id
+                    from cell
+                    where 
+                    b_test1 = 1 and
+                    fault_test_time like '{today}%';";
+
+            DataTable dt = my.GetDataToTable(sql);
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                //dgv.Rows.Add("오전 09시 34분 21초", "전압불량", "A231215001");
+                dgv.Rows.Add(dr[0], dr[1], dr[2]);
+            }
+            
+            
+
+        }
     }
-
-
-    
 }
