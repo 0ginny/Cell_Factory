@@ -58,14 +58,13 @@
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(246, 249, 255);
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(31, 107, 255);
             PorbOrderDatagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             PorbOrderDatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             PorbOrderDatagrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             PorbOrderDatagrid.BackgroundColor = Color.White;
             PorbOrderDatagrid.BorderStyle = BorderStyle.None;
-            PorbOrderDatagrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             PorbOrderDatagrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(235, 238, 244);
@@ -82,7 +81,7 @@
             dataGridViewCellStyle5.BackColor = SystemColors.Window;
             dataGridViewCellStyle5.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
             dataGridViewCellStyle5.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle5.SelectionBackColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Transparent;
             dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(31, 107, 255);
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
             PorbOrderDatagrid.DefaultCellStyle = dataGridViewCellStyle5;
@@ -95,7 +94,7 @@
             PorbOrderDatagrid.ReadOnly = true;
             PorbOrderDatagrid.RowHeadersVisible = false;
             dataGridViewCellStyle6.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle6.SelectionBackColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.Transparent;
             dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(31, 107, 255);
             PorbOrderDatagrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
             PorbOrderDatagrid.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

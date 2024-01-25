@@ -51,6 +51,7 @@ namespace test_base
                 new PieSeries
                 {
                     Title = "이물질",
+                    FontSize = 16,
                     Values = new ChartValues<double> {3},
                     PushOut = 15,
                     DataLabels = true,
@@ -59,6 +60,7 @@ namespace test_base
                 new PieSeries
                 {
                     Title = "전압",
+                    FontSize = 16,
                     Values = new ChartValues<double> {4},
                     DataLabels = true,
                     LabelPoint = labelPoint
@@ -66,11 +68,14 @@ namespace test_base
                 new PieSeries
                 {
                     Title = "표면 결함",
+                    FontSize = 16,
                     Values = new ChartValues<double> {6},
                     DataLabels = true,
                     LabelPoint = labelPoint
                 }
             };
+            pieChart1.LegendLocation = LegendLocation.Bottom;
+
             //파이차트2
             Func<ChartPoint, string> labelPoint1 = chartPoint1 =>
                 string.Format("{0} ({1:P})", chartPoint1.Y, chartPoint1.Participation);
@@ -80,6 +85,7 @@ namespace test_base
                 new PieSeries
                 {
                     Title = "용접",
+                    FontSize = 16,
                     Values = new ChartValues<double> {4},
                     PushOut = 15,
                     DataLabels = true,
@@ -88,6 +94,7 @@ namespace test_base
                 new PieSeries
                 {
                     Title = "온도",
+                    FontSize = 16,
                     Values = new ChartValues<double> {2},
                     DataLabels = true,
                     LabelPoint = labelPoint1
@@ -102,6 +109,7 @@ namespace test_base
                 new StackedColumnSeries
                 {
                     Title = "이물질",
+                    FontSize = 14,
                     Values = new ChartValues<double> {3},
                     StackMode = StackMode.Values, // this is not necessary, values is the default stack mode
                     DataLabels = true
@@ -109,6 +117,7 @@ namespace test_base
                 new StackedColumnSeries
                 {
                     Title = "전압",
+                    FontSize = 14,
                     Values = new ChartValues<double> {4},
                     StackMode = StackMode.Values,
                     DataLabels = true
@@ -116,6 +125,7 @@ namespace test_base
                 new StackedColumnSeries
                 {
                     Title = "표면 결함",
+                    FontSize = 14,
                     Values = new ChartValues<double> {6},
                     StackMode = StackMode.Values,
                     DataLabels = true
@@ -141,6 +151,7 @@ namespace test_base
                 new StackedColumnSeries
                 {
                     Title = "용접",
+                    FontSize = 14,
                     Values = new ChartValues<double> {4},
                     StackMode = StackMode.Values, // this is not necessary, values is the default stack mode
                     DataLabels = true
@@ -148,6 +159,7 @@ namespace test_base
                 new StackedColumnSeries
                 {
                     Title = "온도",
+                    FontSize = 14,
                     Values = new ChartValues<double> {2},
                     StackMode = StackMode.Values,
                     DataLabels = true
@@ -194,7 +206,7 @@ namespace test_base
         {
             //dgv_stacking_error.Rows.Add("온도", "1200", "10시 15분 42초");
             //dgv_stacking_error.Rows.Add("압력", "50", "11시 15분 42초");
-            
+
             //dgv_cell_error.Rows.Add("이물질", "0.04", "09시 15분 42초");
             //dgv_cell_error.Rows.Add("전압", "4.2", "15시 15분 42초");
             //dgv_cell_error.Rows.Add("표면 결함", "0.12", "17시 15분 42초");
@@ -215,13 +227,6 @@ namespace test_base
 
         }
 
-
-        private void hopeDatePicker1_Click(object sender, EventArgs e)
-        {
-            label6.Text = hopeDatePicker1.Date.ToString("yyyy-MM-dd"); // 날짜 형식은 원하는 대로 설정
-     
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             panel17.Size = new System.Drawing.Size(500, 320);
@@ -238,16 +243,6 @@ namespace test_base
                 // 여기에 선택한 항목에 대한 동작을 추가하세요.
                 MessageBox.Show($"선택한 셀: {selectedCell}");
             }
-        }
-
-        private void parrotPieGraph1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hopeDatePicker2_Click(object sender, EventArgs e)
-        {
-            label7.Text = hopeDatePicker2.Date.ToString("yyyy-MM-dd"); // 날짜 형식은 원하는 대로 설정
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -308,6 +303,16 @@ namespace test_base
             // 선택한 날짜와 제품의 종류를 그리드뷰 2개, 차트 4개에 출력
             // error.Error_view(dateTimePicker1, comboBox1.SelectedItem.ToString(), dataGridView1, dataGridView2, chart1, chart2, chart3, chart4);
 
+        }
+
+        private void hopeDatePicker1_onDateChanged(DateTime newDateTime)
+        {
+            label6.Text = hopeDatePicker1.Date.ToString("yyyy년 MM월 dd일"); // 날짜 형식은 원하는 대로 설정
+        }
+
+        private void hopeDatePicker2_onDateChanged(DateTime newDateTime)
+        {
+            label7.Text = hopeDatePicker2.Date.ToString("yyyy년 MM월 dd일"); // 날짜 형식은 원하는 대로 설정
         }
     }
 }

@@ -109,17 +109,16 @@
             label11.TabIndex = 14;
             label11.Text = "01";
             label11.TextAlign = ContentAlignment.MiddleCenter;
-            //label11.Click += label11_Click;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Dock = DockStyle.Fill;
             label12.Font = new Font("맑은 고딕", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label12.Location = new Point(0, 0);
-            label12.Margin = new Padding(0);
+            label12.Location = new Point(20, 20);
+            label12.Margin = new Padding(20, 20, 0, 0);
             label12.Name = "label12";
-            label12.Size = new Size(326, 52);
+            label12.Size = new Size(306, 52);
             label12.TabIndex = 13;
             label12.Text = "Calinder";
             // 
@@ -134,7 +133,7 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(splitContainer3);
-            splitContainer2.Size = new Size(1354, 891);
+            splitContainer2.Size = new Size(1374, 891);
             splitContainer2.SplitterDistance = 25;
             splitContainer2.TabIndex = 0;
             // 
@@ -153,10 +152,9 @@
             // splitContainer3.Panel2
             // 
             splitContainer3.Panel2.Controls.Add(flowLayoutPanel1);
-            splitContainer3.Size = new Size(1354, 862);
+            splitContainer3.Size = new Size(1374, 862);
             splitContainer3.SplitterDistance = 795;
             splitContainer3.TabIndex = 0;
-            //splitContainer3.SplitterMoved += splitContainer3_SplitterMoved;
             // 
             // daycontainer
             // 
@@ -164,7 +162,7 @@
             daycontainer.Location = new Point(0, 0);
             daycontainer.Margin = new Padding(0);
             daycontainer.Name = "daycontainer";
-            daycontainer.Size = new Size(1354, 795);
+            daycontainer.Size = new Size(1374, 795);
             daycontainer.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -174,15 +172,15 @@
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.FlowDirection = FlowDirection.RightToLeft;
             flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Margin = new Padding(0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1354, 63);
+            flowLayoutPanel1.Size = new Size(1374, 63);
             flowLayoutPanel1.TabIndex = 13;
-            //flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // btnnext
             // 
             btnnext.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
-            btnnext.Location = new Point(1251, 3);
+            btnnext.Location = new Point(1271, 3);
             btnnext.Name = "btnnext";
             btnnext.Size = new Size(100, 33);
             btnnext.TabIndex = 1;
@@ -193,7 +191,7 @@
             // btnprevious
             // 
             btnprevious.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
-            btnprevious.Location = new Point(1145, 3);
+            btnprevious.Location = new Point(1165, 3);
             btnprevious.Name = "btnprevious";
             btnprevious.Size = new Size(100, 33);
             btnprevious.TabIndex = 2;
@@ -334,7 +332,7 @@
             panel7.Location = new Point(1140, 0);
             panel7.Margin = new Padding(0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(214, 53);
+            panel7.Size = new Size(234, 53);
             panel7.TabIndex = 19;
             // 
             // label2
@@ -352,7 +350,7 @@
             // 
             splitContainer1.BackColor = Color.White;
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(326, 52);
+            splitContainer1.Location = new Point(326, 72);
             splitContainer1.Margin = new Padding(0);
             splitContainer1.Name = "splitContainer1";
             splitContainer1.Orientation = Orientation.Horizontal;
@@ -370,10 +368,9 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(1354, 948);
+            splitContainer1.Size = new Size(1374, 948);
             splitContainer1.SplitterDistance = 53;
             splitContainer1.TabIndex = 12;
-            //splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
             // panel9
             // 
@@ -382,10 +379,10 @@
             panel9.Controls.Add(label9);
             panel9.Controls.Add(label11);
             panel9.Dock = DockStyle.Fill;
-            panel9.Location = new Point(0, 52);
-            panel9.Margin = new Padding(0);
+            panel9.Location = new Point(20, 72);
+            panel9.Margin = new Padding(20, 0, 0, 0);
             panel9.Name = "panel9";
-            panel9.Size = new Size(326, 948);
+            panel9.Size = new Size(306, 948);
             panel9.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -396,15 +393,15 @@
             tableLayoutPanel1.Controls.Add(panel9, 0, 1);
             tableLayoutPanel1.Controls.Add(splitContainer1, 1, 1);
             tableLayoutPanel1.Controls.Add(label12, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(20, 20);
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 948F));
-            tableLayoutPanel1.Size = new Size(1680, 1000);
+            tableLayoutPanel1.Size = new Size(1700, 1020);
             tableLayoutPanel1.TabIndex = 18;
-           // tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint_1;
             // 
             // Calendar_shipmen_status
             // 

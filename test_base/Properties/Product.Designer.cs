@@ -81,8 +81,13 @@
             label6 = new Label();
             panel3 = new Panel();
             dataGridView2 = new DataGridView();
+            stacking_id = new DataGridViewTextBoxColumn();
+            presure = new DataGridViewTextBoxColumn();
+            weld_temp = new DataGridViewTextBoxColumn();
+            cycle_Time = new DataGridViewTextBoxColumn();
             label4 = new Label();
             panel2 = new Panel();
+            button7 = new Button();
             button6 = new Button();
             panel17 = new Panel();
             label8 = new Label();
@@ -101,10 +106,6 @@
             Column7 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             label5 = new Label();
-            stacking_id = new DataGridViewTextBoxColumn();
-            presure = new DataGridViewTextBoxColumn();
-            weld_temp = new DataGridViewTextBoxColumn();
-            cycle_Time = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -587,6 +588,30 @@
             dataGridView2.TabIndex = 7;
             dataGridView2.CellDoubleClick += dataGridView2_CellDoubleClick;
             // 
+            // stacking_id
+            // 
+            stacking_id.HeaderText = "stacking id";
+            stacking_id.Name = "stacking_id";
+            stacking_id.ReadOnly = true;
+            // 
+            // presure
+            // 
+            presure.HeaderText = "프레스압력";
+            presure.Name = "presure";
+            presure.ReadOnly = true;
+            // 
+            // weld_temp
+            // 
+            weld_temp.HeaderText = "용접 온도";
+            weld_temp.Name = "weld_temp";
+            weld_temp.ReadOnly = true;
+            // 
+            // cycle_Time
+            // 
+            cycle_Time.HeaderText = "싸이클타임";
+            cycle_Time.Name = "cycle_Time";
+            cycle_Time.ReadOnly = true;
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -600,6 +625,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(button7);
             panel2.Controls.Add(button6);
             panel2.Controls.Add(panel17);
             panel2.Controls.Add(dataGridView1);
@@ -611,12 +637,24 @@
             panel2.Size = new Size(1066, 443);
             panel2.TabIndex = 0;
             // 
+            // button7
+            // 
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.ForeColor = Color.FromArgb(31, 107, 255);
+            button7.Location = new Point(967, 20);
+            button7.Name = "button7";
+            button7.Size = new Size(75, 23);
+            button7.TabIndex = 13;
+            button7.Text = "삭제";
+            button7.UseVisualStyleBackColor = true;
+            // 
             // button6
             // 
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.ForeColor = Color.FromArgb(31, 107, 255);
-            button6.Location = new Point(964, 20);
+            button6.Location = new Point(886, 20);
             button6.Name = "button6";
             button6.Size = new Size(75, 23);
             button6.TabIndex = 12;
@@ -707,7 +745,7 @@
             // 
             hopeDatePicker1.BackColor = Color.White;
             hopeDatePicker1.BorderColor = Color.FromArgb(220, 223, 230);
-            hopeDatePicker1.Date = new DateTime(2024, 1, 22, 0, 0, 0, 0);
+            hopeDatePicker1.Date = new DateTime(2024, 1, 28, 0, 0, 0, 0);
             hopeDatePicker1.DayNames = "MTWTFSS";
             hopeDatePicker1.DaysTextColor = Color.FromArgb(96, 98, 102);
             hopeDatePicker1.DayTextColorA = Color.FromArgb(48, 49, 51);
@@ -732,7 +770,10 @@
             hopeDatePicker1.TabIndex = 6;
             hopeDatePicker1.Text = "hopeDatePicker1";
             hopeDatePicker1.ValueTextColor = Color.FromArgb(43, 133, 228);
+            hopeDatePicker1.onDateChanged += hopeDatePicker1_onDateChanged;
+            hopeDatePicker1.VisibleChanged += hopeDatePicker1_ValueChanged;
             hopeDatePicker1.Click += hopeDatePicker1_Click_1;
+            hopeDatePicker1.DataContextChanged += hopeDatePicker1_ValueChanged;
             // 
             // hopeDatePicker2
             // 
@@ -763,6 +804,7 @@
             hopeDatePicker2.TabIndex = 9;
             hopeDatePicker2.Text = "hopeDatePicker2";
             hopeDatePicker2.ValueTextColor = Color.FromArgb(43, 133, 228);
+            hopeDatePicker2.onDateChanged += hopeDatePicker2_onDateChanged;
             hopeDatePicker2.Click += hopeDatePicker2_Click;
             // 
             // dataGridView1
@@ -873,30 +915,6 @@
             label5.TabIndex = 1;
             label5.Text = "작업 예정";
             // 
-            // stacking_id
-            // 
-            stacking_id.HeaderText = "stacking id";
-            stacking_id.Name = "stacking_id";
-            stacking_id.ReadOnly = true;
-            // 
-            // presure
-            // 
-            presure.HeaderText = "프레스압력";
-            presure.Name = "presure";
-            presure.ReadOnly = true;
-            // 
-            // weld_temp
-            // 
-            weld_temp.HeaderText = "용접 온도";
-            weld_temp.Name = "weld_temp";
-            weld_temp.ReadOnly = true;
-            // 
-            // cycle_Time
-            // 
-            cycle_Time.HeaderText = "싸이클타임";
-            cycle_Time.Name = "cycle_Time";
-            cycle_Time.ReadOnly = true;
-            // 
             // Product
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -993,5 +1011,6 @@
         private DataGridViewTextBoxColumn presure;
         private DataGridViewTextBoxColumn weld_temp;
         private DataGridViewTextBoxColumn cycle_Time;
+        private Button button7;
     }
 }

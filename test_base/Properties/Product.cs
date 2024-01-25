@@ -87,7 +87,11 @@ namespace test_base.Properties
 
         private void hopeDatePicker1_Click_1(object sender, EventArgs e)
         {
-            label10.Text = hopeDatePicker1.Date.ToString("yyyy년 MM월 dd일"); // 날짜 형식은 원하는 대로 설정
+
+        }
+        private void hopeDatePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void hopeDatePicker2_Click(object sender, EventArgs e)
@@ -97,24 +101,11 @@ namespace test_base.Properties
 
         private void button6_Click(object sender, EventArgs e)
         {
-            // 버튼을 클릭할 때마다 DataGridView의 ReadOnly 속성을 토글
-            dataGridView1.ReadOnly = !dataGridView1.ReadOnly;
+            // AddOrder 폼을 생성
+            AddOrder addOrderForm = new AddOrder();
 
-            // DataGridView의 ReadOnly 상태에 따라 버튼의 텍스트 변경
-            button6.Text = dataGridView1.ReadOnly ? "수정" : "저장";
-
-            // 수정 가능한 상태일 때는 행 추가 기능도 활성화
-            dataGridView1.AllowUserToAddRows = !dataGridView1.ReadOnly;
-
-            // 행 추가 기능이 활성화되었을 때는 마지막 행으로 스크롤
-            if (dataGridView1.AllowUserToAddRows)
-            {
-                int lastRowIndex = dataGridView1.Rows.Count - 1;
-                if (lastRowIndex >= 0)
-                {
-                    dataGridView1.FirstDisplayedScrollingRowIndex = lastRowIndex;
-                }
-            }
+            // 현재 폼 위에 Modal로 열기
+            addOrderForm.ShowDialog();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -131,6 +122,16 @@ namespace test_base.Properties
         {
             pd.Stack_list_inOrder(dataGridView3, dataGridView2);
 
+        }
+
+        private void hopeDatePicker1_onDateChanged(DateTime newDateTime)
+        {
+            label10.Text = hopeDatePicker1.Date.ToString("yyyy년 MM월 dd일");
+        }
+
+        private void hopeDatePicker2_onDateChanged(DateTime newDateTime)
+        {
+            label9.Text = hopeDatePicker2.Date.ToString("yyyy년 MM월 dd일");
         }
     }
 }
