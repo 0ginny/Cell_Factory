@@ -32,12 +32,12 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             panel1 = new Panel();
@@ -67,6 +67,10 @@
             panel2 = new Panel();
             panel6 = new Panel();
             dgv_cell_error = new DataGridView();
+            cell = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
             panel13 = new Panel();
             panel12 = new Panel();
             splitContainer4 = new SplitContainer();
@@ -80,20 +84,16 @@
             panel10 = new Panel();
             panel8 = new Panel();
             dgv_stacking_error = new DataGridView();
+            스태킹 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             panel16 = new Panel();
             panel14 = new Panel();
             panel15 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel3 = new Panel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            cell = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            스태킹 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -385,7 +385,7 @@
             // 
             hopeDatePicker1.BackColor = Color.White;
             hopeDatePicker1.BorderColor = Color.FromArgb(220, 223, 230);
-            hopeDatePicker1.Date = new DateTime(2024, 1, 22, 0, 0, 0, 0);
+            hopeDatePicker1.Date = new DateTime(2024, 1, 1, 0, 0, 0, 0);
             hopeDatePicker1.DayNames = "MTWTFSS";
             hopeDatePicker1.DaysTextColor = Color.FromArgb(96, 98, 102);
             hopeDatePicker1.DayTextColorA = Color.FromArgb(48, 49, 51);
@@ -417,7 +417,7 @@
             // 
             hopeDatePicker2.BackColor = Color.White;
             hopeDatePicker2.BorderColor = Color.FromArgb(220, 223, 230);
-            hopeDatePicker2.Date = new DateTime(2024, 1, 23, 0, 0, 0, 0);
+            hopeDatePicker2.Date = new DateTime(2024, 1, 1, 0, 0, 0, 0);
             hopeDatePicker2.DayNames = "MTWTFSS";
             hopeDatePicker2.DaysTextColor = Color.FromArgb(96, 98, 102);
             hopeDatePicker2.DayTextColorA = Color.FromArgb(48, 49, 51);
@@ -546,6 +546,36 @@
             dgv_cell_error.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_cell_error.Size = new Size(790, 326);
             dgv_cell_error.TabIndex = 3;
+            // 
+            // cell
+            // 
+            cell.HeaderText = "셀";
+            cell.Name = "cell";
+            cell.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewTextBoxColumn1.HeaderText = "불량원인";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewTextBoxColumn2.HeaderText = "상세정보";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "불량발생시각";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // panel13
             // 
@@ -734,6 +764,36 @@
             dgv_stacking_error.Size = new Size(792, 328);
             dgv_stacking_error.TabIndex = 4;
             // 
+            // 스태킹
+            // 
+            스태킹.HeaderText = "스태킹";
+            스태킹.Name = "스태킹";
+            스태킹.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.NullValue = null;
+            dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewTextBoxColumn3.HeaderText = "불량원인";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Resizable = DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewTextBoxColumn4.HeaderText = "상세정보";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "불량발생시각";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
             // panel16
             // 
             panel16.Dock = DockStyle.Right;
@@ -781,66 +841,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(130, 106);
             panel3.TabIndex = 1;
-            // 
-            // cell
-            // 
-            cell.HeaderText = "셀";
-            cell.Name = "cell";
-            cell.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewTextBoxColumn1.HeaderText = "불량원인";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewTextBoxColumn2.HeaderText = "상세정보";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "불량발생시각";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // 스태킹
-            // 
-            스태킹.HeaderText = "스태킹";
-            스태킹.Name = "스태킹";
-            스태킹.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.NullValue = null;
-            dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewTextBoxColumn3.HeaderText = "불량원인";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.ReadOnly = true;
-            dataGridViewTextBoxColumn3.Resizable = DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewTextBoxColumn4.HeaderText = "상세정보";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "불량발생시각";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
             // 
             // Error
             // 

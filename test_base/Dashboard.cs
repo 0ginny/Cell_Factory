@@ -7,12 +7,18 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using LiveCharts.WinForms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static ReaLTaiizor.Drawing.Poison.PoisonPaint;
+using static test_base.MQTT;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace test_base
 {
@@ -21,18 +27,26 @@ namespace test_base
         // 클래스 전역 선언
         DashBord_Class dash;
         CSS css;
+        MQTT mqtt;
+        MqttObject obj;
+
+        string publish_topic = "publish_chn3";
+        string subscribe_topic = "subscribe_chn3";
+
         public Dashboard()
         {
             InitializeComponent();
             Load += Dashboard_Load;
-
-            circleProgressBar();
-            css = new CSS();
-
-
-
+            
             // 클래스 객체 생성
             dash = new DashBord_Class();
+            css = new CSS();
+            mqtt = new MQTT();
+
+            //mqtt 구독 시작
+            mqtt.SubscribeToTopic(subscribe_topic);
+            // MQTT 수신 이벤트 핸들러 등록, 미 등록시 수신 이벤트 미 처리 : textbox에 메세지가 출력되지 않음
+            mqtt.MessageReceived += Mqtt_MessageReceived;
 
             //standard gauge
             solidGauge1.From = 0;
@@ -72,117 +86,74 @@ namespace test_base
 
             InitializeSolidGauge();
         }
+
         private void InitializeSolidGauge()
         {
             // SolidGauge의 폰트 색상을 변경합니다.
             solidGauge1.ForeColor = ColorTranslator.FromHtml("#3C4E71");
         }
 
-     
-        private void circleProgressBar() { 
-
-            // 불량내역, 생산량, 용접온도 출력 메서드 호출
-            // dash.Display(dataGridView1, chart1, chart2);
-        }
-
-        private void SetHalfDoughnutChart()
-        {
-            
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer4_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
-            //button1.BackColor = ColorTranslator.FromHtml("#002EDE");
-            //button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
-            //button3.BackColor = ColorTranslator.FromHtml("#1FC695");
-
-            // 선택한 제품의 텍스트를 저장
-            //dash.change_state(button1);
 
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
-            //button2.BackColor = ColorTranslator.FromHtml("#EBBC00");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
-
-            // 선택한 제품의 텍스트를 저장
-            //dash.change_state(button2);
-
-            label13.Visible = true;
-            parrotCircleProgressBar1.IsAnimated = true;
-            // 버튼 클릭 시 Label13의 텍스트를 "가동중"으로 변경
-            label13.Text = " 가동중";
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
-            //button2.BackColor = ColorTranslator.FromHtml("#EBBC00");
-            button3.BackColor = ColorTranslator.FromHtml("#1FC695");
-
-            // 선택한 제품의 텍스트를 저장
-            //dash.change_state(button2);
 
             label13.Visible = true;
             parrotCircleProgressBar1.IsAnimated = true;
             // 버튼 클릭 시 Label13의 텍스트를 "가동중"으로 변경
             label13.Text = " 가동중";
 
+
+            mqtt.Publish(publish_topic, "start");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            //button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
-            //button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
-            //button3.BackColor = ColorTranslator.FromHtml("#1AA67D");
-
-            // 선택한 제품의 텍스트를 저장
-            // dash.change_state(button3);
-
-
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
-            //button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
-
-            // 발주제품, 수량 DB에 저장
-            //dash.send_order(textBox1);
 
             label13.Visible = true;
             parrotCircleProgressBar1.IsAnimated = false;
             // 버튼 클릭 시 Label13의 텍스트를 "정지"로 변경
             label13.Text = "  정지";
+
+            mqtt.Publish(publish_topic, "stop");
         }
 
-        
-        private void button4_Click(object sender, EventArgs e)
+
+
+        // MQTT 수신 이벤트 핸들러
+        private void Mqtt_MessageReceived(object sender, MqttMessageEventArgs e)
         {
-            button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
-            //button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
-            button3.BackColor = ColorTranslator.FromHtml("#1FC695");
+            // mqtt_obj에 JSON 메시지를 저장하기 위한 작업
+            MqttObject obj = mqtt.ParseJson(e.Message);
 
-            // 발주제품, 수량 DB에 저장
-            //dash.send_order(textBox1);
+            // UI 업데이트
+            label9.Invoke(new Action(() =>
+            {
+                // label1에 OrdId 속성의 값을 할당
+                label9.Text = obj?.ord_id;
+            }));
 
-            label13.Visible = true;
-            parrotCircleProgressBar1.IsAnimated = false;
-            // 버튼 클릭 시 Label13의 텍스트를 "가동중"으로 변경
-            label13.Text = "  정지";
+            label10.Invoke(new Action(() =>
+            {
+                // label2에 Company 속성의 값을 할당
+                label10.Text = obj?.company;
+            }));
+            label11.Invoke(new Action(() =>
+            {
+                // label2에 Company 속성의 값을 할당
+                label11.Text = obj?.prod_name;
+            }));
+            label12.Invoke(new Action(() =>
+            {
+                // label2에 Company 속성의 값을 할당
+                label12.Text =  obj?.ord_num.ToString();
+            }));
 
-        }
-        
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            // 나머지 레이블들에 대해서도 유사하게 추가할 수 있습니다.
         }
     }
 }

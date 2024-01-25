@@ -115,12 +115,10 @@
             splitContainer1.Panel1.Controls.Add(panel8);
             splitContainer1.Panel1.Controls.Add(panel7);
             splitContainer1.Panel1.Controls.Add(panel9);
-            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(tableLayoutPanel1);
-            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(1720, 636);
             splitContainer1.SplitterDistance = 1136;
             splitContainer1.TabIndex = 0;

@@ -212,8 +212,7 @@ namespace test_base
 
         private void hopeDatePicker1_Click(object sender, EventArgs e)
         {
-            label6.Text = hopeDatePicker1.Date.ToString("yyyy-MM-dd"); // 날짜 형식은 원하는 대로 설정
-     
+            label6.Text = hopeDatePicker1.Date.ToString("yyyy년 MM월 dd일"); // 날짜 형식은 원하는 대로 설정
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -241,7 +240,7 @@ namespace test_base
 
         private void hopeDatePicker2_Click(object sender, EventArgs e)
         {
-            label7.Text = hopeDatePicker2.Date.ToString("yyyy-MM-dd"); // 날짜 형식은 원하는 대로 설정
+            label7.Text = hopeDatePicker2.Date.ToString("yyyy년 MM월 dd일"); // 날짜 형식은 원하는 대로 설정
         }
 
         private void button4_Click(object sender, EventArgs e)
