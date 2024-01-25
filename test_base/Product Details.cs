@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -125,6 +126,120 @@ namespace test_base
             my.fillDataGrid_for(sql, dgv, 7);
             dgv.ClearSelection();
 
+        }
+
+        string select_order;
+        string select_stack;
+
+        DataGridView dgv_stack;
+        string chk = "0";
+        /// <summary>
+        /// 선택된 오더의 스택들을 보여주는 매서드, 이벤트 안에 넣어야함.
+        /// </summary>
+        /// <param name="dgv1"></param>
+        /// <param name="dgv2"></param>
+        public void Stack_list_inOrder(DataGridView dgv1,  DataGridView dgv2)
+        {
+            dgv_stack = dgv2;
+            DataGridViewRow row = dgv1.SelectedRows[0];
+            select_order = row.Cells[0].Value.ToString();
+
+            string sql = $@"select 
+                            stacking_id,
+                            presure as 프레스압,
+                            weld_temp as 용접온도,
+                            cycle_time as 싸이클타임
+                            from stacking
+                            where ord_id = '{select_order}';";
+            //DataTable dt = my.GetDataToTable(sql);
+
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    chk = dr[4].ToString();
+            //    dgv2.Rows.Add(dr[0], dr[1], dr[2], dr[3]);
+            //}
+
+            my.fillDataGrid(sql,dgv_stack);
+            //dgv_stack.Columns[5].Visible = false;
+
+            // 숨기고자 하는 열의 인덱스 (4번째 열)
+            //int columnIndexToHide = 4;
+            //dgv_stack.Columns[columnIndexToHide].Visible = false;
+            dgv_stack.ClearSelection();
+        }
+
+        // 4번째 열이면서 값이 1인 경우
+         private void Dgv2_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            string pcodeValue = dgv_stack.Rows[rowIndex].Cells["stacking_id"].Value.ToString();
+
+            DataRow[] matchingRows = getErrorStack().Select("stacking_id = '" + pcodeValue + "'");
+
+            // 만약 dt2에 pcode값이 존재하면 해당 행의 배경색을 변경
+            if (matchingRows.Length > 0)
+            {
+                SetCellStyle(row: dgv_stack.Rows[rowIndex], backColor: Color.Yellow);
+            }
+            else
+            {
+                // dt2에 pcode값이 없는 경우 기본 스타일 유지
+                SetCellStyle(row: dgv_stack.Rows[rowIndex], backColor: dgv_stack.DefaultCellStyle.BackColor);
+            }
+        }
+
+        private void SetCellStyle(DataGridViewRow row, Color backColor)
+        {
+            row.DefaultCellStyle.BackColor = backColor;
+            // 여기서 필요에 따라 다른 스타일 변경을 수행할 수 있음
+        }
+
+
+        public DataTable getErrorStack()
+        {
+            string SQL = $@"select 
+                            stacking_id,
+                            where ord_id = '{select_order}'
+                            and not b_test2 ; ";
+            return my.GetDataToTable(SQL);
+        }
+
+
+
+        public void Cell_list_inStack(DataGridView dgv1, DataGridView dgv2)
+        {
+            DataGridViewRow row = dgv1.SelectedRows[0];
+            select_stack = row.Cells[0].Value.ToString();
+
+            string sql = $@"select 
+                            cell_id,
+                            voltage,
+                            contain,
+                            surface
+                            from cell
+                            where stacking_id = '{select_stack}';";
+
+            DataTable dt = my.GetDataToTable(sql);
+            dgv2.Rows.Clear();
+            // DataGridView에 데이터 추가
+            foreach (DataRow dr in dt.Rows)
+            {
+                string cell_id = dr["cell_id"].ToString();
+                string contain = dr["contain"].ToString();
+                string surface = dr["surface"].ToString();
+                string voltage = dr["voltage"].ToString();
+
+                voltage = $"{voltage} V";
+                contain = $"{contain} %";
+                surface = surface + " μm";
+
+
+                // DataGridView에 행 추가
+                dgv2.Rows.Add(cell_id, voltage, contain, surface);
+            }
+
+
+            dgv2.ClearSelection();
         }
     }
 }
