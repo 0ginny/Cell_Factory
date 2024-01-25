@@ -44,7 +44,7 @@
             // 
             // lbevent
             // 
-            lbevent.Font = new Font("맑은 고딕", 8F);
+            lbevent.Font = new Font("함초롬바탕", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 129);
             lbevent.Location = new Point(20, 31);
             lbevent.Name = "lbevent";
             lbevent.Size = new Size(140, 108);
@@ -60,6 +60,7 @@
             BackgroundImage = test_base.Properties.Resources.제목_없음;
             Controls.Add(lbevent);
             Controls.Add(lbdays);
+            Font = new Font("맑은 고딕", 9F, FontStyle.Regular, GraphicsUnit.Point, 129);
             Name = "UserControlDays";
             Size = new Size(183, 153);
             Load += UserControlDays_Load;
