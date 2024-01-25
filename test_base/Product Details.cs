@@ -173,17 +173,14 @@ namespace test_base
                 targetRowIndex++;
             }
 
+            // 색 변경 코드
             foreach (int target in  targetRowIndicesList)
             {
                 // DataGridViewCellStyle 객체를 만들어 배경색을 설정합니다.
-                dgv2.Rows[target].DefaultCellStyle.BackColor = Color.Yellow;
+                //dgv2.Rows[target].DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#FFCC99");
+                dgv2.Rows[target].DefaultCellStyle.BackColor = Color.BlanchedAlmond;
             }
-
-
             dgv2.ClearSelection();
-            
-
-            
         }
 
 

@@ -109,7 +109,7 @@
             label11.TabIndex = 14;
             label11.Text = "01";
             label11.TextAlign = ContentAlignment.MiddleCenter;
-            label11.Click += label11_Click;
+            //label11.Click += label11_Click;
             // 
             // label12
             // 
@@ -156,7 +156,7 @@
             splitContainer3.Size = new Size(1354, 862);
             splitContainer3.SplitterDistance = 795;
             splitContainer3.TabIndex = 0;
-            splitContainer3.SplitterMoved += splitContainer3_SplitterMoved;
+            //splitContainer3.SplitterMoved += splitContainer3_SplitterMoved;
             // 
             // daycontainer
             // 
@@ -177,7 +177,7 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1354, 63);
             flowLayoutPanel1.TabIndex = 13;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            //flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // btnnext
             // 
@@ -373,7 +373,7 @@
             splitContainer1.Size = new Size(1354, 948);
             splitContainer1.SplitterDistance = 53;
             splitContainer1.TabIndex = 12;
-            splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
+            //splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
             // panel9
             // 
@@ -404,7 +404,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 948F));
             tableLayoutPanel1.Size = new Size(1680, 1000);
             tableLayoutPanel1.TabIndex = 18;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+           // tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // Calendar_shipmen_status
             // 
