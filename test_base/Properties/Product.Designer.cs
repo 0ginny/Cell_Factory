@@ -101,6 +101,10 @@
             Column7 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             label5 = new Label();
+            stacking_id = new DataGridViewTextBoxColumn();
+            presure = new DataGridViewTextBoxColumn();
+            weld_temp = new DataGridViewTextBoxColumn();
+            cycle_Time = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -551,6 +555,7 @@
             dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             dataGridView2.ColumnHeadersHeight = 40;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { stacking_id, presure, weld_temp, cycle_Time });
             dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle16.BackColor = SystemColors.Window;
             dataGridViewCellStyle16.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
@@ -868,6 +873,30 @@
             label5.TabIndex = 1;
             label5.Text = "작업 예정";
             // 
+            // stacking_id
+            // 
+            stacking_id.HeaderText = "stacking id";
+            stacking_id.Name = "stacking_id";
+            stacking_id.ReadOnly = true;
+            // 
+            // presure
+            // 
+            presure.HeaderText = "프레스압력";
+            presure.Name = "presure";
+            presure.ReadOnly = true;
+            // 
+            // weld_temp
+            // 
+            weld_temp.HeaderText = "용접 온도";
+            weld_temp.Name = "weld_temp";
+            weld_temp.ReadOnly = true;
+            // 
+            // cycle_Time
+            // 
+            cycle_Time.HeaderText = "싸이클타임";
+            cycle_Time.Name = "cycle_Time";
+            cycle_Time.ReadOnly = true;
+            // 
             // Product
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -960,5 +989,9 @@
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn stacking_id;
+        private DataGridViewTextBoxColumn presure;
+        private DataGridViewTextBoxColumn weld_temp;
+        private DataGridViewTextBoxColumn cycle_Time;
     }
 }
