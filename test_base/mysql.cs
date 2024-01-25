@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace test_base
 {
@@ -135,6 +136,8 @@ namespace test_base
         public void fillDataGrid(string sql, DataGridView dgv)
         {
             dgv.DataSource = GetDataToTable(sql);
+
+            
         }
 
         public void fillDataChart(string sql, Chart chart)
@@ -147,5 +150,28 @@ namespace test_base
             chart1.DataSource = GetDataToTable(sql);
             chart2.DataSource = GetDataToTable(sql);
         }
+
+
+        public void fillDataGrid_for(string sql, DataGridView dgv , int data_num)
+        {
+            DataTable dt = GetDataToTable(sql);
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                // data_num 만큼 열 추가
+                object[] rowData = new object[data_num];
+                for (int i = 0; i < data_num; i++)
+                {
+                    rowData[i] = dr[i].ToString();
+                    Console.WriteLine(dr[i]);
+                }
+
+                // DataGridView에 행 추가
+                dgv.Rows.Add(rowData);
+            }
+
+            dgv.ClearSelection();
+        }
+
     }
 }

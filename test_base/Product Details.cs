@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +15,12 @@ namespace test_base
     internal class Product_Details
     {
         // mysql에 접속하기 위한 전역 변수
-        mysql mysql;
+        mysql my;
 
+        public Product_Details()
+        {
+            my = new mysql();
+        }
         /// <summary>
         /// 달력의 날짜를 선택시 선택한 날짜를 기준으로 >Stacking 데이터를 조회하여 그리드뷰에 출력
         /// </summary>
@@ -38,7 +43,7 @@ namespace test_base
                               ORDER BY A.stacking_Sttime DESC";
             */
 
-            mysql.fillDataGrid(query, dataGridView);
+            my.fillDataGrid(query, dataGridView);
         }
 
         /// <summary>
@@ -56,7 +61,70 @@ namespace test_base
             string query = $"SELECT lotid, test1,  FROM electrode_test WHERE stacking = '{selectedStacking}'";
             // lotid / 투입시각 input_time / 이물질 여부 contaminant / 표면 결함 여부 surface / 전압 voltage / 불량 여부 test1 / 불량 분류 시각 faulty_Cltime / stacking_id stacking / 층수 level / 스태킹 도착 시각 stacking_Artime
 
-            mysql.fillDataGrid(query, dataGridView);
+            my.fillDataGrid(query, dataGridView);
+        }
+
+
+
+        //----------------------------------영진
+
+        public string start_date { get; set; } = "2024-01-24";
+        public string end_date { get; set; } = "2024-02-24";
+
+        public static string FormatStringToDate(string tdrDate)
+        {
+            return DateTime.ParseExact(tdrDate, "yyyyMMdd", null).ToString("yyyy-MM-dd");
+        }
+
+
+
+        public void Plan_Order_list(DataGridView dgv)
+        {
+            string sql = $@"select 
+                            A.ord_id, 
+                            A.company, 
+                            B.prod_name, 
+                            A.ord_num,                             
+                            A.ord_time,
+                            A.d_date,
+                            A.plan_date
+                            from 
+                            (select * from orders where ord_fin_time is null and
+                            d_date between date('{start_date}') and date('{end_date}')+1)
+                             as A
+                            inner join product as B
+                            on A.prod_id = B.prod_id;";
+
+            //my.fillDataGrid(sql, dgv);
+            //DataTable dt = my.GetDataToTable(sql);
+
+            //foreach (DataRow row in dt.Rows)
+            //{
+            //    dgv.Rows.Add(row[0], row[1], row[2], row[3], row[4], FormatStringToDate(row[5].ToString()), FormatStringToDate(row[6].ToString()));
+            //}
+            my.fillDataGrid_for(sql, dgv,7);
+            dgv.ClearSelection();
+        }
+
+        public void Fin_Order_list(DataGridView dgv)
+        {
+            string sql = $@"select 
+                            A.ord_id, 
+                            A.company, 
+                            B.prod_name, 
+                            A.ord_num,                             
+                            A.d_date,
+                            A.ord_fin_time,
+                            A.leadtime
+                            from 
+                            (select * from orders where ord_fin_time is not null and
+                            d_date between date('{start_date}') and date('{end_date}')+1)
+                             as A
+                            inner join product as B
+                            on A.prod_id = B.prod_id;";
+            my.fillDataGrid_for(sql, dgv, 7);
+            dgv.ClearSelection();
+
         }
     }
 }

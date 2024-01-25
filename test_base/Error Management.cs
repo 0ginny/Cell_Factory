@@ -104,11 +104,14 @@ namespace test_base
 
 
         //--------------------------------------영진
-        public string cell_start_date = "2024-01-24";
-        public string cell_end_date = "2024-01-24";
+        public string cell_start_date { get; set; } = "2024-01-24";
+        public string cell_end_date { get; set; } = "2024-01-24";
 
 
-
+        /// <summary>
+        /// 셀에러 리스트를 보여주는 메서드
+        /// </summary>
+        /// <param name="dgv"></param>
         public void Cell_Error_list(DataGridView dgv)
         {
             string sql = $@"select 
@@ -159,6 +162,10 @@ namespace test_base
             dgv.ClearSelection();
         }
         
+        /// <summary>
+        /// 스택불량을 리스트에 보여주는 메서드
+        /// </summary>
+        /// <param name="dgv"></param>
         public void Stack_Error_list(DataGridView dgv)
         {
             string sql = $@"select 
@@ -199,9 +206,6 @@ namespace test_base
             }
             dgv.ClearSelection();
         }
-    
-
-
 
     }
 }
