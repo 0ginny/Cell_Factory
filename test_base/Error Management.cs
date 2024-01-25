@@ -158,6 +158,49 @@ namespace test_base
             }
             dgv.ClearSelection();
         }
+        
+        public void Stack_Error_list(DataGridView dgv)
+        {
+            string sql = $@"select 
+                        stacking_id,
+                        sta_err_cont,
+                        presure,
+                        weld_temp,
+                        fault_fin_time
+                        from stacking
+                        where 
+                        b_test2 = 1 and
+                        fault_fin_time between date('{cell_start_date}') and date('{cell_end_date}')+1;";
+
+
+            DataTable dt = my.GetDataToTable(sql);
+
+            // DataGridView에 데이터 추가
+            foreach (DataRow dr in dt.Rows)
+            {
+                string detail;
+                // 값에 따라 가공
+                switch (dr[1].ToString())
+                {
+                    case "프레스압 불량":
+                        detail = $"{dr[2]} bar";
+                        break;
+                    case "용접온도 불량":
+                        detail = $"{dr[3]} {"\u2103"}";
+                        break;
+                    // 다른 경우에 대한 추가적인 가공 로직을 여기에 추가할 수 있습니다.
+                    default:
+                        detail = $"{dr[2]} bar";
+                        break;
+                }
+
+                // DataGridView에 행 추가
+                dgv.Rows.Add(dr[0], dr[1], detail, dr[4]);
+            }
+            dgv.ClearSelection();
+        }
+    
+
 
 
     }

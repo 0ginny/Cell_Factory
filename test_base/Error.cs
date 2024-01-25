@@ -168,9 +168,6 @@ namespace test_base
             });
 
 
-
-            //---------------------------datagrid
-            err.Cell_Error_list(dgv_cell_error);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -195,9 +192,9 @@ namespace test_base
 
         private void Error_Load(object sender, EventArgs e)
         {
-            dgv_stacking_error.Rows.Add("온도", "1200", "10시 15분 42초");
-            dgv_stacking_error.Rows.Add("압력", "50", "11시 15분 42초");
-
+            //dgv_stacking_error.Rows.Add("온도", "1200", "10시 15분 42초");
+            //dgv_stacking_error.Rows.Add("압력", "50", "11시 15분 42초");
+            
             //dgv_cell_error.Rows.Add("이물질", "0.04", "09시 15분 42초");
             //dgv_cell_error.Rows.Add("전압", "4.2", "15시 15분 42초");
             //dgv_cell_error.Rows.Add("표면 결함", "0.12", "17시 15분 42초");
@@ -209,6 +206,12 @@ namespace test_base
             ApplyRoundedBorder(panel17, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
             ApplyRoundedBorder(button1, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
             ApplyRoundedBorder(button3, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+
+
+
+            //---------------------------datagrid
+            err.Cell_Error_list(dgv_cell_error);
+            err.Stack_Error_list(dgv_stacking_error);
 
         }
 
