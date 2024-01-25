@@ -20,13 +20,14 @@ namespace test_base
     {
         // 클래스 전역 선언
         DashBord_Class dash;
-
+        CSS css;
         public Dashboard()
         {
             InitializeComponent();
             Load += Dashboard_Load;
 
             circleProgressBar();
+            css = new CSS();
 
 
 
@@ -57,12 +58,12 @@ namespace test_base
             pictureBox2.Image = Properties.Resources.녹색_1단;
 
             // 이미 생성된 패널1에 둥근 테두리, 테두리 색상, 테두리 굵기 설정
-            ApplyRoundedBorder(panel1, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
-            ApplyRoundedBorder(panel2, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
-            ApplyRoundedBorder(panel3, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
-            ApplyRoundedBorder(panel4, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
-            ApplyRoundedBorder(panel5, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
-            ApplyRoundedBorder(panel6, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(panel1, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(panel2, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(panel3, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(panel4, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(panel5, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(panel6, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
 
             // 금일 발생 에러 리스트 표시
             dash.today_error_list(dataGridView1);
@@ -77,48 +78,7 @@ namespace test_base
             solidGauge1.ForeColor = ColorTranslator.FromHtml("#3C4E71");
         }
 
-        // 패널 라운드 설정(클래스 부탁함 ㅎㅎ ㅋㅋ ㅈㅅ;;)
-        private void ApplyRoundedBorder(Control control, int radius, Color borderColor, int borderSize)
-        {
-            // 컨트롤의 Paint 이벤트에 핸들러 추가
-            control.Paint += (sender, e) => DrawRoundedBorder(sender as Control, radius, borderColor, borderSize);
-
-            // GraphicsPath를 사용하여 둥근 경계를 만듭니다.
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, radius, radius, 180, 90); // 좌상단
-            path.AddArc(control.Width - radius, 0, radius, radius, 270, 90); // 우상단
-            path.AddArc(control.Width - radius, control.Height - radius, radius, radius, 0, 90); // 우하단
-            path.AddArc(0, control.Height - radius, radius, radius, 90, 90); // 좌하단
-            path.CloseAllFigures();
-
-            // 컨트롤에 경로를 설정하여 둥근 경계를 적용
-            control.Region = new Region(path);
-        }
-
-        // 둥근 테두리 및 테두리 그리기
-        private void DrawRoundedBorder(Control control, int radius, Color borderColor, int borderSize)
-        {
-            using (Pen borderPen = new Pen(borderColor, borderSize))
-            {
-                // Graphics 객체를 얻어와서 테두리를 그립니다.
-                using (Graphics g = control.CreateGraphics())
-                {
-                    g.DrawPath(borderPen, CreateRoundedRectanglePath(control.ClientRectangle, radius));
-                }
-            }
-        }
-
-        // 둥근 사각형 경로 생성
-        private GraphicsPath CreateRoundedRectanglePath(Rectangle bounds, int radius)
-        {
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(bounds.X, bounds.Y, radius, radius, 180, 90); // 좌상단
-            path.AddArc(bounds.Right - radius, bounds.Y, radius, radius, 270, 90); // 우상단
-            path.AddArc(bounds.Right - radius, bounds.Bottom - radius, radius, radius, 0, 90); // 우하단
-            path.AddArc(bounds.X, bounds.Bottom - radius, radius, radius, 90, 90); // 좌하단
-            path.CloseAllFigures();
-            return path;
-        }
+     
         private void circleProgressBar() { 
 
             // 불량내역, 생산량, 용접온도 출력 메서드 호출

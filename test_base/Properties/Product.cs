@@ -13,7 +13,7 @@ namespace test_base.Properties
     public partial class Product : Form
     {
         Product_Details pd;
-
+        CSS css;
         public Product()
         {
             InitializeComponent();
@@ -23,6 +23,17 @@ namespace test_base.Properties
             dataGridView1.ReadOnly = true; // DataGridView를 초기에 읽기 전용으로 설정
 
             pd = new Product_Details();
+            css = new CSS();
+
+            //패널 라운드
+            css.ApplyRoundedBorder(panel2, 20, ColorTranslator.FromHtml("#D1D9E7"), 2);
+            css.ApplyRoundedBorder(panel3, 20, ColorTranslator.FromHtml("#D1D9E7"), 2);
+            css.ApplyRoundedBorder(panel5, 20, ColorTranslator.FromHtml("#D1D9E7"), 2);
+            css.ApplyRoundedBorder(panel6, 20, ColorTranslator.FromHtml("#D1D9E7"), 2);
+            css.ApplyRoundedBorder(panel17, 20, ColorTranslator.FromHtml("#D1D9E7"), 2);
+            css.ApplyRoundedBorder(button1, 20, ColorTranslator.FromHtml("#D1D9E7"), 2);
+            css.ApplyRoundedBorder(button3, 20, ColorTranslator.FromHtml("#D1D9E7"), 2);
+
 
         }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Linq;
 using System.Text;
@@ -31,11 +32,7 @@ namespace test_base
 
         public CSS()
         {
-            //fontFileName = "Fonts/Pretendard-Light.otf";
-            //fontFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fontFileName);
-            //Console.WriteLine(fontFilePath);
 
-            //LoadExternalFont(fontFilePath);
         }
 
         private void LoadExternalFont(string fontFilePath)
@@ -81,13 +78,6 @@ namespace test_base
             // 새로운 폰트로 변경
             Font newFont = new Font("맑은 고딕", 9, FontStyle.Bold);
 
-            //// 기존 폰트 Dispose
-            //if (dataGridView.Font != null)
-            //{
-            //    dataGridView.Font.Dispose();
-            //}
-
-            // DataGridView의 폰트 설정
             dataGridView.Font = newFont;
         }
 
@@ -100,22 +90,6 @@ namespace test_base
             dataGridView.Columns[dataGridView.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
-        //public void SetColumnWidths(DataGridView dataGridView, params int[] columnWidthRatios)
-        //{
-        //    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-
-        //    if (columnWidthRatios.Length != dataGridView.Columns.Count)
-        //    {
-        //        throw new ArgumentException("The number of ratios must match the number of columns.");
-        //    }
-
-        //    float totalRatio = columnWidthRatios.Sum();
-
-        //    for (int i = 0; i < dataGridView.Columns.Count; i++)
-        //    {
-        //        dataGridView.Columns[i].Width = (int)((columnWidthRatios[i] / totalRatio) * dataGridView.ClientSize.Width);
-        //    }
-        //}
 
 
 
@@ -135,6 +109,49 @@ namespace test_base
             {
                 dataGridView.Columns[i].Width = (int)((columnWidthRatios[i] / totalRatio) * dataGridView.ClientSize.Width);
             }
+        }
+
+
+        public void ApplyRoundedBorder(Control control, int radius, Color borderColor, int borderSize)
+        {
+            // 컨트롤의 Paint 이벤트에 핸들러 추가
+            control.Paint += (sender, e) => DrawRoundedBorder(sender as Control, radius, borderColor, borderSize);
+
+            // GraphicsPath를 사용하여 둥근 경계를 만듭니다.
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90); // 좌상단
+            path.AddArc(control.Width - radius, 0, radius, radius, 270, 90); // 우상단
+            path.AddArc(control.Width - radius, control.Height - radius, radius, radius, 0, 90); // 우하단
+            path.AddArc(0, control.Height - radius, radius, radius, 90, 90); // 좌하단
+            path.CloseAllFigures();
+
+            // 컨트롤에 경로를 설정하여 둥근 경계를 적용
+            control.Region = new Region(path);
+        }
+
+        // 둥근 테두리 및 테두리 그리기
+        private void DrawRoundedBorder(Control control, int radius, Color borderColor, int borderSize)
+        {
+            using (Pen borderPen = new Pen(borderColor, borderSize))
+            {
+                // Graphics 객체를 얻어와서 테두리를 그립니다.
+                using (Graphics g = control.CreateGraphics())
+                {
+                    g.DrawPath(borderPen, CreateRoundedRectanglePath(control.ClientRectangle, radius));
+                }
+            }
+        }
+
+        // 둥근 사각형 경로 생성
+        private GraphicsPath CreateRoundedRectanglePath(Rectangle bounds, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(bounds.X, bounds.Y, radius, radius, 180, 90); // 좌상단
+            path.AddArc(bounds.Right - radius, bounds.Y, radius, radius, 270, 90); // 우상단
+            path.AddArc(bounds.Right - radius, bounds.Bottom - radius, radius, radius, 0, 90); // 우하단
+            path.AddArc(bounds.X, bounds.Bottom - radius, radius, radius, 90, 90); // 좌하단
+            path.CloseAllFigures();
+            return path;
         }
     }
 }

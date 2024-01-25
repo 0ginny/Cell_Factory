@@ -20,7 +20,7 @@ namespace test_base
     {
         // 클래스 전역 선언
         Error_Management err;
-
+        CSS css;
         public Error()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace test_base
 
             // 클래스 객체 생성
             err = new Error_Management();
-
+            css = new CSS();
             panel17.Visible = false;
 
 
@@ -192,20 +192,14 @@ namespace test_base
 
         private void Error_Load(object sender, EventArgs e)
         {
-            //dgv_stacking_error.Rows.Add("온도", "1200", "10시 15분 42초");
-            //dgv_stacking_error.Rows.Add("압력", "50", "11시 15분 42초");
-            
-            //dgv_cell_error.Rows.Add("이물질", "0.04", "09시 15분 42초");
-            //dgv_cell_error.Rows.Add("전압", "4.2", "15시 15분 42초");
-            //dgv_cell_error.Rows.Add("표면 결함", "0.12", "17시 15분 42초");
 
-            ApplyRoundedBorder(panel5, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
-            ApplyRoundedBorder(panel6, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
-            ApplyRoundedBorder(panel7, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
-            ApplyRoundedBorder(panel8, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
-            ApplyRoundedBorder(panel17, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
-            ApplyRoundedBorder(button1, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
-            ApplyRoundedBorder(button3, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(panel5, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(panel6, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(panel7, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(panel8, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(panel17, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(button1, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
+            css.ApplyRoundedBorder(button3, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
 
 
 
@@ -259,50 +253,7 @@ namespace test_base
         {
             panel17.Visible = false;
         }
-
-        //------------------------------------------------------round class
-        private void ApplyRoundedBorder(Control control, int radius, Color borderColor, int borderSize)
-        {
-            // 컨트롤의 Paint 이벤트에 핸들러 추가
-            control.Paint += (sender, e) => DrawRoundedBorder(sender as Control, radius, borderColor, borderSize);
-
-            // GraphicsPath를 사용하여 둥근 경계를 만듭니다.
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, radius, radius, 180, 90); // 좌상단
-            path.AddArc(control.Width - radius, 0, radius, radius, 270, 90); // 우상단
-            path.AddArc(control.Width - radius, control.Height - radius, radius, radius, 0, 90); // 우하단
-            path.AddArc(0, control.Height - radius, radius, radius, 90, 90); // 좌하단
-            path.CloseAllFigures();
-
-            // 컨트롤에 경로를 설정하여 둥근 경계를 적용
-            control.Region = new Region(path);
-        }
-
-        // 둥근 테두리 및 테두리 그리기
-        private void DrawRoundedBorder(Control control, int radius, Color borderColor, int borderSize)
-        {
-            using (Pen borderPen = new Pen(borderColor, borderSize))
-            {
-                // Graphics 객체를 얻어와서 테두리를 그립니다.
-                using (Graphics g = control.CreateGraphics())
-                {
-                    g.DrawPath(borderPen, CreateRoundedRectanglePath(control.ClientRectangle, radius));
-                }
-            }
-        }
-
-        // 둥근 사각형 경로 생성
-        private GraphicsPath CreateRoundedRectanglePath(Rectangle bounds, int radius)
-        {
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(bounds.X, bounds.Y, radius, radius, 180, 90); // 좌상단
-            path.AddArc(bounds.Right - radius, bounds.Y, radius, radius, 270, 90); // 우상단
-            path.AddArc(bounds.Right - radius, bounds.Bottom - radius, radius, radius, 0, 90); // 우하단
-            path.AddArc(bounds.X, bounds.Bottom - radius, radius, radius, 90, 90); // 좌하단
-            path.CloseAllFigures();
-            return path;
-        }
-        // ------------------------------------------round end
+        
         private void button3_Click(object sender, EventArgs e)// 날짜와 제품의 종류에 대한 불량 검색을 위한 버튼
         {
             // 선택한 날짜와 제품의 종류를 그리드뷰 2개, 차트 4개에 출력
