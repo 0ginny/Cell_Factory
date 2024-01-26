@@ -173,5 +173,12 @@ namespace test_base
             dgv.ClearSelection();
         }
 
+
+        public int GetNextID(string table, string id, int str_len)
+        {
+            string sql = $@"SELECT MAX(CAST(SUBSTRING({id}, {str_len+1}) AS SIGNED)) AS max_ord_id FROM {table};";
+            return Convert.ToInt32(GetDataToTable(sql).Rows[0][0]) + 1;
+        }
+
     }
 }

@@ -72,8 +72,8 @@ namespace test_base
 
         //----------------------------------영진
 
-        public string start_date { get; set; } = "2024-01-24";
-        public string end_date { get; set; } = "2024-02-24";
+        public string start_date { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
+        public string end_date { get; set; } =  DateTime.Now.ToString("yyyy-MM-dd");
 
         public static string FormatStringToDate(string tdrDate)
         {
@@ -212,7 +212,7 @@ namespace test_base
                 string voltage = dr["voltage"].ToString();
 
                 voltage = $"{voltage} V";
-                contain = $"{contain} %";
+                contain = $"{contain} ppm";
                 surface = surface + " μm";
 
 

@@ -30,8 +30,10 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             panel6 = new Panel();
+            dateTimePicker2 = new DateTimePicker();
             label7 = new Label();
             panel5 = new Panel();
+            dateTimePicker1 = new DateTimePicker();
             label6 = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -50,8 +52,6 @@
             button5 = new Button();
             button4 = new Button();
             crownContextMenuStrip1 = new ReaLTaiizor.Controls.CrownContextMenuStrip();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
             tableLayoutPanel1.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -98,6 +98,15 @@
             panel6.Size = new Size(253, 81);
             panel6.TabIndex = 3;
             // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.CalendarFont = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dateTimePicker2.Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dateTimePicker2.Location = new Point(19, 29);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(216, 29);
+            dateTimePicker2.TabIndex = 15;
+            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -118,6 +127,15 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(254, 100);
             panel5.TabIndex = 3;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CalendarFont = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dateTimePicker1.Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dateTimePicker1.Location = new Point(17, 46);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(216, 29);
+            dateTimePicker1.TabIndex = 14;
             // 
             // label6
             // 
@@ -244,7 +262,6 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(253, 100);
             panel4.TabIndex = 3;
-            panel4.Paint += panel4_Paint;
             // 
             // textBox2
             // 
@@ -291,6 +308,7 @@
             button5.TabIndex = 13;
             button5.Text = "확인";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -304,6 +322,7 @@
             button4.TabIndex = 12;
             button4.Text = "취소";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // crownContextMenuStrip1
             // 
@@ -311,24 +330,6 @@
             crownContextMenuStrip1.ForeColor = Color.FromArgb(220, 220, 220);
             crownContextMenuStrip1.Name = "crownContextMenuStrip1";
             crownContextMenuStrip1.Size = new Size(61, 4);
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.CalendarFont = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            dateTimePicker1.Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            dateTimePicker1.Location = new Point(17, 46);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(216, 29);
-            dateTimePicker1.TabIndex = 14;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.CalendarFont = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            dateTimePicker2.Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            dateTimePicker2.Location = new Point(19, 29);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(216, 29);
-            dateTimePicker2.TabIndex = 15;
             // 
             // AddOrder
             // 
@@ -339,7 +340,9 @@
             Controls.Add(tableLayoutPanel1);
             ForeColor = Color.FromArgb(235, 238, 244);
             Name = "AddOrder";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddOrder";
+            Load += AddOrder_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             panel6.ResumeLayout(false);

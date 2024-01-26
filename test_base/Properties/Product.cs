@@ -18,6 +18,7 @@ namespace test_base.Properties
         {
             InitializeComponent();
 
+            label2.Text = DateTime.Now.ToString("오늘 yyyy년 MM월 dd일");
 
             panel17.Visible = false;
             dataGridView1.ReadOnly = true; // DataGridView를 초기에 읽기 전용으로 설정
@@ -39,10 +40,10 @@ namespace test_base.Properties
 
         private void Product_Load_1(object sender, EventArgs e)
         {
-            
+
             //pd.Plan_Order_list(dataGridView1);
             //pd.Fin_Order_list(dataGridView3);
-            
+
         }
 
 
@@ -90,11 +91,15 @@ namespace test_base.Properties
 
         private void button6_Click(object sender, EventArgs e)
         {
-            // AddOrder 폼을 생성
-            AddOrder addOrderForm = new AddOrder();
 
-            // 현재 폼 위에 Modal로 열기
-            addOrderForm.ShowDialog();
+        }
+
+        private void AddOrderForm_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            pd.Plan_Order_list(dataGridView1);
+            pd.Fin_Order_list(dataGridView3);
+            dataGridView4.Rows.Clear();
+            dataGridView2.Rows.Clear();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -133,8 +138,22 @@ namespace test_base.Properties
         private void label_clear()
         {
             label10.Visible = false;
-            label9.Visible =  false;
+            label9.Visible = false;
             label8.Visible = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // AddOrder 폼을 생성
+            AddOrder addOrderForm = new AddOrder();
+            //addOrderForm.FormClosed += AddOrderForm_FormClosed;
+            // 현재 폼 위에 Modal로 열기
+            addOrderForm.ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

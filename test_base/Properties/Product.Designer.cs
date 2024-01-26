@@ -87,8 +87,6 @@
             cycle_Time = new DataGridViewTextBoxColumn();
             label4 = new Label();
             panel2 = new Panel();
-            button7 = new Button();
-            button6 = new Button();
             panel17 = new Panel();
             label8 = new Label();
             label9 = new Label();
@@ -207,6 +205,7 @@
             label2.Size = new Size(212, 15);
             label2.TabIndex = 1;
             label2.Text = "오늘 날자 표시 예시 2024년 1월 12일";
+            label2.Click += label2_Click;
             // 
             // button1
             // 
@@ -251,8 +250,9 @@
             button3.Name = "button3";
             button3.Size = new Size(86, 30);
             button3.TabIndex = 2;
-            button3.Text = "검색";
+            button3.Text = "추가";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -630,8 +630,6 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(button7);
-            panel2.Controls.Add(button6);
             panel2.Controls.Add(panel17);
             panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(label5);
@@ -641,31 +639,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1066, 443);
             panel2.TabIndex = 0;
-            // 
-            // button7
-            // 
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.ForeColor = Color.FromArgb(31, 107, 255);
-            button7.Location = new Point(967, 20);
-            button7.Name = "button7";
-            button7.Size = new Size(75, 23);
-            button7.TabIndex = 13;
-            button7.Text = "삭제";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.ForeColor = Color.FromArgb(31, 107, 255);
-            button6.Location = new Point(886, 20);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 23);
-            button6.TabIndex = 12;
-            button6.Text = "추가";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
             // 
             // panel17
             // 
@@ -1009,12 +982,10 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private Button button6;
         private DataGridViewTextBoxColumn stacking_id;
         private DataGridViewTextBoxColumn presure;
         private DataGridViewTextBoxColumn weld_temp;
         private DataGridViewTextBoxColumn cycle_Time;
-        private Button button7;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
