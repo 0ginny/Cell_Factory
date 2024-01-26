@@ -145,7 +145,6 @@
             splitContainer1.Size = new Size(1720, 1040);
             splitContainer1.SplitterDistance = 110;
             splitContainer1.TabIndex = 0;
-            splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
             // splitContainer2
             // 
@@ -693,6 +692,7 @@
             label8.Size = new Size(20, 20);
             label8.TabIndex = 14;
             label8.Text = "~";
+            label8.Visible = false;
             // 
             // label9
             // 
@@ -704,6 +704,7 @@
             label9.Size = new Size(100, 15);
             label9.TabIndex = 13;
             label9.Text = "2024년 1월 12일";
+            label9.Visible = false;
             // 
             // label10
             // 
@@ -715,6 +716,7 @@
             label10.Size = new Size(100, 15);
             label10.TabIndex = 12;
             label10.Text = "2024년 1월 12일";
+            label10.Visible = false;
             // 
             // button5
             // 
@@ -777,9 +779,6 @@
             hopeDatePicker1.Text = "hopeDatePicker1";
             hopeDatePicker1.ValueTextColor = Color.FromArgb(43, 133, 228);
             hopeDatePicker1.onDateChanged += hopeDatePicker1_onDateChanged;
-            hopeDatePicker1.VisibleChanged += hopeDatePicker1_ValueChanged;
-            hopeDatePicker1.Click += hopeDatePicker1_Click_1;
-            hopeDatePicker1.DataContextChanged += hopeDatePicker1_ValueChanged;
             // 
             // hopeDatePicker2
             // 
@@ -811,7 +810,6 @@
             hopeDatePicker2.Text = "hopeDatePicker2";
             hopeDatePicker2.ValueTextColor = Color.FromArgb(43, 133, 228);
             hopeDatePicker2.onDateChanged += hopeDatePicker2_onDateChanged;
-            hopeDatePicker2.Click += hopeDatePicker2_Click;
             // 
             // dataGridView1
             // 

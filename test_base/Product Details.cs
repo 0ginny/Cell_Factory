@@ -94,11 +94,12 @@ namespace test_base
                             A.plan_date
                             from 
                             (select * from orders where ord_fin_time is null and
-                            d_date between date('{start_date}') and date('{end_date}')+1)
+                            d_date between date('{start_date}') and DATE_ADD(DATE('{end_date}'), INTERVAL 1 DAY))
                              as A
                             inner join product as B
                             on A.prod_id = B.prod_id;";
 
+            Console.WriteLine(sql);
             //my.fillDataGrid(sql, dgv);
             //DataTable dt = my.GetDataToTable(sql);
 
@@ -106,26 +107,29 @@ namespace test_base
             //{
             //    dgv.Rows.Add(row[0], row[1], row[2], row[3], row[4], FormatStringToDate(row[5].ToString()), FormatStringToDate(row[6].ToString()));
             //}
+            dgv.Rows.Clear();
             my.fillDataGrid_for(sql, dgv,7);
             dgv.ClearSelection();
         }
 
         public void Fin_Order_list(DataGridView dgv)
         {
-            string sql = $@"select 
-                            A.ord_id, 
-                            A.company, 
-                            B.prod_name, 
-                            A.ord_num,                             
+            string sql = $@"SELECT
+                            A.ord_id,
+                            A.company,
+                            B.prod_name,
+                            A.ord_num,
                             A.d_date,
                             A.ord_fin_time,
                             A.leadtime
-                            from 
-                            (select * from orders where ord_fin_time is not null and
-                            d_date between date('{start_date}') and date('{end_date}')+1)
-                             as A
-                            inner join product as B
-                            on A.prod_id = B.prod_id;";
+                        FROM
+                            (SELECT * FROM orders WHERE ord_fin_time IS NOT NULL AND
+                            d_date BETWEEN DATE('{start_date}') AND DATE_ADD(DATE('{end_date}'), INTERVAL 1 DAY)) AS A
+                        INNER JOIN product AS B ON A.prod_id = B.prod_id;";
+
+            Console.WriteLine(sql);
+
+            dgv.Rows.Clear();
             my.fillDataGrid_for(sql, dgv, 7);
             dgv.ClearSelection();
 
