@@ -21,14 +21,23 @@ namespace test_base
         // 클래스 전역 선언
         DashBord_Class dash;
 
+        int pictureBox5Y = 200; // PictureBox5의 초기 Y 위치
+        System.Windows.Forms.Timer timer1; // System.Windows.Forms.Timer 사용
+        private int moveCount = 0;
+        private bool goingDown = true;
+
+        private int pictureBox1Y = 248; // pB_1stack의 초기 Y 위치
+        private int moveCountPB1 = 0;
+        private bool goingDownPB1 = true;
+        private System.Windows.Forms.Timer timerPB1;
+
         public Dashboard()
         {
             InitializeComponent();
+
             Load += Dashboard_Load;
 
             circleProgressBar();
-
-
 
             // 클래스 객체 생성
             dash = new DashBord_Class();
@@ -37,9 +46,19 @@ namespace test_base
             solidGauge1.From = 0;
             solidGauge1.To = 100;
             solidGauge1.Value = 50;
-            
+
             // 설비운전 라벨 설정
             label13.Visible = false;
+
+            // Timer 이벤트 핸들러 추가 --이미지
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Tick += Timer1_Tick;
+            timer1.Interval = 150;
+
+            // Timer 이벤트 핸들러 추가 --이미지1
+            timerPB1 = new System.Windows.Forms.Timer();
+            timerPB1.Tick += TimerPB1_Tick;
+            timerPB1.Interval = 150;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -119,23 +138,14 @@ namespace test_base
             path.CloseAllFigures();
             return path;
         }
-        private void circleProgressBar() { 
+        private void circleProgressBar()
+        {
 
             // 불량내역, 생산량, 용접온도 출력 메서드 호출
             // dash.Display(dataGridView1, chart1, chart2);
         }
 
-        private void SetHalfDoughnutChart()
-        {
-            
-        }
-
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer4_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -163,22 +173,6 @@ namespace test_base
             label13.Text = " 가동중";
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
-            //button2.BackColor = ColorTranslator.FromHtml("#EBBC00");
-            button3.BackColor = ColorTranslator.FromHtml("#1FC695");
-
-            // 선택한 제품의 텍스트를 저장
-            //dash.change_state(button2);
-
-            label13.Visible = true;
-            parrotCircleProgressBar1.IsAnimated = true;
-            // 버튼 클릭 시 Label13의 텍스트를 "가동중"으로 변경
-            label13.Text = " 가동중";
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -203,26 +197,82 @@ namespace test_base
             label13.Text = "  정지";
         }
 
-        
-        private void button4_Click(object sender, EventArgs e)
-        {
-            button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
-            //button2.BackColor = ColorTranslator.FromHtml("#FFCC00");
-            button3.BackColor = ColorTranslator.FromHtml("#1FC695");
-
-            // 발주제품, 수량 DB에 저장
-            //dash.send_order(textBox1);
-
-            label13.Visible = true;
-            parrotCircleProgressBar1.IsAnimated = false;
-            // 버튼 클릭 시 Label13의 텍스트를 "가동중"으로 변경
-            label13.Text = "  정지";
-
-        }
-        
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        // 이미지 처리
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            // Timer를 시작하기 전에 초기화
+            pictureBox5Y = 200;
+            pB_2stack.Location = new Point(600, pictureBox5Y);
+
+            // 이동 횟수 및 방향 초기화
+            moveCount = 0;
+            goingDown = true;
+
+            // Timer를 시작
+            timer1.Start();
+        }
+        //이미지 처리
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            // Timer 이벤트 핸들러
+
+            const int moveAmount = 5; // 이동량
+
+            // PictureBox5를 5씩 아래로 이동
+            pictureBox5Y += moveAmount;
+            pB_2stack.Location = new Point(600, pictureBox5Y);
+
+            // Timer 정지
+            if (pictureBox5Y >= 225)
+            {
+                timer1.Stop();
+            }
+        }
+
+        private void Bt_1stack_Click(object sender, EventArgs e)
+        {
+            // Timer를 시작하기 전에 초기화
+            pictureBox1Y = 248;
+            pB_1stack.Location = new Point(600, pictureBox1Y);
+
+            // 이동 횟수 및 방향 초기화
+            moveCountPB1 = 0;
+            goingDownPB1 = true;
+
+            // Timer를 시작
+            timerPB1.Start();
+        }
+
+        private void TimerPB1_Tick(object sender, EventArgs e)
+        {
+            const int moveAmount = 5; // 이동량
+
+            // PictureBox1을 5씩 아래 또는 위로 이동
+            if (goingDownPB1)
+            {
+                pictureBox1Y += moveAmount;
+                pB_1stack.Location = new Point(600, pictureBox1Y);
+            }
+            else
+            {
+                pictureBox1Y -= moveAmount;
+                pB_1stack.Location = new Point(600, pictureBox1Y);
+            }
+
+            // Timer 정지
+            if (pictureBox1Y >= 273)
+            {
+                timerPB1.Stop();
+            }
+            else if (pictureBox1Y <= 248)
+            {
+                goingDownPB1 = true;
+                moveCountPB1++;
+            }
         }
     }
 }
