@@ -69,6 +69,8 @@
             dataGridViewTextBoxColumn2 = new DataGridViewImageColumn();
             noderedConnectBindingSource = new BindingSource(components);
             panel4 = new Panel();
+            pB_1stack = new PictureBox();
+            Bt_1stack = new Button();
             Bt_2stack = new Button();
             pB_2stack = new PictureBox();
             label8 = new Label();
@@ -86,8 +88,7 @@
             panel6 = new Panel();
             label6 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
-            Bt_1stack = new Button();
-            pB_1stack = new PictureBox();
+            pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -101,13 +102,14 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)noderedConnectBindingSource).BeginInit();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pB_1stack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pB_2stack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel5.SuspendLayout();
             panel10.SuspendLayout();
             panel6.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pB_1stack).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -484,6 +486,7 @@
             // panel4
             // 
             panel4.BackColor = Color.White;
+            panel4.Controls.Add(pictureBox3);
             panel4.Controls.Add(pB_1stack);
             panel4.Controls.Add(Bt_1stack);
             panel4.Controls.Add(Bt_2stack);
@@ -499,6 +502,27 @@
             panel4.Size = new Size(770, 384);
             panel4.TabIndex = 4;
             // 
+            // pB_1stack
+            // 
+            pB_1stack.BackColor = Color.Transparent;
+            pB_1stack.BackgroundImage = Properties.Resources.C_cell_stacking;
+            pB_1stack.Location = new Point(271, 264);
+            pB_1stack.Margin = new Padding(0);
+            pB_1stack.Name = "pB_1stack";
+            pB_1stack.Size = new Size(103, 53);
+            pB_1stack.TabIndex = 7;
+            pB_1stack.TabStop = false;
+            // 
+            // Bt_1stack
+            // 
+            Bt_1stack.Location = new Point(560, 16);
+            Bt_1stack.Name = "Bt_1stack";
+            Bt_1stack.Size = new Size(75, 23);
+            Bt_1stack.TabIndex = 6;
+            Bt_1stack.Text = "1stack";
+            Bt_1stack.UseVisualStyleBackColor = true;
+            Bt_1stack.Click += Bt_1stack_Click;
+            // 
             // Bt_2stack
             // 
             Bt_2stack.Location = new Point(661, 16);
@@ -512,8 +536,8 @@
             // pB_2stack
             // 
             pB_2stack.BackColor = Color.Transparent;
-            pB_2stack.BackgroundImage = Properties.Resources.A_cell_stacking;
-            pB_2stack.Location = new Point(600, 200);
+            pB_2stack.BackgroundImage = Properties.Resources.C_cell_stacking;
+            pB_2stack.Location = new Point(400, 200);
             pB_2stack.Margin = new Padding(0);
             pB_2stack.Name = "pB_2stack";
             pB_2stack.Size = new Size(103, 53);
@@ -707,26 +731,16 @@
             tableLayoutPanel2.Size = new Size(1720, 404);
             tableLayoutPanel2.TabIndex = 1;
             // 
-            // Bt_1stack
+            // pictureBox3
             // 
-            Bt_1stack.Location = new Point(560, 16);
-            Bt_1stack.Name = "Bt_1stack";
-            Bt_1stack.Size = new Size(75, 23);
-            Bt_1stack.TabIndex = 6;
-            Bt_1stack.Text = "1stack";
-            Bt_1stack.UseVisualStyleBackColor = true;
-            Bt_1stack.Click += Bt_1stack_Click;
-            // 
-            // pB_1stack
-            // 
-            pB_1stack.BackColor = Color.Transparent;
-            pB_1stack.BackgroundImage = Properties.Resources.A_cell_stacking;
-            pB_1stack.Location = new Point(600, 248);
-            pB_1stack.Margin = new Padding(0);
-            pB_1stack.Name = "pB_1stack";
-            pB_1stack.Size = new Size(103, 53);
-            pB_1stack.TabIndex = 7;
-            pB_1stack.TabStop = false;
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BackgroundImage = Properties.Resources.C_cell_stacking;
+            pictureBox3.Location = new Point(600, 147);
+            pictureBox3.Margin = new Padding(0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(103, 53);
+            pictureBox3.TabIndex = 8;
+            pictureBox3.TabStop = false;
             // 
             // Dashboard
             // 
@@ -757,6 +771,7 @@
             ((System.ComponentModel.ISupportInitialize)noderedConnectBindingSource).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pB_1stack).EndInit();
             ((System.ComponentModel.ISupportInitialize)pB_2stack).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel5.ResumeLayout(false);
@@ -766,7 +781,7 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pB_1stack).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -818,5 +833,6 @@
         private Button Bt_2stack;
         private PictureBox pB_1stack;
         private Button Bt_1stack;
+        private PictureBox pictureBox3;
     }
 }
