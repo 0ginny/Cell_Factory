@@ -44,7 +44,7 @@ namespace test_base
             mqtt = new MQTT();
 
             //mqtt 구독 시작
-            mqtt.SubscribeToTopic(subscribe_topic);
+            //mqtt.SubscribeToTopic(subscribe_topic);
             // MQTT 수신 이벤트 핸들러 등록, 미 등록시 수신 이벤트 미 처리 : textbox에 메세지가 출력되지 않음
             mqtt.MessageReceived += Mqtt_MessageReceived;
 
