@@ -81,8 +81,13 @@
             label6 = new Label();
             panel3 = new Panel();
             dataGridView2 = new DataGridView();
+            stacking_id = new DataGridViewTextBoxColumn();
+            presure = new DataGridViewTextBoxColumn();
+            weld_temp = new DataGridViewTextBoxColumn();
+            cycle_Time = new DataGridViewTextBoxColumn();
             label4 = new Label();
             panel2 = new Panel();
+            button7 = new Button();
             button6 = new Button();
             panel17 = new Panel();
             label8 = new Label();
@@ -101,10 +106,6 @@
             Column7 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             label5 = new Label();
-            stacking_id = new DataGridViewTextBoxColumn();
-            presure = new DataGridViewTextBoxColumn();
-            weld_temp = new DataGridViewTextBoxColumn();
-            cycle_Time = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -195,14 +196,14 @@
             label3.ForeColor = Color.FromArgb(134, 139, 150);
             label3.Location = new Point(201, 32);
             label3.Name = "label3";
-            label3.Size = new Size(56, 15);
+            label3.Size = new Size(55, 15);
             label3.TabIndex = 2;
-            label3.Text = "LOT 검색";
+            label3.Text = "주문관리";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(240, 89);
+            label2.Location = new Point(127, 92);
             label2.Name = "label2";
             label2.Size = new Size(212, 15);
             label2.TabIndex = 1;
@@ -410,7 +411,6 @@
             dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(31, 107, 255);
             dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView3.BackgroundColor = Color.White;
             dataGridView3.BorderStyle = BorderStyle.None;
@@ -463,48 +463,55 @@
             dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.NullValue = null;
             dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewTextBoxColumn4.HeaderText = "주문코드";
+            dataGridViewTextBoxColumn4.HeaderText = "    주문코드";
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             dataGridViewTextBoxColumn4.ReadOnly = true;
             dataGridViewTextBoxColumn4.Resizable = DataGridViewTriState.True;
+            dataGridViewTextBoxColumn4.Width = 126;
             // 
             // dataGridViewTextBoxColumn5
             // 
-            dataGridViewTextBoxColumn5.HeaderText = "회사";
+            dataGridViewTextBoxColumn5.HeaderText = "    회사";
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             dataGridViewTextBoxColumn5.ReadOnly = true;
+            dataGridViewTextBoxColumn5.Width = 126;
             // 
             // dataGridViewTextBoxColumn6
             // 
-            dataGridViewTextBoxColumn6.HeaderText = "제품";
+            dataGridViewTextBoxColumn6.HeaderText = "    제품";
             dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             dataGridViewTextBoxColumn6.ReadOnly = true;
+            dataGridViewTextBoxColumn6.Width = 126;
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewTextBoxColumn7.HeaderText = "수량";
+            dataGridViewTextBoxColumn7.HeaderText = "  수량";
             dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             dataGridViewTextBoxColumn7.ReadOnly = true;
+            dataGridViewTextBoxColumn7.Width = 70;
             // 
             // dataGridViewTextBoxColumn8
             // 
-            dataGridViewTextBoxColumn8.HeaderText = "납기";
+            dataGridViewTextBoxColumn8.HeaderText = "    납기";
             dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             dataGridViewTextBoxColumn8.ReadOnly = true;
+            dataGridViewTextBoxColumn8.Width = 190;
             // 
             // dataGridViewTextBoxColumn9
             // 
-            dataGridViewTextBoxColumn9.HeaderText = "완료시간";
+            dataGridViewTextBoxColumn9.HeaderText = "    완료시간";
             dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             dataGridViewTextBoxColumn9.ReadOnly = true;
+            dataGridViewTextBoxColumn9.Width = 190;
             // 
             // dataGridViewTextBoxColumn10
             // 
             dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewTextBoxColumn10.HeaderText = "리드타임";
+            dataGridViewTextBoxColumn10.HeaderText = "    리드타임";
             dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             dataGridViewTextBoxColumn10.ReadOnly = true;
+            dataGridViewTextBoxColumn10.Width = 190;
             // 
             // label6
             // 
@@ -587,6 +594,30 @@
             dataGridView2.TabIndex = 7;
             dataGridView2.CellDoubleClick += dataGridView2_CellDoubleClick;
             // 
+            // stacking_id
+            // 
+            stacking_id.HeaderText = "stacking id";
+            stacking_id.Name = "stacking_id";
+            stacking_id.ReadOnly = true;
+            // 
+            // presure
+            // 
+            presure.HeaderText = "프레스압력";
+            presure.Name = "presure";
+            presure.ReadOnly = true;
+            // 
+            // weld_temp
+            // 
+            weld_temp.HeaderText = "용접 온도";
+            weld_temp.Name = "weld_temp";
+            weld_temp.ReadOnly = true;
+            // 
+            // cycle_Time
+            // 
+            cycle_Time.HeaderText = "싸이클타임";
+            cycle_Time.Name = "cycle_Time";
+            cycle_Time.ReadOnly = true;
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -600,6 +631,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(button7);
             panel2.Controls.Add(button6);
             panel2.Controls.Add(panel17);
             panel2.Controls.Add(dataGridView1);
@@ -611,16 +643,28 @@
             panel2.Size = new Size(1066, 443);
             panel2.TabIndex = 0;
             // 
+            // button7
+            // 
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.ForeColor = Color.FromArgb(31, 107, 255);
+            button7.Location = new Point(967, 20);
+            button7.Name = "button7";
+            button7.Size = new Size(75, 23);
+            button7.TabIndex = 13;
+            button7.Text = "삭제";
+            button7.UseVisualStyleBackColor = true;
+            // 
             // button6
             // 
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.ForeColor = Color.FromArgb(31, 107, 255);
-            button6.Location = new Point(964, 20);
+            button6.Location = new Point(886, 20);
             button6.Name = "button6";
             button6.Size = new Size(75, 23);
             button6.TabIndex = 12;
-            button6.Text = "수정";
+            button6.Text = "추가";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
@@ -707,7 +751,7 @@
             // 
             hopeDatePicker1.BackColor = Color.White;
             hopeDatePicker1.BorderColor = Color.FromArgb(220, 223, 230);
-            hopeDatePicker1.Date = new DateTime(2024, 1, 22, 0, 0, 0, 0);
+            hopeDatePicker1.Date = new DateTime(2024, 1, 28, 0, 0, 0, 0);
             hopeDatePicker1.DayNames = "MTWTFSS";
             hopeDatePicker1.DaysTextColor = Color.FromArgb(96, 98, 102);
             hopeDatePicker1.DayTextColorA = Color.FromArgb(48, 49, 51);
@@ -732,7 +776,10 @@
             hopeDatePicker1.TabIndex = 6;
             hopeDatePicker1.Text = "hopeDatePicker1";
             hopeDatePicker1.ValueTextColor = Color.FromArgb(43, 133, 228);
+            hopeDatePicker1.onDateChanged += hopeDatePicker1_onDateChanged;
+            hopeDatePicker1.VisibleChanged += hopeDatePicker1_ValueChanged;
             hopeDatePicker1.Click += hopeDatePicker1_Click_1;
+            hopeDatePicker1.DataContextChanged += hopeDatePicker1_ValueChanged;
             // 
             // hopeDatePicker2
             // 
@@ -763,6 +810,7 @@
             hopeDatePicker2.TabIndex = 9;
             hopeDatePicker2.Text = "hopeDatePicker2";
             hopeDatePicker2.ValueTextColor = Color.FromArgb(43, 133, 228);
+            hopeDatePicker2.onDateChanged += hopeDatePicker2_onDateChanged;
             hopeDatePicker2.Click += hopeDatePicker2_Click;
             // 
             // dataGridView1
@@ -776,7 +824,6 @@
             dataGridViewCellStyle18.SelectionForeColor = Color.FromArgb(31, 107, 255);
             dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.BorderStyle = BorderStyle.None;
@@ -827,41 +874,55 @@
             dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle20.NullValue = null;
             Column1.DefaultCellStyle = dataGridViewCellStyle20;
-            Column1.HeaderText = "주문코드";
+            Column1.FillWeight = 58.9487534F;
+            Column1.HeaderText = "    주문코드";
             Column1.Name = "Column1";
             Column1.Resizable = DataGridViewTriState.True;
+            Column1.Width = 126;
             // 
             // Column4
             // 
-            Column4.HeaderText = "회사";
+            Column4.FillWeight = 9.530048F;
+            Column4.HeaderText = "    회사";
             Column4.Name = "Column4";
+            Column4.Width = 126;
             // 
             // Column5
             // 
-            Column5.HeaderText = "제품";
+            Column5.FillWeight = 9.530048F;
+            Column5.HeaderText = "    제품";
             Column5.Name = "Column5";
+            Column5.Width = 126;
             // 
             // Column6
             // 
-            Column6.HeaderText = "수량";
+            Column6.FillWeight = 9.530048F;
+            Column6.HeaderText = "  수량";
             Column6.Name = "Column6";
+            Column6.Width = 70;
             // 
             // Column8
             // 
-            Column8.HeaderText = "주문시각";
+            Column8.FillWeight = 9.530048F;
+            Column8.HeaderText = "    주문시각";
             Column8.Name = "Column8";
+            Column8.Width = 190;
             // 
             // Column7
             // 
-            Column7.HeaderText = "납기일";
+            Column7.FillWeight = 9.530048F;
+            Column7.HeaderText = "    납기일";
             Column7.Name = "Column7";
+            Column7.Width = 190;
             // 
             // Column2
             // 
             dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleCenter;
             Column2.DefaultCellStyle = dataGridViewCellStyle21;
-            Column2.HeaderText = "착수예정일";
+            Column2.FillWeight = 593.401F;
+            Column2.HeaderText = "    착수예정일";
             Column2.Name = "Column2";
+            Column2.Width = 190;
             // 
             // label5
             // 
@@ -872,30 +933,6 @@
             label5.Size = new Size(95, 25);
             label5.TabIndex = 1;
             label5.Text = "작업 예정";
-            // 
-            // stacking_id
-            // 
-            stacking_id.HeaderText = "stacking id";
-            stacking_id.Name = "stacking_id";
-            stacking_id.ReadOnly = true;
-            // 
-            // presure
-            // 
-            presure.HeaderText = "프레스압력";
-            presure.Name = "presure";
-            presure.ReadOnly = true;
-            // 
-            // weld_temp
-            // 
-            weld_temp.HeaderText = "용접 온도";
-            weld_temp.Name = "weld_temp";
-            weld_temp.ReadOnly = true;
-            // 
-            // cycle_Time
-            // 
-            cycle_Time.HeaderText = "싸이클타임";
-            cycle_Time.Name = "cycle_Time";
-            cycle_Time.ReadOnly = true;
             // 
             // Product
             // 
@@ -974,14 +1011,12 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private Button button6;
+        private DataGridViewTextBoxColumn stacking_id;
+        private DataGridViewTextBoxColumn presure;
+        private DataGridViewTextBoxColumn weld_temp;
+        private DataGridViewTextBoxColumn cycle_Time;
+        private Button button7;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
@@ -989,9 +1024,12 @@
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn stacking_id;
-        private DataGridViewTextBoxColumn presure;
-        private DataGridViewTextBoxColumn weld_temp;
-        private DataGridViewTextBoxColumn cycle_Time;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
     }
 }

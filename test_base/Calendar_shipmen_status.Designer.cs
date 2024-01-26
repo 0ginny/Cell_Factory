@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label9 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calendar_shipmen_status));
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
@@ -36,6 +36,8 @@
             splitContainer3 = new SplitContainer();
             daycontainer = new FlowLayoutPanel();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            panel8 = new Panel();
+            panel10 = new Panel();
             btnnext = new Button();
             btnprevious = new Button();
             panel1 = new Panel();
@@ -54,6 +56,7 @@
             label2 = new Label();
             splitContainer1 = new SplitContainer();
             panel9 = new Panel();
+            panel11 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel2.SuspendLayout();
@@ -78,21 +81,12 @@
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(135, 679);
-            label9.Name = "label9";
-            label9.Size = new Size(55, 15);
-            label9.TabIndex = 16;
-            label9.Text = "공지사항";
-            // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("맑은 고딕", 18F, FontStyle.Regular, GraphicsUnit.Point, 129);
             label10.ForeColor = Color.FromArgb(60, 78, 113);
-            label10.Location = new Point(141, 344);
+            label10.Location = new Point(134, 280);
             label10.Name = "label10";
             label10.Size = new Size(49, 32);
             label10.TabIndex = 15;
@@ -103,25 +97,24 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("맑은 고딕", 90F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label11.Location = new Point(69, 174);
+            label11.Location = new Point(62, 110);
             label11.Name = "label11";
             label11.Size = new Size(207, 159);
             label11.TabIndex = 14;
             label11.Text = "01";
             label11.TextAlign = ContentAlignment.MiddleCenter;
-            //label11.Click += label11_Click;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Dock = DockStyle.Fill;
             label12.Font = new Font("맑은 고딕", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label12.Location = new Point(0, 0);
-            label12.Margin = new Padding(0);
+            label12.Location = new Point(20, 20);
+            label12.Margin = new Padding(20, 20, 0, 0);
             label12.Name = "label12";
-            label12.Size = new Size(326, 52);
+            label12.Size = new Size(306, 52);
             label12.TabIndex = 13;
-            label12.Text = "Calinder";
+            label12.Text = "Calendar";
             // 
             // splitContainer2
             // 
@@ -134,7 +127,7 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(splitContainer3);
-            splitContainer2.Size = new Size(1354, 891);
+            splitContainer2.Size = new Size(1374, 891);
             splitContainer2.SplitterDistance = 25;
             splitContainer2.TabIndex = 0;
             // 
@@ -153,10 +146,9 @@
             // splitContainer3.Panel2
             // 
             splitContainer3.Panel2.Controls.Add(flowLayoutPanel1);
-            splitContainer3.Size = new Size(1354, 862);
+            splitContainer3.Size = new Size(1374, 862);
             splitContainer3.SplitterDistance = 795;
             splitContainer3.TabIndex = 0;
-            //splitContainer3.SplitterMoved += splitContainer3_SplitterMoved;
             // 
             // daycontainer
             // 
@@ -164,41 +156,64 @@
             daycontainer.Location = new Point(0, 0);
             daycontainer.Margin = new Padding(0);
             daycontainer.Name = "daycontainer";
-            daycontainer.Size = new Size(1354, 795);
+            daycontainer.Size = new Size(1374, 795);
             daycontainer.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(btnnext);
-            flowLayoutPanel1.Controls.Add(btnprevious);
+            flowLayoutPanel1.Controls.Add(panel8);
+            flowLayoutPanel1.Controls.Add(panel10);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.FlowDirection = FlowDirection.RightToLeft;
             flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Margin = new Padding(0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1354, 63);
+            flowLayoutPanel1.Size = new Size(1374, 63);
             flowLayoutPanel1.TabIndex = 13;
-            //flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint_1;
+            // 
+            // panel8
+            // 
+            panel8.Location = new Point(1299, 3);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(72, 30);
+            panel8.TabIndex = 17;
+            // 
+            // panel10
+            // 
+            panel10.Location = new Point(1192, 3);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(101, 30);
+            panel10.TabIndex = 18;
             // 
             // btnnext
             // 
-            btnnext.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
-            btnnext.Location = new Point(1251, 3);
+            btnnext.BackColor = Color.White;
+            btnnext.FlatAppearance.BorderSize = 0;
+            btnnext.FlatStyle = FlatStyle.Flat;
+            btnnext.Font = new Font("맑은 고딕", 48F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnnext.ForeColor = Color.FromArgb(31, 107, 255);
+            btnnext.Location = new Point(235, 140);
             btnnext.Name = "btnnext";
-            btnnext.Size = new Size(100, 33);
+            btnnext.Size = new Size(61, 101);
             btnnext.TabIndex = 1;
-            btnnext.Text = "Next";
-            btnnext.UseVisualStyleBackColor = true;
+            btnnext.Text = ">";
+            btnnext.UseVisualStyleBackColor = false;
             btnnext.Click += btnnext_Click;
             // 
             // btnprevious
             // 
-            btnprevious.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
-            btnprevious.Location = new Point(1145, 3);
+            btnprevious.BackColor = Color.White;
+            btnprevious.FlatAppearance.BorderSize = 0;
+            btnprevious.FlatStyle = FlatStyle.Flat;
+            btnprevious.Font = new Font("맑은 고딕", 48F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnprevious.ForeColor = Color.FromArgb(31, 107, 255);
+            btnprevious.Location = new Point(20, 140);
             btnprevious.Name = "btnprevious";
-            btnprevious.Size = new Size(100, 33);
+            btnprevious.Size = new Size(61, 101);
             btnprevious.TabIndex = 2;
-            btnprevious.Text = "Previous";
-            btnprevious.UseVisualStyleBackColor = true;
+            btnprevious.Text = "<";
+            btnprevious.UseVisualStyleBackColor = false;
             btnprevious.Click += btnprevious_Click;
             // 
             // panel1
@@ -334,7 +349,7 @@
             panel7.Location = new Point(1140, 0);
             panel7.Margin = new Padding(0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(214, 53);
+            panel7.Size = new Size(234, 53);
             panel7.TabIndex = 19;
             // 
             // label2
@@ -352,7 +367,7 @@
             // 
             splitContainer1.BackColor = Color.White;
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(326, 52);
+            splitContainer1.Location = new Point(326, 72);
             splitContainer1.Margin = new Padding(0);
             splitContainer1.Name = "splitContainer1";
             splitContainer1.Orientation = Orientation.Horizontal;
@@ -370,23 +385,32 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(1354, 948);
+            splitContainer1.Size = new Size(1374, 948);
             splitContainer1.SplitterDistance = 53;
             splitContainer1.TabIndex = 12;
-            //splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
             // panel9
             // 
             panel9.BackColor = Color.White;
+            panel9.Controls.Add(panel11);
             panel9.Controls.Add(label10);
-            panel9.Controls.Add(label9);
+            panel9.Controls.Add(btnnext);
+            panel9.Controls.Add(btnprevious);
             panel9.Controls.Add(label11);
             panel9.Dock = DockStyle.Fill;
-            panel9.Location = new Point(0, 52);
-            panel9.Margin = new Padding(0);
+            panel9.Location = new Point(20, 72);
+            panel9.Margin = new Padding(20, 0, 0, 0);
             panel9.Name = "panel9";
-            panel9.Size = new Size(326, 948);
+            panel9.Size = new Size(306, 948);
             panel9.TabIndex = 1;
+            // 
+            // panel11
+            // 
+            panel11.BackgroundImage = (Image)resources.GetObject("panel11.BackgroundImage");
+            panel11.Location = new Point(40, 599);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(222, 296);
+            panel11.TabIndex = 17;
             // 
             // tableLayoutPanel1
             // 
@@ -396,15 +420,15 @@
             tableLayoutPanel1.Controls.Add(panel9, 0, 1);
             tableLayoutPanel1.Controls.Add(splitContainer1, 1, 1);
             tableLayoutPanel1.Controls.Add(label12, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(20, 20);
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 948F));
-            tableLayoutPanel1.Size = new Size(1680, 1000);
+            tableLayoutPanel1.Size = new Size(1700, 1020);
             tableLayoutPanel1.TabIndex = 18;
-           // tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint_1;
             // 
             // Calendar_shipmen_status
             // 
@@ -452,7 +476,6 @@
         }
 
         #endregion
-        private Label label9;
         private Label label10;
         private Label label11;
         private Label label12;
@@ -479,5 +502,8 @@
         private Label label2;
         private Panel panel9;
         private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel8;
+        private Panel panel10;
+        private Panel panel11;
     }
 }

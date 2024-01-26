@@ -45,12 +45,14 @@
             label3 = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
             panel4 = new Panel();
+            label4 = new Label();
             contextMenuStrip2 = new ContextMenuStrip(components);
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -226,7 +228,7 @@
             button4.Name = "button4";
             button4.Size = new Size(200, 46);
             button4.TabIndex = 7;
-            button4.Text = "         Calinder";
+            button4.Text = "         Calendar";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
@@ -259,11 +261,24 @@
             // 
             // panel4
             // 
+            panel4.BackgroundImage = (Image)resources.GetObject("panel4.BackgroundImage");
+            panel4.Controls.Add(label4);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(200, 50);
             panel4.Name = "panel4";
             panel4.Size = new Size(1720, 1011);
             panel4.TabIndex = 2;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("맑은 고딕", 72F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            label4.ForeColor = Color.FromArgb(109, 133, 178);
+            label4.Location = new Point(585, 622);
+            label4.Name = "label4";
+            label4.Size = new Size(532, 128);
+            label4.TabIndex = 0;
+            label4.Text = "(주) PONG";
             // 
             // contextMenuStrip2
             // 
@@ -291,6 +306,8 @@
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -312,5 +329,6 @@
         private Panel panel5;
         private ContextMenuStrip contextMenuStrip2;
         private ReaLTaiizor.Controls.MetroControlBox metroControlBox1;
+        private Label label4;
     }
 }

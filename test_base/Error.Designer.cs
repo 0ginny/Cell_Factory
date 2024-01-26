@@ -157,7 +157,7 @@
             comboBox1.Font = new Font("맑은 고딕", 12F);
             comboBox1.ForeColor = Color.FromArgb(60, 78, 113);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(248, 76);
+            comboBox1.Location = new Point(134, 76);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(86, 29);
             comboBox1.TabIndex = 3;
@@ -169,14 +169,14 @@
             label3.ForeColor = Color.FromArgb(134, 139, 150);
             label3.Location = new Point(262, 33);
             label3.Name = "label3";
-            label3.Size = new Size(83, 15);
+            label3.Size = new Size(99, 15);
             label3.TabIndex = 2;
-            label3.Text = "간단한 코멘트";
+            label3.Text = "공정별 에러 내역";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(353, 87);
+            label2.Location = new Point(245, 87);
             label2.Name = "label2";
             label2.Size = new Size(212, 15);
             label2.TabIndex = 1;
@@ -411,7 +411,7 @@
             hopeDatePicker1.TabIndex = 6;
             hopeDatePicker1.Text = "hopeDatePicker1";
             hopeDatePicker1.ValueTextColor = Color.FromArgb(43, 133, 228);
-            hopeDatePicker1.Click += hopeDatePicker1_Click;
+            hopeDatePicker1.onDateChanged += hopeDatePicker1_onDateChanged;
             // 
             // hopeDatePicker2
             // 
@@ -442,7 +442,7 @@
             hopeDatePicker2.TabIndex = 9;
             hopeDatePicker2.Text = "hopeDatePicker2";
             hopeDatePicker2.ValueTextColor = Color.FromArgb(43, 133, 228);
-            hopeDatePicker2.Click += hopeDatePicker2_Click;
+            hopeDatePicker2.onDateChanged += hopeDatePicker2_onDateChanged;
             // 
             // pieChart1
             // 
@@ -549,7 +549,10 @@
             // 
             // cell
             // 
-            cell.HeaderText = "셀";
+
+
+            cell.HeaderText = "   셀";
+
             cell.Name = "cell";
             cell.ReadOnly = true;
             // 
@@ -558,7 +561,8 @@
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.NullValue = null;
             dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewTextBoxColumn1.HeaderText = "불량원인";
+
+            dataGridViewTextBoxColumn1.HeaderText = "   불량원인";
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             dataGridViewTextBoxColumn1.ReadOnly = true;
             dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.True;
@@ -567,13 +571,17 @@
             // 
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewTextBoxColumn2.HeaderText = "상세정보";
+
+            dataGridViewTextBoxColumn2.HeaderText = "   상세정보";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // Column1
             // 
-            Column1.HeaderText = "불량발생시각";
+
+
+            Column1.HeaderText = "   불량발생시각";
+
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             // 
@@ -766,7 +774,8 @@
             // 
             // 스태킹
             // 
-            스태킹.HeaderText = "스태킹";
+
+            스태킹.HeaderText = "   스태킹";
             스태킹.Name = "스태킹";
             스태킹.ReadOnly = true;
             // 
@@ -775,7 +784,8 @@
             dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.NullValue = null;
             dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewTextBoxColumn3.HeaderText = "불량원인";
+
+            dataGridViewTextBoxColumn3.HeaderText = "   불량원인";
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             dataGridViewTextBoxColumn3.ReadOnly = true;
             dataGridViewTextBoxColumn3.Resizable = DataGridViewTriState.True;
@@ -784,13 +794,15 @@
             // 
             dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewTextBoxColumn4.HeaderText = "상세정보";
+
+            dataGridViewTextBoxColumn4.HeaderText = "   상세정보";
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // Column2
             // 
-            Column2.HeaderText = "불량발생시각";
+
+            Column2.HeaderText = "   불량발생시각";
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
             // 

@@ -33,11 +33,40 @@ namespace test_base
         string publish_topic = "publish_chn3";
         string subscribe_topic = "subscribe_chn3";
 
+        //1층 셀이동
+        private int pictureBox1Y = 238; // pB_1stack의 초기 Y 위치
+        private int moveCountPB1 = 0;
+        private bool goingDownPB1 = true;
+        private System.Windows.Forms.Timer timerPB1;
+        //2층 셀이동
+        int pictureBox5Y = 182; // PictureBox5의 초기 Y 위치
+        System.Windows.Forms.Timer timer1; // System.Windows.Forms.Timer 사용
+        private int moveCount = 0;
+        private bool goingDown = true;
+        //3층 셀이동
+        private int pictureBox3Y = 131; // pB_3stack의 초기 Y 위치
+        private int moveCountPB3 = 0;
+        private bool goingDownPB3 = true;
+        private System.Windows.Forms.Timer timerPB3;
+
+        //레이저 1층이동
+        private int pictureBoxLaserY = 297; // pB_laser의 초기 Y 위치
+        private int moveAmountLaser = 5;
+        private System.Windows.Forms.Timer timerLaser;
+
+        //레이저 2층 이동
+        private int pictureBoxLaserY1a = 257; // pB_laser의 초기 Y 위치
+        private int moveAmountLaser1a = 5;
+        private System.Windows.Forms.Timer timerLaser1a;
+
+        //레이저on/off
+        private bool laserImageToggle = false; // 이미지 토글 상태 변수
+
         public Dashboard()
         {
             InitializeComponent();
+
             Load += Dashboard_Load;
-            
             // 클래스 객체 생성
             dash = new DashBord_Class();
             css = new CSS();
@@ -52,9 +81,34 @@ namespace test_base
             solidGauge1.From = 0;
             solidGauge1.To = 100;
             solidGauge1.Value = 50;
-            
+
             // 설비운전 라벨 설정
             label13.Visible = false;
+
+            // Timer 이벤트 핸들러 추가 --1층 셀이동
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Tick += Timer1_Tick;
+            timer1.Interval = 150;
+
+            // Timer 이벤트 핸들러 추가 --2층 셀이동
+            timerPB1 = new System.Windows.Forms.Timer();
+            timerPB1.Tick += TimerPB1_Tick;
+            timerPB1.Interval = 150;
+
+            // Timer 이벤트 핸들러 추가 --3층 셀이동
+            timerPB3 = new System.Windows.Forms.Timer();
+            timerPB3.Tick += TimerPB3_Tick;
+            timerPB3.Interval = 150;
+
+            // Timer 이벤트 핸들러 추가 -- pB_laser 1층 레이저
+            timerLaser = new System.Windows.Forms.Timer();
+            timerLaser.Tick += TimerLaser_Tick;
+            timerLaser.Interval = 150; // 이동 간격 조절 가능
+
+            // Timer 이벤트 핸들러 추가 -- pB_laser 2층 레이저
+            timerLaser1a = new System.Windows.Forms.Timer();
+            timerLaser1a.Tick += TimerLaser_Tick1a;
+            timerLaser1a.Interval = 150; // 이동 간격 조절 가능
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -62,14 +116,6 @@ namespace test_base
             // 이미지를 프로젝트 리소스에서 가져와서 PictureBox의 이미지로 설정
 
             //pictureBox1.Image = Properties.Resources.실시간모니터링_그림;
-
-
-
-
-            pictureBox2.Image = Properties.Resources.녹색_1단;
-
-
-            pictureBox2.Image = Properties.Resources.녹색_1단;
 
             // 이미 생성된 패널1에 둥근 테두리, 테두리 색상, 테두리 굵기 설정
             css.ApplyRoundedBorder(panel1, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
@@ -93,24 +139,38 @@ namespace test_base
             solidGauge1.ForeColor = ColorTranslator.FromHtml("#3C4E71");
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
+
+            // 선택한 제품의 텍스트를 저장
+            //dash.change_state(button1);
 
 
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
+
+
+            // 선택한 제품의 텍스트를 저장
+            //dash.change_state(button2);
 
             label13.Visible = true;
             parrotCircleProgressBar1.IsAnimated = true;
             // 버튼 클릭 시 Label13의 텍스트를 "가동중"으로 변경
             label13.Text = " 가동중";
 
-
             mqtt.Publish(publish_topic, "start");
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+
+            // 선택한 제품의 텍스트를 저장
+            // dash.change_state(button3);
+
+
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
 
@@ -121,7 +181,6 @@ namespace test_base
 
             mqtt.Publish(publish_topic, "stop");
         }
-
 
 
         // MQTT 수신 이벤트 핸들러
@@ -150,10 +209,195 @@ namespace test_base
             label12.Invoke(new Action(() =>
             {
                 // label2에 Company 속성의 값을 할당
-                label12.Text =  obj?.ord_num.ToString();
+                label12.Text = obj?.ord_num.ToString();
             }));
+        }
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
 
             // 나머지 레이블들에 대해서도 유사하게 추가할 수 있습니다.
+        }
+        // 2층 셀이동
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            // Timer를 시작하기 전에 초기화
+            pictureBox5Y = 182;
+            pB_2stack.Location = new Point(600, pictureBox5Y);
+
+            // 이동 횟수 및 방향 초기화
+            moveCount = 0;
+            goingDown = true;
+
+            // Timer를 시작
+            timer1.Start();
+        }
+        // 2층 셀이동
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            // Timer 이벤트 핸들러
+
+            const int moveAmount = 5; // 이동량
+
+            // PictureBox5를 5씩 아래로 이동
+            pictureBox5Y += moveAmount;
+            pB_2stack.Location = new Point(600, pictureBox5Y);
+
+            // Timer 정지
+            if (pictureBox5Y >= 217)
+            {
+                timer1.Stop();
+            }
+        }
+        //1층 셀이동
+        private void Bt_1stack_Click(object sender, EventArgs e)
+        {
+            // Timer를 시작하기 전에 초기화
+            pictureBox1Y = 238;
+            pB_1stack.Location = new Point(600, pictureBox1Y);
+
+            // 이동 횟수 및 방향 초기화
+            moveCountPB1 = 0;
+            goingDownPB1 = true;
+
+            // Timer를 시작
+            timerPB1.Start();
+        }
+        //1층 셀이동
+        private void TimerPB1_Tick(object sender, EventArgs e)
+        {
+            const int moveAmount = 5; // 이동량
+
+            // PictureBox1을 5씩 아래 또는 위로 이동
+            if (goingDownPB1)
+            {
+                pictureBox1Y += moveAmount;
+                pB_1stack.Location = new Point(600, pictureBox1Y);
+            }
+            else
+            {
+                pictureBox1Y -= moveAmount;
+                pB_1stack.Location = new Point(600, pictureBox1Y);
+            }
+
+            // Timer 정지
+            if (pictureBox1Y >= 273)
+            {
+                timerPB1.Stop();
+            }
+            else if (pictureBox1Y <= 238)
+            {
+                goingDownPB1 = true;
+                moveCountPB1++;
+            }
+        }
+        //3층 셀이동
+        private void Bt_3stack_Click(object sender, EventArgs e)
+        {
+            // Timer를 시작하기 전에 초기화
+            pictureBox3Y = 131;
+            pB_3stack.Location = new Point(600, pictureBox3Y);
+
+            // 이동 횟수 및 방향 초기화
+            moveCountPB3 = 0;
+            goingDownPB3 = true;
+
+            // Timer를 시작
+            timerPB3.Start();
+        }
+        //3층 셀이동
+        private void TimerPB3_Tick(object sender, EventArgs e)
+        {
+            const int moveAmount = 5; // 이동량
+
+            // PictureBox3을 5씩 아래 또는 위로 이동
+            if (goingDownPB3)
+            {
+                pictureBox3Y += moveAmount;
+                pB_3stack.Location = new Point(600, pictureBox3Y);
+            }
+            else
+            {
+                pictureBox3Y -= moveAmount;
+                pB_3stack.Location = new Point(600, pictureBox3Y);
+            }
+
+            // Timer 정지
+            if (pictureBox3Y >= 159)
+            {
+                timerPB3.Stop();
+            }
+            else if (pictureBox3Y <= 131)
+            {
+                goingDownPB3 = true;
+                moveCountPB3++;
+            }
+        }
+        //레이저 1층
+        private void Bt_Servo1_Click(object sender, EventArgs e)
+        {
+            // Timer를 시작하기 전에 초기화
+            pictureBoxLaserY = 297;
+            pB_laser.Location = new Point(382, pictureBoxLaserY);
+
+            // Timer를 시작
+            timerLaser.Start();
+        }
+        //레이저 1층
+        private void TimerLaser_Tick(object sender, EventArgs e)
+        {
+            // Timer 이벤트 핸들러
+
+            // pB_laser를 5씩 아래로 이동
+            pictureBoxLaserY -= moveAmountLaser;
+            pB_laser.Location = new Point(382, pictureBoxLaserY);
+
+            // Timer 정지
+            if (pictureBoxLaserY <= 257)
+            {
+                timerLaser.Stop();
+            }
+        }
+        //레이저 on/off
+        private void Bt_Laser_Click(object sender, EventArgs e)
+        {
+            // 이미지 토글
+            laserImageToggle = !laserImageToggle;
+
+            // 이미지 변경
+            if (laserImageToggle)
+            {
+                pB_laser.Image = Properties.Resources.레이저2;
+            }
+            else
+            {
+                pB_laser.Image = Properties.Resources.레이저1;
+            }
+        }
+        //레이저2층
+        private void Bt_Servo2_Click(object sender, EventArgs e)
+        {
+            // Timer를 시작하기 전에 초기화
+            pictureBoxLaserY1a = 257;
+            pB_laser.Location = new Point(382, pictureBoxLaserY1a);
+
+            // Timer를 시작
+            timerLaser1a.Start();
+        }
+        //레이저2층
+        private void TimerLaser_Tick1a(object sender, EventArgs e)
+        {
+            // Timer 이벤트 핸들러
+
+            // pB_laser를 5씩 아래로 이동
+            pictureBoxLaserY1a -= moveAmountLaser1a;
+            pB_laser.Location = new Point(382, pictureBoxLaserY1a);
+
+            // Timer 정지
+            if (pictureBoxLaserY1a <= 197)
+            {
+                timerLaser1a.Stop();
+            }
         }
     }
 }

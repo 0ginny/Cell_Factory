@@ -63,6 +63,46 @@ namespace test_base.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap A_cell_stacking {
+            get {
+                object obj = ResourceManager.GetObject("A_cell_stacking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap B_cell_stacking {
+            get {
+                object obj = ResourceManager.GetObject("B_cell_stacking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap B_cell_stacking1 {
+            get {
+                object obj = ResourceManager.GetObject("B_cell_stacking1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap C_cell_stacking {
+            get {
+                object obj = ResourceManager.GetObject("C_cell_stacking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Close_Black {
             get {
                 object obj = ResourceManager.GetObject("Close_Black", resourceCulture);
@@ -246,6 +286,26 @@ namespace test_base.Properties {
         internal static System.Drawing.Bitmap 대시보드2_removebg_preview__1_ {
             get {
                 object obj = ResourceManager.GetObject("대시보드2-removebg-preview (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 레이저1 {
+            get {
+                object obj = ResourceManager.GetObject("레이저1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 레이저2 {
+            get {
+                object obj = ResourceManager.GetObject("레이저2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
