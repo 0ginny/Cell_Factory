@@ -30,20 +30,22 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
             panel1 = new Panel();
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
@@ -56,24 +58,24 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             panel3 = new Panel();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
             label3 = new Label();
             panel2 = new Panel();
             solidGauge1 = new LiveCharts.WinForms.SolidGauge();
             label2 = new Label();
             dataGridView2 = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewImageColumn();
             noderedConnectBindingSource = new BindingSource(components);
             panel4 = new Panel();
-            pictureBox3 = new PictureBox();
+            Bt_Laser = new Button();
+            Bt_Servo2 = new Button();
+            Bt_Servo1 = new Button();
+            pB_laser = new PictureBox();
+            pB_servo = new PictureBox();
+            Bt_3stack = new Button();
+            pB_3stack = new PictureBox();
+            pB_2stack = new PictureBox();
             pB_1stack = new PictureBox();
             Bt_1stack = new Button();
             Bt_2stack = new Button();
-            pB_2stack = new PictureBox();
             label8 = new Label();
             label4 = new Label();
             label7 = new Label();
@@ -89,11 +91,19 @@
             panel6 = new Panel();
             label6 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -102,9 +112,11 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)noderedConnectBindingSource).BeginInit();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pB_1stack).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pB_laser).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pB_servo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pB_3stack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pB_2stack).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pB_1stack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel5.SuspendLayout();
             panel10.SuspendLayout();
@@ -138,6 +150,8 @@
             // 
             panel1.BackColor = Color.White;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(label11);
             panel1.Controls.Add(label10);
@@ -151,11 +165,39 @@
             panel1.Size = new Size(1116, 596);
             panel1.TabIndex = 1;
             // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox4.ErrorImage = null;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.InitialImage = null;
+            pictureBox4.Location = new Point(694, 395);
+            pictureBox4.Margin = new Padding(0);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(42, 19);
+            pictureBox4.TabIndex = 7;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox3.ErrorImage = null;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.InitialImage = null;
+            pictureBox3.Location = new Point(780, 395);
+            pictureBox3.Margin = new Padding(0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(42, 19);
+            pictureBox3.TabIndex = 6;
+            pictureBox3.TabStop = false;
+            // 
             // label12
             // 
             label12.AutoSize = true;
             label12.ForeColor = Color.FromArgb(31, 107, 255);
-            label12.Location = new Point(1001, 69);
+            label12.Location = new Point(1051, 24);
             label12.Name = "label12";
             label12.Size = new Size(31, 15);
             label12.TabIndex = 5;
@@ -165,7 +207,7 @@
             // 
             label11.AutoSize = true;
             label11.ForeColor = Color.FromArgb(31, 107, 255);
-            label11.Location = new Point(910, 69);
+            label11.Location = new Point(980, 24);
             label11.Name = "label11";
             label11.Size = new Size(31, 15);
             label11.TabIndex = 4;
@@ -175,7 +217,7 @@
             // 
             label10.AutoSize = true;
             label10.ForeColor = Color.FromArgb(31, 107, 255);
-            label10.Location = new Point(808, 69);
+            label10.Location = new Point(858, 24);
             label10.Name = "label10";
             label10.Size = new Size(55, 15);
             label10.TabIndex = 3;
@@ -185,7 +227,7 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.FromArgb(31, 107, 255);
-            label9.Location = new Point(687, 69);
+            label9.Location = new Point(737, 24);
             label9.Name = "label9";
             label9.Size = new Size(49, 15);
             label9.TabIndex = 2;
@@ -194,6 +236,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = null;
@@ -274,11 +317,11 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle13.SelectionBackColor = Color.White;
-            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -286,35 +329,35 @@
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = Color.FromArgb(235, 238, 244);
-            dataGridViewCellStyle14.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            dataGridViewCellStyle14.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(235, 238, 244);
-            dataGridViewCellStyle14.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle2.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeight = 40;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
-            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = SystemColors.Window;
-            dataGridViewCellStyle18.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            dataGridViewCellStyle18.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle18.SelectionBackColor = Color.White;
-            dataGridViewCellStyle18.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle6.SelectionBackColor = Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.FromArgb(235, 238, 244);
             dataGridView1.Location = new Point(18, 55);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle19.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle19.SelectionBackColor = Color.White;
-            dataGridViewCellStyle19.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle7.SelectionBackColor = Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
             dataGridView1.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.RowTemplate.DefaultCellStyle.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
             dataGridView1.RowTemplate.DefaultCellStyle.Padding = new Padding(0, 5, 0, 10);
@@ -326,35 +369,6 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(508, 219);
             dataGridView1.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.NullValue = null;
-            Column1.DefaultCellStyle = dataGridViewCellStyle15;
-            Column1.HeaderText = "시간";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Resizable = DataGridViewTriState.True;
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle16;
-            Column2.HeaderText = "알람";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.ForeColor = Color.FromArgb(31, 107, 255);
-            dataGridViewCellStyle17.SelectionBackColor = Color.White;
-            dataGridViewCellStyle17.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            Column3.DefaultCellStyle = dataGridViewCellStyle17;
-            Column3.HeaderText = "Cell-ID";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
             // 
             // label3
             // 
@@ -402,11 +416,11 @@
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle20.SelectionBackColor = Color.White;
-            dataGridViewCellStyle20.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle8.SelectionBackColor = Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -414,35 +428,35 @@
             dataGridView2.BorderStyle = BorderStyle.None;
             dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = Color.FromArgb(235, 238, 244);
-            dataGridViewCellStyle21.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            dataGridViewCellStyle21.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = Color.FromArgb(235, 238, 244);
-            dataGridViewCellStyle21.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle21.WrapMode = DataGridViewTriState.True;
-            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle9.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(235, 238, 244);
+            dataGridViewCellStyle9.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dataGridView2.ColumnHeadersHeight = 40;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column4, dataGridViewTextBoxColumn2 });
-            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = SystemColors.Window;
-            dataGridViewCellStyle23.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            dataGridViewCellStyle23.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle23.SelectionBackColor = Color.White;
-            dataGridViewCellStyle23.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.False;
-            dataGridView2.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = SystemColors.Window;
+            dataGridViewCellStyle11.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dataGridViewCellStyle11.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle11.SelectionBackColor = Color.White;
+            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            dataGridView2.DefaultCellStyle = dataGridViewCellStyle11;
             dataGridView2.EnableHeadersVisualStyles = false;
             dataGridView2.GridColor = Color.FromArgb(235, 238, 244);
             dataGridView2.Location = new Point(18, 60);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersVisible = false;
-            dataGridViewCellStyle24.ForeColor = Color.FromArgb(60, 78, 113);
-            dataGridViewCellStyle24.SelectionBackColor = Color.White;
-            dataGridViewCellStyle24.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.ForeColor = Color.FromArgb(60, 78, 113);
+            dataGridViewCellStyle12.SelectionBackColor = Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle12;
             dataGridView2.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView2.RowTemplate.DefaultCellStyle.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
             dataGridView2.RowTemplate.DefaultCellStyle.Padding = new Padding(0, 5, 0, 10);
@@ -455,30 +469,6 @@
             dataGridView2.Size = new Size(508, 310);
             dataGridView2.TabIndex = 2;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.NullValue = null;
-            dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle22;
-            dataGridViewTextBoxColumn1.HeaderText = "제품";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.True;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "갯수";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "현재 상태";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            dataGridViewTextBoxColumn2.Resizable = DataGridViewTriState.True;
-            dataGridViewTextBoxColumn2.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
             // noderedConnectBindingSource
             // 
             noderedConnectBindingSource.DataSource = typeof(NoderedConnect);
@@ -486,11 +476,17 @@
             // panel4
             // 
             panel4.BackColor = Color.White;
-            panel4.Controls.Add(pictureBox3);
+            panel4.Controls.Add(Bt_Laser);
+            panel4.Controls.Add(Bt_Servo2);
+            panel4.Controls.Add(Bt_Servo1);
+            panel4.Controls.Add(pB_laser);
+            panel4.Controls.Add(pB_servo);
+            panel4.Controls.Add(Bt_3stack);
+            panel4.Controls.Add(pB_3stack);
+            panel4.Controls.Add(pB_2stack);
             panel4.Controls.Add(pB_1stack);
             panel4.Controls.Add(Bt_1stack);
             panel4.Controls.Add(Bt_2stack);
-            panel4.Controls.Add(pB_2stack);
             panel4.Controls.Add(label8);
             panel4.Controls.Add(label4);
             panel4.Controls.Add(label7);
@@ -502,22 +498,93 @@
             panel4.Size = new Size(770, 384);
             panel4.TabIndex = 4;
             // 
-            // pictureBox3
+            // Bt_Laser
             // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.BackgroundImage = Properties.Resources.A_cell_stacking;
-            pictureBox3.Location = new Point(600, 147);
-            pictureBox3.Margin = new Padding(0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(103, 53);
-            pictureBox3.TabIndex = 8;
-            pictureBox3.TabStop = false;
+            Bt_Laser.Location = new Point(405, 16);
+            Bt_Laser.Name = "Bt_Laser";
+            Bt_Laser.Size = new Size(91, 23);
+            Bt_Laser.TabIndex = 14;
+            Bt_Laser.Text = "레이저on/off";
+            Bt_Laser.UseVisualStyleBackColor = true;
+            Bt_Laser.Click += Bt_Laser_Click;
+            // 
+            // Bt_Servo2
+            // 
+            Bt_Servo2.Location = new Point(324, 16);
+            Bt_Servo2.Name = "Bt_Servo2";
+            Bt_Servo2.Size = new Size(75, 23);
+            Bt_Servo2.TabIndex = 13;
+            Bt_Servo2.Text = "서보2층";
+            Bt_Servo2.UseVisualStyleBackColor = true;
+            Bt_Servo2.Click += Bt_Servo2_Click;
+            // 
+            // Bt_Servo1
+            // 
+            Bt_Servo1.Location = new Point(227, 16);
+            Bt_Servo1.Name = "Bt_Servo1";
+            Bt_Servo1.Size = new Size(75, 23);
+            Bt_Servo1.TabIndex = 12;
+            Bt_Servo1.Text = "서보1층";
+            Bt_Servo1.UseVisualStyleBackColor = true;
+            Bt_Servo1.Click += Bt_Servo1_Click;
+            // 
+            // pB_laser
+            // 
+            pB_laser.BackgroundImage = Properties.Resources.레이저1;
+            pB_laser.Location = new Point(382, 296);
+            pB_laser.Margin = new Padding(0);
+            pB_laser.Name = "pB_laser";
+            pB_laser.Size = new Size(215, 50);
+            pB_laser.TabIndex = 11;
+            pB_laser.TabStop = false;
+            // 
+            // pB_servo
+            // 
+            pB_servo.BackColor = Color.Transparent;
+            pB_servo.BackgroundImage = (Image)resources.GetObject("pB_servo.BackgroundImage");
+            pB_servo.Location = new Point(324, 95);
+            pB_servo.Name = "pB_servo";
+            pB_servo.Size = new Size(60, 260);
+            pB_servo.TabIndex = 10;
+            pB_servo.TabStop = false;
+            // 
+            // Bt_3stack
+            // 
+            Bt_3stack.Location = new Point(679, 16);
+            Bt_3stack.Name = "Bt_3stack";
+            Bt_3stack.Size = new Size(75, 23);
+            Bt_3stack.TabIndex = 9;
+            Bt_3stack.Text = "3stack";
+            Bt_3stack.UseVisualStyleBackColor = true;
+            Bt_3stack.Click += Bt_3stack_Click;
+            // 
+            // pB_3stack
+            // 
+            pB_3stack.BackColor = Color.Transparent;
+            pB_3stack.BackgroundImage = Properties.Resources.A_cell_stacking;
+            pB_3stack.Location = new Point(600, 161);
+            pB_3stack.Margin = new Padding(0);
+            pB_3stack.Name = "pB_3stack";
+            pB_3stack.Size = new Size(103, 53);
+            pB_3stack.TabIndex = 8;
+            pB_3stack.TabStop = false;
+            // 
+            // pB_2stack
+            // 
+            pB_2stack.BackColor = Color.Transparent;
+            pB_2stack.BackgroundImage = Properties.Resources.C_cell_stacking;
+            pB_2stack.Location = new Point(600, 217);
+            pB_2stack.Margin = new Padding(0);
+            pB_2stack.Name = "pB_2stack";
+            pB_2stack.Size = new Size(103, 53);
+            pB_2stack.TabIndex = 4;
+            pB_2stack.TabStop = false;
             // 
             // pB_1stack
             // 
             pB_1stack.BackColor = Color.Transparent;
             pB_1stack.BackgroundImage = Properties.Resources.C_cell_stacking;
-            pB_1stack.Location = new Point(271, 264);
+            pB_1stack.Location = new Point(600, 273);
             pB_1stack.Margin = new Padding(0);
             pB_1stack.Name = "pB_1stack";
             pB_1stack.Size = new Size(103, 52);
@@ -526,7 +593,7 @@
             // 
             // Bt_1stack
             // 
-            Bt_1stack.Location = new Point(560, 16);
+            Bt_1stack.Location = new Point(517, 16);
             Bt_1stack.Name = "Bt_1stack";
             Bt_1stack.Size = new Size(75, 23);
             Bt_1stack.TabIndex = 6;
@@ -536,24 +603,13 @@
             // 
             // Bt_2stack
             // 
-            Bt_2stack.Location = new Point(661, 16);
+            Bt_2stack.Location = new Point(598, 16);
             Bt_2stack.Name = "Bt_2stack";
             Bt_2stack.Size = new Size(75, 23);
             Bt_2stack.TabIndex = 6;
             Bt_2stack.Text = "2stack";
             Bt_2stack.UseVisualStyleBackColor = true;
             Bt_2stack.Click += button2_Click_1;
-            // 
-            // pB_2stack
-            // 
-            pB_2stack.BackColor = Color.Transparent;
-            pB_2stack.BackgroundImage = Properties.Resources.C_cell_stacking;
-            pB_2stack.Location = new Point(412, 177);
-            pB_2stack.Margin = new Padding(0);
-            pB_2stack.Name = "pB_2stack";
-            pB_2stack.Size = new Size(103, 53);
-            pB_2stack.TabIndex = 4;
-            pB_2stack.TabStop = false;
             // 
             // label8
             // 
@@ -587,10 +643,11 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.ErrorImage = Properties.Resources.녹색_2단;
-            pictureBox2.Image = Properties.Resources.녹색_1단;
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.ErrorImage = null;
             pictureBox2.InitialImage = Properties.Resources.녹색_3단;
             pictureBox2.Location = new Point(249, 60);
+            pictureBox2.Margin = new Padding(0);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(505, 310);
             pictureBox2.TabIndex = 1;
@@ -742,6 +799,59 @@
             tableLayoutPanel2.Size = new Size(1720, 404);
             tableLayoutPanel2.TabIndex = 1;
             // 
+            // Column1
+            // 
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = null;
+            Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            Column1.HeaderText = "  시간";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Resizable = DataGridViewTriState.True;
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            Column2.HeaderText = "  알람";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(31, 107, 255);
+            dataGridViewCellStyle5.SelectionBackColor = Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            Column3.DefaultCellStyle = dataGridViewCellStyle5;
+            Column3.HeaderText = "  Cell-ID";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.NullValue = null;
+            dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewTextBoxColumn1.HeaderText = "  제품";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.True;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "  갯수";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "  현재 상태";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Resizable = DataGridViewTriState.True;
+            dataGridViewTextBoxColumn2.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -760,6 +870,8 @@
             splitContainer1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -771,9 +883,11 @@
             ((System.ComponentModel.ISupportInitialize)noderedConnectBindingSource).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pB_1stack).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pB_laser).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pB_servo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pB_3stack).EndInit();
             ((System.ComponentModel.ISupportInitialize)pB_2stack).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pB_1stack).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
@@ -815,16 +929,10 @@
         private Panel panel7;
         private Panel panel8;
         private TableLayoutPanel tableLayoutPanel2;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
         private Label label12;
         private Label label11;
         private Label label10;
         private Label label9;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewImageColumn dataGridViewTextBoxColumn2;
         private LiveCharts.WinForms.SolidGauge solidGauge1;
         private Panel panel10;
         private ReaLTaiizor.Controls.ParrotCircleProgressBar parrotCircleProgressBar1;
@@ -833,6 +941,20 @@
         private Button Bt_2stack;
         private PictureBox pB_1stack;
         private Button Bt_1stack;
+        private PictureBox pB_3stack;
+        private Button Bt_3stack;
+        private PictureBox pB_servo;
+        private PictureBox pB_laser;
+        private Button Bt_Laser;
+        private Button Bt_Servo2;
+        private Button Bt_Servo1;
+        private PictureBox pictureBox4;
         private PictureBox pictureBox3;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewImageColumn dataGridViewTextBoxColumn2;
     }
 }

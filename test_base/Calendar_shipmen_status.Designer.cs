@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label9 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calendar_shipmen_status));
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
@@ -36,6 +36,8 @@
             splitContainer3 = new SplitContainer();
             daycontainer = new FlowLayoutPanel();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            panel8 = new Panel();
+            panel10 = new Panel();
             btnnext = new Button();
             btnprevious = new Button();
             panel1 = new Panel();
@@ -54,6 +56,7 @@
             label2 = new Label();
             splitContainer1 = new SplitContainer();
             panel9 = new Panel();
+            panel11 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel2.SuspendLayout();
@@ -78,21 +81,12 @@
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(135, 679);
-            label9.Name = "label9";
-            label9.Size = new Size(55, 15);
-            label9.TabIndex = 16;
-            label9.Text = "공지사항";
-            // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("맑은 고딕", 18F, FontStyle.Regular, GraphicsUnit.Point, 129);
             label10.ForeColor = Color.FromArgb(60, 78, 113);
-            label10.Location = new Point(141, 344);
+            label10.Location = new Point(134, 280);
             label10.Name = "label10";
             label10.Size = new Size(49, 32);
             label10.TabIndex = 15;
@@ -103,7 +97,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("맑은 고딕", 90F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label11.Location = new Point(69, 174);
+            label11.Location = new Point(62, 110);
             label11.Name = "label11";
             label11.Size = new Size(207, 159);
             label11.TabIndex = 14;
@@ -120,7 +114,7 @@
             label12.Name = "label12";
             label12.Size = new Size(306, 52);
             label12.TabIndex = 13;
-            label12.Text = "Calinder";
+            label12.Text = "Calendar";
             // 
             // splitContainer2
             // 
@@ -167,8 +161,8 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(btnnext);
-            flowLayoutPanel1.Controls.Add(btnprevious);
+            flowLayoutPanel1.Controls.Add(panel8);
+            flowLayoutPanel1.Controls.Add(panel10);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.FlowDirection = FlowDirection.RightToLeft;
             flowLayoutPanel1.Location = new Point(0, 0);
@@ -176,27 +170,50 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1374, 63);
             flowLayoutPanel1.TabIndex = 13;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint_1;
+            // 
+            // panel8
+            // 
+            panel8.Location = new Point(1299, 3);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(72, 30);
+            panel8.TabIndex = 17;
+            // 
+            // panel10
+            // 
+            panel10.Location = new Point(1192, 3);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(101, 30);
+            panel10.TabIndex = 18;
             // 
             // btnnext
             // 
-            btnnext.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
-            btnnext.Location = new Point(1271, 3);
+            btnnext.BackColor = Color.White;
+            btnnext.FlatAppearance.BorderSize = 0;
+            btnnext.FlatStyle = FlatStyle.Flat;
+            btnnext.Font = new Font("맑은 고딕", 48F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnnext.ForeColor = Color.FromArgb(31, 107, 255);
+            btnnext.Location = new Point(235, 140);
             btnnext.Name = "btnnext";
-            btnnext.Size = new Size(100, 33);
+            btnnext.Size = new Size(61, 101);
             btnnext.TabIndex = 1;
-            btnnext.Text = "Next";
-            btnnext.UseVisualStyleBackColor = true;
+            btnnext.Text = ">";
+            btnnext.UseVisualStyleBackColor = false;
             btnnext.Click += btnnext_Click;
             // 
             // btnprevious
             // 
-            btnprevious.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
-            btnprevious.Location = new Point(1165, 3);
+            btnprevious.BackColor = Color.White;
+            btnprevious.FlatAppearance.BorderSize = 0;
+            btnprevious.FlatStyle = FlatStyle.Flat;
+            btnprevious.Font = new Font("맑은 고딕", 48F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnprevious.ForeColor = Color.FromArgb(31, 107, 255);
+            btnprevious.Location = new Point(20, 140);
             btnprevious.Name = "btnprevious";
-            btnprevious.Size = new Size(100, 33);
+            btnprevious.Size = new Size(61, 101);
             btnprevious.TabIndex = 2;
-            btnprevious.Text = "Previous";
-            btnprevious.UseVisualStyleBackColor = true;
+            btnprevious.Text = "<";
+            btnprevious.UseVisualStyleBackColor = false;
             btnprevious.Click += btnprevious_Click;
             // 
             // panel1
@@ -375,8 +392,10 @@
             // panel9
             // 
             panel9.BackColor = Color.White;
+            panel9.Controls.Add(panel11);
             panel9.Controls.Add(label10);
-            panel9.Controls.Add(label9);
+            panel9.Controls.Add(btnnext);
+            panel9.Controls.Add(btnprevious);
             panel9.Controls.Add(label11);
             panel9.Dock = DockStyle.Fill;
             panel9.Location = new Point(20, 72);
@@ -384,6 +403,14 @@
             panel9.Name = "panel9";
             panel9.Size = new Size(306, 948);
             panel9.TabIndex = 1;
+            // 
+            // panel11
+            // 
+            panel11.BackgroundImage = (Image)resources.GetObject("panel11.BackgroundImage");
+            panel11.Location = new Point(40, 599);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(222, 296);
+            panel11.TabIndex = 17;
             // 
             // tableLayoutPanel1
             // 
@@ -449,7 +476,6 @@
         }
 
         #endregion
-        private Label label9;
         private Label label10;
         private Label label11;
         private Label label12;
@@ -476,5 +502,8 @@
         private Label label2;
         private Panel panel9;
         private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel8;
+        private Panel panel10;
+        private Panel panel11;
     }
 }

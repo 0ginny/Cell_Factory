@@ -127,8 +127,17 @@
   <data name="re캘린더1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\re캘린더1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="C_cell_stacking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\C_cell_stacking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="에러발생" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\에러발생.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="A_cell_stacking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A_cell_stacking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="B_cell_stacking1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\B_cell_stacking1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="re불량관리2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\re불량관리2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,9 +151,6 @@
   <data name="파랑 3단" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\파랑 3단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="파랑 2단" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\파랑 2단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="노랑 2단" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\노랑 2단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,11 +163,11 @@
   <data name="Close_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="하양 2단" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\하양 2단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="대시보드2-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\대시보드2-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="완료" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\완료.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="제목 없음" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\제목 없음.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -171,6 +177,9 @@
   </data>
   <data name="실시간모니터링1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\실시간모니터링2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="노랑 1단" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\노랑 1단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="re대시보드1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\re대시보드1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +205,8 @@
   <data name="파랑 1단" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\파랑 1단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="노랑 1단" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\노랑 1단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="하양 2단" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\하양 2단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="re제품1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\re제품1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,19 +220,16 @@
   <data name="진행중" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\진행중.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="완료" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\완료.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="파랑 2단" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\파랑 2단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="실시간모니터링" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\실시간모니터링1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="A_cell_stacking" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\A_cell_stacking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="레이저1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\레이저1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="B_cell_stacking1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\B_cell_stacking1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="C_cell_stacking" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\C_cell_stacking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="레이저2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\레이저2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

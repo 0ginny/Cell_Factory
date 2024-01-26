@@ -35,6 +35,9 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             PorbOrderDatagrid = new DataGridView();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            panel1 = new Panel();
+            button6 = new Button();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
@@ -42,9 +45,6 @@
             Column4 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            panel1 = new Panel();
-            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)PorbOrderDatagrid).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
@@ -109,54 +109,6 @@
             PorbOrderDatagrid.Size = new Size(1128, 184);
             PorbOrderDatagrid.TabIndex = 4;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewTextBoxColumn1.HeaderText = "주문ID";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewTextBoxColumn2.HeaderText = "회사명";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "제품명";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "주문갯수";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "주문일자";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "착수일자";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "라드타임";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 1;
@@ -193,6 +145,54 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewTextBoxColumn1.HeaderText = "   주문ID";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewTextBoxColumn2.HeaderText = "   회사명";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "   제품명";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "   주문갯수";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "   주문일자";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "   착수일자";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "   라드타임";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
             // EventForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -211,6 +211,9 @@
         #endregion
 
         private DataGridView PorbOrderDatagrid;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel1;
+        private Button button6;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn Column1;
@@ -218,8 +221,5 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column5;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Panel panel1;
-        private Button button6;
     }
 }
