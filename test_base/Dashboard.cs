@@ -16,9 +16,11 @@ using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static ReaLTaiizor.Drawing.Poison.PoisonPaint;
 using static test_base.MQTT;
+using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Google.Protobuf.Compiler;
 
 namespace test_base
 {
@@ -116,6 +118,7 @@ namespace test_base
             timerLaser1a = new System.Windows.Forms.Timer();
             timerLaser1a.Tick += TimerLaser_Tick1a;
             timerLaser1a.Interval = 150; // 이동 간격 조절 가능
+
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -197,21 +200,6 @@ namespace test_base
             // mqtt_obj에 JSON 메시지를 저장하기 위한 작업
             obj = Newtonsoft.Json.JsonConvert.DeserializeObject<MqttObject>(e.Message);
             Console.WriteLine(e.Message);
-
-            if (obj.Y22)
-            {
-                twin.picMove(A_cell, 727, 437, 727, 397, 3, 5);
-            }
-            else if (obj.Y23)
-            {
-                twin.picMove(A_cell, 781, 355, 781, 397, 3, 5);
-            }
-            else if (obj.Y24)
-            {
-                twin.picMove(A_cell, 692, 437, 692, 397, 3, 5);
-            }
-
-
 
         }
 
@@ -403,5 +391,122 @@ namespace test_base
                 timerLaser1a.Stop();
             }
         }
+
+        bool mag_once1 = true;
+        bool mag_once2 = true;
+        bool mag_once3 = true;
+
+        int pic_select = 0;
+        private void DTTimer_Tick(object sender, EventArgs e)
+        {
+
+            if (obj.Y22 && mag_once1)
+            {
+                A_cell.Visible = true;
+                twin.picMove(A_cell, 727, 437, 727, 397, 1, 1);
+
+                mag_once1 = false;
+                pic_select = 1;
+            } else mag_once1 = true;
+
+            if (obj.Y23 && mag_once2)
+            {
+                B_cell.Visible = true;
+
+                twin.picMove(B_cell, 781, 355, 781, 397, 1, 1);
+                mag_once2 = false;
+                pic_select = 2;
+
+
+            }
+            else mag_once2 = true;
+
+            if (obj.Y24 && mag_once3)
+            {
+                C_cell.Visible = true;
+
+                twin.picMove(C_cell, 692, 355, 692, 397, 1, 1);
+                mag_once3 = false;
+                pic_select = 3;
+
+
+            }
+            else mag_once3 = true;
+
+            //컨베이어1 on
+            if (obj.Y2A)
+            {
+
+                int end = 272;
+                bool vision = true;
+
+                if ( obj.M61 || obj.M63 || obj.M65 )
+                {
+                    end = 151;
+                    vision = false;
+                }
+
+
+                switch (pic_select)
+                {
+                    case 1:
+                        twin.picConMove(A_cell, "x", -20, 0.5, 1, end, vision);
+                        break;
+                    case 2:
+                        twin.picConMove(B_cell, "x", -20, 0.5, 1, end, vision);
+                        break;
+                    case 3:
+                        twin.picConMove(C_cell, "x", -20, 0.5, 1, end, vision);
+                        break;
+                    default:
+                        break;
+                }
+                
+            }
+
+            //if(obj.Y25)
+            //{
+            //    Point rotationCenter = new Point(A_cell.Width / 2, A_cell.Height / 2);
+                
+            //    switch (pic_select)
+            //    {
+            //        case 1:
+            //            twin.picSpin(A_cell, 0, 90, 1, 1, rotationCenter, 272, 391, 275, 355);
+            //            break;
+            //        case 2:
+            //            twin.picSpin(B_cell, 0, 90, 1, 1, rotationCenter, 272, 391, 275, 355);
+            //            break;
+            //        case 3:
+            //            twin.picSpin(C_cell, 0, 90, 1, 1, rotationCenter, 272, 391, 275, 355);
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //}
+
+            //컨베이어2 on
+            if (obj.Y2B)
+            {
+                
+                switch (pic_select)
+                {
+                    case 1:
+                        twin.picConMove(A_cell, "y", -30, 0.5, 1, 160);
+                        break;
+                    case 2:
+                        twin.picConMove(B_cell, "y", -30, 0.5, 1, 160);
+                        break;
+                    case 3:
+                        twin.picConMove(C_cell, "y", -30, 0.5, 1, 160);
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+        }
+
+
+
     }
 }

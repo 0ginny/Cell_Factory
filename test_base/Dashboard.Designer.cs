@@ -45,7 +45,7 @@
             splitContainer1 = new SplitContainer();
             panel1 = new Panel();
             C_cell = new PictureBox();
-            pictureBox3 = new PictureBox();
+            B_cell = new PictureBox();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
@@ -97,13 +97,14 @@
             panel6 = new Panel();
             label6 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
+            DTTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)C_cell).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)B_cell).BeginInit();
             ((System.ComponentModel.ISupportInitialize)A_cell).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -149,7 +150,7 @@
             panel1.BackColor = Color.White;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.Controls.Add(C_cell);
-            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(B_cell);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(label11);
             panel1.Controls.Add(label10);
@@ -170,26 +171,26 @@
             C_cell.ErrorImage = null;
             C_cell.Image = (Image)resources.GetObject("C_cell.Image");
             C_cell.InitialImage = null;
-            C_cell.Location = new Point(692, 355);
+            C_cell.Location = new Point(275, 355);
             C_cell.Margin = new Padding(0);
             C_cell.Name = "C_cell";
             C_cell.Size = new Size(42, 19);
             C_cell.TabIndex = 7;
             C_cell.TabStop = false;
             // 
-            // pictureBox3
+            // B_cell
             // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox3.ErrorImage = null;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.InitialImage = null;
-            pictureBox3.Location = new Point(781, 355);
-            pictureBox3.Margin = new Padding(0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(42, 19);
-            pictureBox3.TabIndex = 6;
-            pictureBox3.TabStop = false;
+            B_cell.BackColor = Color.Transparent;
+            B_cell.BorderStyle = BorderStyle.FixedSingle;
+            B_cell.ErrorImage = null;
+            B_cell.Image = (Image)resources.GetObject("B_cell.Image");
+            B_cell.InitialImage = null;
+            B_cell.Location = new Point(781, 355);
+            B_cell.Margin = new Padding(0);
+            B_cell.Name = "B_cell";
+            B_cell.Size = new Size(42, 19);
+            B_cell.TabIndex = 6;
+            B_cell.TabStop = false;
             // 
             // label12
             // 
@@ -850,6 +851,12 @@
             tableLayoutPanel2.Size = new Size(1720, 404);
             tableLayoutPanel2.TabIndex = 1;
             // 
+            // DTTimer
+            // 
+            DTTimer.Enabled = true;
+            DTTimer.Interval = 500;
+            DTTimer.Tick += DTTimer_Tick;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -869,7 +876,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)C_cell).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)B_cell).EndInit();
             ((System.ComponentModel.ISupportInitialize)A_cell).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -947,12 +954,13 @@
         private Button Bt_Servo2;
         private Button Bt_Servo1;
         private PictureBox C_cell;
-        private PictureBox pictureBox3;
+        private PictureBox B_cell;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewImageColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Timer DTTimer;
     }
 }

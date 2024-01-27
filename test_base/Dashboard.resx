@@ -2826,11 +2826,11 @@
   <data name="C_cell.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACoAAAATCAYAAADmtp8+AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAEhJREFUSEvtzrENACAMA8HMkf2HYpHUhhYUCQrTfaRr0vhjnW7GCEl/VIUy+91D
+        vAAADrwBlbxySQAAAEhJREFUSEvtzrENACAMA8HMkf2HYpHUhhYUCQrTfaRr0vhjnW7GCEl/VIUy+91D
         +9wQuhDqRqgboW6EuhHqRqgboW6Eur2FhibGWqRDuA6dUwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="B_cell.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACoAAAATCAYAAADmtp8+AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAJ9JREFUSEvtlsEKglAQRcfX2pWFSOk2lMpFUNHP+EuCLfrY4MZIhIuLFPM2wizO
@@ -2842,7 +2842,7 @@
   <data name="A_cell.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACoAAAATCAYAAADmtp8+AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAGxJREFUSEtjAIL/+DCfGM//zov5/yfeLf3fd7OYqnjKo4r/FTsSsdqLBWMVhONR
+        vAAADrwBlbxySQAAAGxJREFUSEtjAIL/+DCfGM//zov5/yfeLf3fd7OYqnjKo4r/FTsSsdqLBWMVhONR
         hwLxqEOxWUYJHnUoNssowaMOxWYZJXjUodgsowSPOhSbZZTgUYdis4wSPOpQbJZRgkcdis0ySjDxDmX4
         DwAGAWaWE8Ge1wAAAABJRU5ErkJggg==
 </value>
@@ -2905,6 +2905,9 @@
         XQHsxHCL6cp5cEjIv2GwB4ftwx97AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="DTTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>238, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>64</value>
   </metadata>
