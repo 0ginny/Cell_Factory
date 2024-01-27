@@ -34,23 +34,23 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
             panel1 = new Panel();
-            pictureBox4 = new PictureBox();
+            C_cell = new PictureBox();
             pictureBox3 = new PictureBox();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
             label9 = new Label();
-            pictureBox1 = new PictureBox();
+            A_cell = new PictureBox();
             label1 = new Label();
             panel8 = new Panel();
             panel7 = new Panel();
@@ -58,11 +58,17 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             panel3 = new Panel();
             dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
             label3 = new Label();
             panel2 = new Panel();
             solidGauge1 = new LiveCharts.WinForms.SolidGauge();
             label2 = new Label();
             dataGridView2 = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewImageColumn();
             noderedConnectBindingSource = new BindingSource(components);
             panel4 = new Panel();
             Bt_Laser = new Button();
@@ -91,20 +97,14 @@
             panel6 = new Panel();
             label6 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)C_cell).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)A_cell).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -148,13 +148,13 @@
             // 
             panel1.BackColor = Color.White;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
-            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(C_cell);
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(label11);
             panel1.Controls.Add(label10);
             panel1.Controls.Add(label9);
-            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(A_cell);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(20, 20);
@@ -163,19 +163,19 @@
             panel1.Size = new Size(1116, 596);
             panel1.TabIndex = 1;
             // 
-            // pictureBox4
+            // C_cell
             // 
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox4.ErrorImage = null;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.InitialImage = null;
-            pictureBox4.Location = new Point(694, 395);
-            pictureBox4.Margin = new Padding(0);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(42, 19);
-            pictureBox4.TabIndex = 7;
-            pictureBox4.TabStop = false;
+            C_cell.BackColor = Color.Transparent;
+            C_cell.BorderStyle = BorderStyle.FixedSingle;
+            C_cell.ErrorImage = null;
+            C_cell.Image = (Image)resources.GetObject("C_cell.Image");
+            C_cell.InitialImage = null;
+            C_cell.Location = new Point(692, 355);
+            C_cell.Margin = new Padding(0);
+            C_cell.Name = "C_cell";
+            C_cell.Size = new Size(42, 19);
+            C_cell.TabIndex = 7;
+            C_cell.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -184,7 +184,7 @@
             pictureBox3.ErrorImage = null;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.InitialImage = null;
-            pictureBox3.Location = new Point(780, 395);
+            pictureBox3.Location = new Point(781, 355);
             pictureBox3.Margin = new Padding(0);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(42, 19);
@@ -231,19 +231,19 @@
             label9.TabIndex = 2;
             label9.Text = "OrderID";
             // 
-            // pictureBox1
+            // A_cell
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.ErrorImage = null;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(728, 395);
-            pictureBox1.Margin = new Padding(0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(42, 19);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            A_cell.BackColor = Color.Transparent;
+            A_cell.BorderStyle = BorderStyle.FixedSingle;
+            A_cell.ErrorImage = null;
+            A_cell.Image = (Image)resources.GetObject("A_cell.Image");
+            A_cell.InitialImage = null;
+            A_cell.Location = new Point(726, 437);
+            A_cell.Margin = new Padding(0);
+            A_cell.Name = "A_cell";
+            A_cell.Size = new Size(42, 19);
+            A_cell.TabIndex = 1;
+            A_cell.TabStop = false;
             // 
             // label1
             // 
@@ -368,6 +368,35 @@
             dataGridView1.Size = new Size(508, 219);
             dataGridView1.TabIndex = 1;
             // 
+            // Column1
+            // 
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = null;
+            Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            Column1.HeaderText = "  시간";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Resizable = DataGridViewTriState.True;
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            Column2.HeaderText = "  알람";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(31, 107, 255);
+            dataGridViewCellStyle5.SelectionBackColor = Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(31, 107, 255);
+            Column3.DefaultCellStyle = dataGridViewCellStyle5;
+            Column3.HeaderText = "  Cell-ID";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -466,6 +495,30 @@
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(508, 310);
             dataGridView2.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.NullValue = null;
+            dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewTextBoxColumn1.HeaderText = "  제품";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.True;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "  갯수";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "  현재 상태";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Resizable = DataGridViewTriState.True;
+            dataGridViewTextBoxColumn2.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // noderedConnectBindingSource
             // 
@@ -797,59 +850,6 @@
             tableLayoutPanel2.Size = new Size(1720, 404);
             tableLayoutPanel2.TabIndex = 1;
             // 
-            // Column1
-            // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = null;
-            Column1.DefaultCellStyle = dataGridViewCellStyle3;
-            Column1.HeaderText = "  시간";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Resizable = DataGridViewTriState.True;
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle4;
-            Column2.HeaderText = "  알람";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(31, 107, 255);
-            dataGridViewCellStyle5.SelectionBackColor = Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(31, 107, 255);
-            Column3.DefaultCellStyle = dataGridViewCellStyle5;
-            Column3.HeaderText = "  Cell-ID";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.NullValue = null;
-            dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewTextBoxColumn1.HeaderText = "  제품";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.True;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "  갯수";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "  현재 상태";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            dataGridViewTextBoxColumn2.Resizable = DataGridViewTriState.True;
-            dataGridViewTextBoxColumn2.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -868,9 +868,9 @@
             splitContainer1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)C_cell).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)A_cell).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -914,7 +914,7 @@
         private Panel panel6;
         private Label label6;
         private DataGridView dataGridView1;
-        private PictureBox pictureBox1;
+        private PictureBox A_cell;
         private PictureBox pictureBox2;
         private Label label8;
         private Label label7;
@@ -946,7 +946,7 @@
         private Button Bt_Laser;
         private Button Bt_Servo2;
         private Button Bt_Servo1;
-        private PictureBox pictureBox4;
+        private PictureBox C_cell;
         private PictureBox pictureBox3;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;

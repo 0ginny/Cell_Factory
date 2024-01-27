@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace test_base
 {
-    internal class MqttObject
+    internal class plc_sign
     {
         public bool X0 { get; set; }
         public bool X1 { get; set; }
@@ -30,22 +30,12 @@ namespace test_base
         public bool X13 { get; set; }
         public bool X14 { get; set; }
         public bool X15 { get; set; }
-        public bool Y20 { get; set; }
-        public bool Y21 { get; set; }
-        public bool Y22 { get; set; }
-        public bool Y23 { get; set; }
-        public bool Y24 { get; set; }
-        public bool Y25 { get; set; }
-        public bool Y26 { get; set; }
-        public bool Y27 { get; set; }
-        public bool Y28 { get; set; }
-        public bool Y29 { get; set; }
-        public bool Y2A { get; set; }
-        public bool Y2B { get; set; }
-        public bool Y2C { get; set; }
-        public bool Y2D { get; set; }
-        public bool Y2E { get; set; }
-        public bool Y2F { get; set; }
+        public bool YA { get; set; }
+        public bool YB { get; set; }
+        public bool YC { get; set; }
+        public bool YD { get; set; }
+        public bool YE { get; set; }
+        public bool YF { get; set; }
         public bool Y30 { get; set; }
         public bool Y31 { get; set; }
         public bool Y32 { get; set; }
@@ -62,16 +52,15 @@ namespace test_base
         public bool M67 { get; set; }
         public bool M68 { get; set; }
         public bool M69 { get; set; }
-        public bool D5 { get; set; }
-        public int floar { get; set; }
-        public string ord_id { get; set; }
-        public string company { get; set; }
-        public string prod_id { get; set; }
-        public string prod_name { get; set; }
-        public int ord_num { get; set; }
-        public int prod_volt_max { get; set; }
-        public int prod_volt_min { get; set; }
-        public int prod_contain { get; set; }
-        public int prod_surface { get; set; }
+        public int Floar { get; set; }
+        public string OrdId { get; set; }
+        public string Company { get; set; }
+        public string ProdId { get; set; }
+        public string ProdName { get; set; }
+        public int OrdNum { get; set; }
+        public int ProdVoltMax { get; set; }
+        public int ProdVoltMin { get; set; }
+        public int ProdContain { get; set; }
+        public int ProdSurface { get; set; }
     }
 }

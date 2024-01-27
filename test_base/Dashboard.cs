@@ -28,7 +28,10 @@ namespace test_base
         DashBord_Class dash;
         CSS css;
         MQTT mqtt;
+
         MqttObject obj;
+
+        Digital_Twin twin;
 
         string publish_topic = "publish_chn3";
         string subscribe_topic = "subscribe_chn3";
@@ -72,8 +75,12 @@ namespace test_base
             css = new CSS();
             mqtt = new MQTT();
 
+
+            twin = new Digital_Twin(obj);
+
+
             //mqtt 구독 시작
-            //mqtt.SubscribeToTopic(subscribe_topic);
+            mqtt.SubscribeToTopic(subscribe_topic);
             // MQTT 수신 이벤트 핸들러 등록, 미 등록시 수신 이벤트 미 처리 : textbox에 메세지가 출력되지 않음
             mqtt.MessageReceived += Mqtt_MessageReceived;
 
@@ -182,36 +189,33 @@ namespace test_base
             mqtt.Publish(publish_topic, "stop");
         }
 
+        //-----------------------------------------------------------------디지털 트윈 시작
 
         // MQTT 수신 이벤트 핸들러
         private void Mqtt_MessageReceived(object sender, MqttMessageEventArgs e)
         {
             // mqtt_obj에 JSON 메시지를 저장하기 위한 작업
-            MqttObject obj = mqtt.ParseJson(e.Message);
+            obj = Newtonsoft.Json.JsonConvert.DeserializeObject<MqttObject>(e.Message);
+            Console.WriteLine(e.Message);
 
-            // UI 업데이트
-            label9.Invoke(new Action(() =>
+            if (obj.Y22)
             {
-                // label1에 OrdId 속성의 값을 할당
-                label9.Text = obj?.ord_id;
-            }));
+                twin.picMove(A_cell, 727, 437, 727, 397, 3, 5);
+            }
+            else if (obj.Y23)
+            {
+                twin.picMove(A_cell, 781, 355, 781, 397, 3, 5);
+            }
+            else if (obj.Y24)
+            {
+                twin.picMove(A_cell, 692, 437, 692, 397, 3, 5);
+            }
 
-            label10.Invoke(new Action(() =>
-            {
-                // label2에 Company 속성의 값을 할당
-                label10.Text = obj?.company;
-            }));
-            label11.Invoke(new Action(() =>
-            {
-                // label2에 Company 속성의 값을 할당
-                label11.Text = obj?.prod_name;
-            }));
-            label12.Invoke(new Action(() =>
-            {
-                // label2에 Company 속성의 값을 할당
-                label12.Text = obj?.ord_num.ToString();
-            }));
+
+
         }
+
+        //-------------------------------------------------------------------디지털 트윈 끝
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
