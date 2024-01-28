@@ -161,6 +161,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(86, 29);
             comboBox1.TabIndex = 3;
+            comboBox1.Visible = false;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label3
@@ -549,10 +550,7 @@
             // 
             // cell
             // 
-
-
             cell.HeaderText = "   셀";
-
             cell.Name = "cell";
             cell.ReadOnly = true;
             // 
@@ -561,7 +559,6 @@
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.NullValue = null;
             dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
-
             dataGridViewTextBoxColumn1.HeaderText = "   불량원인";
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -571,17 +568,13 @@
             // 
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
-
             dataGridViewTextBoxColumn2.HeaderText = "   상세정보";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // Column1
             // 
-
-
             Column1.HeaderText = "   불량발생시각";
-
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             // 
@@ -774,7 +767,6 @@
             // 
             // 스태킹
             // 
-
             스태킹.HeaderText = "   스태킹";
             스태킹.Name = "스태킹";
             스태킹.ReadOnly = true;
@@ -784,7 +776,6 @@
             dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.NullValue = null;
             dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
-
             dataGridViewTextBoxColumn3.HeaderText = "   불량원인";
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -794,14 +785,12 @@
             // 
             dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle10;
-
             dataGridViewTextBoxColumn4.HeaderText = "   상세정보";
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // Column2
             // 
-
             Column2.HeaderText = "   불량발생시각";
             Column2.Name = "Column2";
             Column2.ReadOnly = true;

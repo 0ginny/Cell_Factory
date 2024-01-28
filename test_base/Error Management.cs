@@ -104,8 +104,8 @@ namespace test_base
 
 
         //--------------------------------------영진
-        public string cell_start_date { get; set; } = "2024-01-24";
-        public string cell_end_date { get; set; } = "2024-01-24";
+        public string start_date { get; set; } = "2024-01-24";
+        public string end_date { get; set; } = "2024-01-24";
 
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace test_base
                             fault_test_time  from cell
                             where 
                             b_test1 = 1 and
-                            fault_test_time between date('{cell_start_date}') and date('{cell_end_date}')+1;";
+                            fault_test_time BETWEEN DATE('{start_date}') AND DATE_ADD(DATE('{end_date}'), INTERVAL 1 DAY);";
 
             DataTable dt = my.GetDataToTable(sql);
 
@@ -145,7 +145,7 @@ namespace test_base
                         detail = $"{voltage} V";
                         break;
                     case "이물질불량":
-                        detail =  $"{contain} %";
+                        detail =  $"{contain} ppm";
                         break;
                     case "표면결함":
                         detail = surface + " μm"; // 마이크로미터 기호 추가
@@ -177,7 +177,7 @@ namespace test_base
                         from stacking
                         where 
                         b_test2 = 1 and
-                        fault_fin_time between date('{cell_start_date}') and date('{cell_end_date}')+1;";
+                        fault_fin_time BETWEEN DATE('{start_date}') AND DATE_ADD(DATE('{end_date}'), INTERVAL 1 DAY);";
 
 
             DataTable dt = my.GetDataToTable(sql);
@@ -189,10 +189,10 @@ namespace test_base
                 // 값에 따라 가공
                 switch (dr[1].ToString())
                 {
-                    case "프레스압 불량":
+                    case "프레스압 문제":
                         detail = $"{dr[2]} bar";
                         break;
-                    case "용접온도 불량":
+                    case "용접 온도 문제":
                         detail = $"{dr[3]} {"\u2103"}";
                         break;
                     // 다른 경우에 대한 추가적인 가공 로직을 여기에 추가할 수 있습니다.
@@ -206,6 +206,89 @@ namespace test_base
             }
             dgv.ClearSelection();
         }
+
+
+        public DataTable Cerr_cnt_table()
+        {
+            string sql = $@"
+select
+fault_content,
+count(cell_id)
+from cell
+where
+fault_test_time BETWEEN DATE('{start_date}') AND DATE_ADD(DATE('{end_date}'), INTERVAL 1 DAY)
+group by fault_content;
+                            ";
+            return my.GetDataToTable (sql);
+
+        }
+
+        public DataTable Serr_cnt_table()
+        {
+            string sql = $@"
+select 
+sta_err_cont,
+count(stacking_id)
+from stacking
+where
+fault_fin_time BETWEEN DATE('{start_date}') AND DATE_ADD(DATE('{end_date}'), INTERVAL 1 DAY)
+group by sta_err_cont;
+                            ";
+            return my.GetDataToTable(sql);
+        }
+
+        public int volt_err { get; set; } = 0;
+        public int contain_err { get; set; } = 0;
+        public int surface_err { get; set; } = 0; 
+        public int press_err { get; set; } = 0; 
+        public int temp_err { get; set; } = 0;
+
+
+        public void setPieChartData()
+        {
+            DataTable dt_cell = Cerr_cnt_table();
+            DataTable dt_stack = Serr_cnt_table();
+
+            foreach (DataRow dr in dt_cell.Rows)
+            {
+                Console.WriteLine(dr[0].ToString() + "      " + int.Parse(dr[1].ToString()));
+
+                switch (dr[0].ToString())
+                {
+                    case "전압불량":
+                        volt_err = int.Parse(dr[1].ToString());
+                        break;
+                    case "이물질불량":
+                        contain_err = int.Parse(dr[1].ToString());
+                        break;
+                    case "표면결함":
+                        surface_err = int.Parse(dr[1].ToString());
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            foreach (DataRow dr in dt_stack.Rows)
+            {
+
+                Console.WriteLine(dr[0].ToString() + "      " + int.Parse(dr[1].ToString()));
+                switch (dr[0].ToString())
+                {
+                    case "프레스압 문제":
+                        press_err = int.Parse(dr[1].ToString());
+                        break;
+                    case "용접 온도 문제":
+                        temp_err = int.Parse(dr[1].ToString());
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+
+
 
     }
 }

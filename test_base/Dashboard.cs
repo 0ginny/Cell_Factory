@@ -26,6 +26,8 @@ namespace test_base
 {
     public partial class Dashboard : Form
     {
+
+        PictureBox[] cells;
         // 클래스 전역 선언
         DashBord_Class dash;
         CSS css;
@@ -69,6 +71,7 @@ namespace test_base
 
         public Dashboard()
         {
+            cells = new PictureBox[] { A_cell, B_cell, C_cell };
             InitializeComponent();
 
             Load += Dashboard_Load;
@@ -153,16 +156,10 @@ namespace test_base
         private void button1_Click(object sender, EventArgs e)
         {
 
-            // 선택한 제품의 텍스트를 저장
-            //dash.change_state(button1);
 
 
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
-
-
-            // 선택한 제품의 텍스트를 저장
-            //dash.change_state(button2);
 
             label13.Visible = true;
             parrotCircleProgressBar1.IsAnimated = true;
@@ -199,7 +196,7 @@ namespace test_base
         {
             // mqtt_obj에 JSON 메시지를 저장하기 위한 작업
             obj = Newtonsoft.Json.JsonConvert.DeserializeObject<MqttObject>(e.Message);
-            Console.WriteLine(e.Message);
+            Console.WriteLine(obj.floar);
 
         }
 
@@ -213,16 +210,7 @@ namespace test_base
         // 2층 셀이동
         private void button2_Click_1(object sender, EventArgs e)
         {
-            // Timer를 시작하기 전에 초기화
-            pictureBox5Y = 182;
-            pB_2stack.Location = new Point(600, pictureBox5Y);
-
-            // 이동 횟수 및 방향 초기화
-            moveCount = 0;
-            goingDown = true;
-
-            // Timer를 시작
-            timer1.Start();
+            
         }
         // 2층 셀이동
         private void Timer1_Tick(object sender, EventArgs e)
@@ -244,16 +232,7 @@ namespace test_base
         //1층 셀이동
         private void Bt_1stack_Click(object sender, EventArgs e)
         {
-            // Timer를 시작하기 전에 초기화
-            pictureBox1Y = 238;
-            pB_1stack.Location = new Point(600, pictureBox1Y);
-
-            // 이동 횟수 및 방향 초기화
-            moveCountPB1 = 0;
-            goingDownPB1 = true;
-
-            // Timer를 시작
-            timerPB1.Start();
+            
         }
         //1층 셀이동
         private void TimerPB1_Tick(object sender, EventArgs e)
@@ -286,16 +265,7 @@ namespace test_base
         //3층 셀이동
         private void Bt_3stack_Click(object sender, EventArgs e)
         {
-            // Timer를 시작하기 전에 초기화
-            pictureBox3Y = 131;
-            pB_3stack.Location = new Point(600, pictureBox3Y);
 
-            // 이동 횟수 및 방향 초기화
-            moveCountPB3 = 0;
-            goingDownPB3 = true;
-
-            // Timer를 시작
-            timerPB3.Start();
         }
         //3층 셀이동
         private void TimerPB3_Tick(object sender, EventArgs e)
@@ -328,12 +298,7 @@ namespace test_base
         //레이저 1층
         private void Bt_Servo1_Click(object sender, EventArgs e)
         {
-            // Timer를 시작하기 전에 초기화
-            pictureBoxLaserY = 297;
-            pB_laser.Location = new Point(382, pictureBoxLaserY);
 
-            // Timer를 시작
-            timerLaser.Start();
         }
         //레이저 1층
         private void TimerLaser_Tick(object sender, EventArgs e)
@@ -353,28 +318,12 @@ namespace test_base
         //레이저 on/off
         private void Bt_Laser_Click(object sender, EventArgs e)
         {
-            // 이미지 토글
-            laserImageToggle = !laserImageToggle;
 
-            // 이미지 변경
-            if (laserImageToggle)
-            {
-                pB_laser.Image = Properties.Resources.레이저2;
-            }
-            else
-            {
-                pB_laser.Image = Properties.Resources.레이저1;
-            }
         }
         //레이저2층
         private void Bt_Servo2_Click(object sender, EventArgs e)
         {
-            // Timer를 시작하기 전에 초기화
-            pictureBoxLaserY1a = 257;
-            pB_laser.Location = new Point(382, pictureBoxLaserY1a);
 
-            // Timer를 시작
-            timerLaser1a.Start();
         }
         //레이저2층
         private void TimerLaser_Tick1a(object sender, EventArgs e)
@@ -395,117 +344,241 @@ namespace test_base
         bool mag_once1 = true;
         bool mag_once2 = true;
         bool mag_once3 = true;
+        
 
+
+        bool robot_pick = true;
+        bool picking = false;
         int pic_select = 0;
         private void DTTimer_Tick(object sender, EventArgs e)
         {
-
-            if (obj.Y22 && mag_once1)
+            try
             {
-                A_cell.Visible = true;
-                twin.picMove(A_cell, 727, 437, 727, 397, 1, 1);
-
-                mag_once1 = false;
-                pic_select = 1;
-            } else mag_once1 = true;
-
-            if (obj.Y23 && mag_once2)
-            {
-                B_cell.Visible = true;
-
-                twin.picMove(B_cell, 781, 355, 781, 397, 1, 1);
-                mag_once2 = false;
-                pic_select = 2;
-
-
-            }
-            else mag_once2 = true;
-
-            if (obj.Y24 && mag_once3)
-            {
-                C_cell.Visible = true;
-
-                twin.picMove(C_cell, 692, 355, 692, 397, 1, 1);
-                mag_once3 = false;
-                pic_select = 3;
-
-
-            }
-            else mag_once3 = true;
-
-            //컨베이어1 on
-            if (obj.Y2A)
-            {
-
-                int end = 272;
-                bool vision = true;
-
-                if ( obj.M61 || obj.M63 || obj.M65 )
+                if (obj.Y22 && mag_once1)
                 {
-                    end = 151;
-                    vision = false;
+                    A_cell.Visible = true;
+                    twin.picMove(A_cell, 727, 437, 727, 397, 0.5, 50);
+                    mag_once1 = false;
+                    pic_select = 0;
+                    twin.change_stack_pic(A_cell, B_cell, C_cell, pic_select);
+
+                }
+                else mag_once1 = true;
+
+                if (obj.Y23 && mag_once2)
+                {
+                    B_cell.Visible = true;
+
+                    twin.picMove(B_cell, 781, 355, 781, 397, 0.5, 50);
+                    mag_once2 = false;
+                    pic_select = 1;
+                    twin.change_stack_pic(A_cell, B_cell, C_cell, pic_select);
+
+                }
+                else mag_once2 = true;
+
+                if (obj.Y24 && mag_once3)
+                {
+                    C_cell.Visible = true;
+
+                    twin.picMove(C_cell, 692, 355, 692, 397, 0.5, 50);
+                    mag_once3 = false;
+                    pic_select = 2;
+                    twin.change_stack_pic(A_cell, B_cell, C_cell, pic_select);
+
+
+                }
+                else mag_once3 = true;
+
+                //컨베이어1 on
+                if (obj.Y2A)
+                {
+
+                    int end = 272;
+                    bool vision = true;
+
+                    if (obj.M61 || obj.M63 || obj.M65)
+                    {
+                        end = 151;
+                        vision = false;
+                    }
+
+
+                    switch (pic_select)
+                    {
+                        case 0:
+                            twin.picConMove(A_cell, "x", -60, 0.5, 10, end, vision);
+                            break;
+                        case 1:
+                            twin.picConMove(B_cell, "x", -60, 0.5, 10, end, vision);
+                            break;
+                        case 2:
+                            twin.picConMove(C_cell, "x", -60, 0.5, 10, end, vision);
+                            break;
+                        default:
+                            break;
+                    }
+
                 }
 
+                //if (obj.Y25)
+                //{
+                //    Point rotationcenter = new Point(A_cell.Width / 2, A_cell.Height / 2);
 
-                switch (pic_select)
+                //    switch (pic_select)
+                //    {
+                //        case 1:
+                //            twin.picSpin(A_cell, 0, 90, 1, 1, rotationcenter, 272, 391, 275, 355);
+                //            break;
+                //        case 2:
+                //            twin.picSpin(B_cell, 0, 90, 1, 1, rotationcenter, 272, 391, 275, 355);
+                //            break;
+                //        case 3:
+                //            twin.picSpin(C_cell, 0, 90, 1, 1, rotationcenter, 272, 391, 275, 355);
+                //            break;
+                //        default:
+                //            break;
+                //    }
+                //}
+
+                //컨베이어2 on
+                if (obj.Y2B)
                 {
-                    case 1:
-                        twin.picConMove(A_cell, "x", -20, 0.5, 1, end, vision);
-                        break;
-                    case 2:
-                        twin.picConMove(B_cell, "x", -20, 0.5, 1, end, vision);
-                        break;
-                    case 3:
-                        twin.picConMove(C_cell, "x", -20, 0.5, 1, end, vision);
-                        break;
-                    default:
-                        break;
+
+                    switch (pic_select)
+                    {
+                        case 0:
+                            twin.picConMove(A_cell, "y", -30, 0.5, 1, 160);
+                            break;
+                        case 1:
+                            twin.picConMove(B_cell, "y", -30, 0.5, 1, 160);
+                            break;
+                        case 2:
+                            twin.picConMove(C_cell, "y", -30, 0.5, 1, 160);
+                            break;
+                        default:
+                            break;
+                    }
+
                 }
-                
+
+                //로봇 픽
+                if (obj.Y30 && robot_pick)
+                {
+                    robot_pick = false;
+                    switch (pic_select)
+                    {
+                        case 0:
+                            A_cell.Visible = false;
+                            break;
+                        case 1:
+                            B_cell.Visible = false;
+                            break;
+                        case 2:
+                            C_cell.Visible = false;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    twin.anime_stacking(A_cell, B_cell, C_cell, obj.floar);
+                    picking = true;
+                }
+
+                if (picking)
+                {
+                    anime_floar(obj.floar);
+                }
+
+                switch (obj.D5)
+                {
+                    case 14:
+                        picking = false; // 적층 정지
+                                         // Timer를 시작하기 전에 초기화
+                        pictureBoxLaserY = 297;
+                        pB_laser.Location = new Point(382, pictureBoxLaserY);
+
+                        // Timer를 시작
+                        timerLaser.Start();
+                        break;
+                    case 15:
+                        // 이미지 토글
+                        pB_laser.Image = Properties.Resources.레이저2;
+                        break;
+                    case 17:
+                        // 이미지 토글
+                        pB_laser.Image = Properties.Resources.레이저1;
+                        break;
+                    case 18:
+                        // Timer를 시작하기 전에 초기화
+                        pictureBoxLaserY1a = 257;
+                        pB_laser.Location = new Point(382, pictureBoxLaserY1a);
+
+                        // Timer를 시작
+                        timerLaser1a.Start();
+                        break;
+                    case 19:
+                        // 이미지 토글
+                        pB_laser.Image = Properties.Resources.레이저2;
+                        break;
+                    case 21:
+                        // 이미지 토글
+                        pB_laser.Image = Properties.Resources.레이저1;
+                        break;
+
+
+                }
             }
-
-            //if(obj.Y25)
-            //{
-            //    Point rotationCenter = new Point(A_cell.Width / 2, A_cell.Height / 2);
-                
-            //    switch (pic_select)
-            //    {
-            //        case 1:
-            //            twin.picSpin(A_cell, 0, 90, 1, 1, rotationCenter, 272, 391, 275, 355);
-            //            break;
-            //        case 2:
-            //            twin.picSpin(B_cell, 0, 90, 1, 1, rotationCenter, 272, 391, 275, 355);
-            //            break;
-            //        case 3:
-            //            twin.picSpin(C_cell, 0, 90, 1, 1, rotationCenter, 272, 391, 275, 355);
-            //            break;
-            //        default:
-            //            break;
-            //    }
-            //}
-
-            //컨베이어2 on
-            if (obj.Y2B)
+            catch
             {
-                
-                switch (pic_select)
-                {
-                    case 1:
-                        twin.picConMove(A_cell, "y", -30, 0.5, 1, 160);
-                        break;
-                    case 2:
-                        twin.picConMove(B_cell, "y", -30, 0.5, 1, 160);
-                        break;
-                    case 3:
-                        twin.picConMove(C_cell, "y", -30, 0.5, 1, 160);
-                        break;
-                    default:
-                        break;
-                }
 
             }
+           
         }
 
+
+        public void anime_floar(int floar)
+        {
+            if (floar == 1)
+            {
+                // Timer를 시작하기 전에 초기화
+                pictureBox1Y = 238;
+                pB_1stack.Location = new Point(600, pictureBox1Y);
+
+                // 이동 횟수 및 방향 초기화
+                moveCountPB1 = 0;
+                goingDownPB1 = true;
+
+                // Timer를 시작
+                timerPB1.Start();
+            }
+            else if ( floar == 2 ) {
+                // Timer를 시작하기 전에 초기화
+                pictureBox5Y = 182;
+                pB_2stack.Location = new Point(600, pictureBox5Y);
+
+                // 이동 횟수 및 방향 초기화
+                moveCount = 0;
+                goingDown = true;
+
+                // Timer를 시작
+                timer1.Start();
+            }
+            else if (floar == 3)
+            {
+                // Timer를 시작하기 전에 초기화
+                pictureBox3Y = 131;
+                pB_3stack.Location = new Point(600, pictureBox3Y);
+
+                // 이동 횟수 및 방향 초기화
+                moveCountPB3 = 0;
+                goingDownPB3 = true;
+
+                // Timer를 시작
+                timerPB3.Start();
+            }
+
+        }
 
 
     }

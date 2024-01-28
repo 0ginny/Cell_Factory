@@ -83,6 +83,7 @@ namespace test_base.Properties
                 pd.Fin_Order_list(dataGridView3);
                 dataGridView4.Rows.Clear();
                 dataGridView2.Rows.Clear();
+                label2.Text = label10.Text + "  ~  " + label9.Text;
 
                 // 필요한 작업 수행
             }

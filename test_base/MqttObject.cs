@@ -62,7 +62,7 @@ namespace test_base
         public bool M67 { get; set; }
         public bool M68 { get; set; }
         public bool M69 { get; set; }
-        public bool D5 { get; set; }
+        public int D5 { get; set; }
         public int floar { get; set; }
         public string ord_id { get; set; }
         public string company { get; set; }

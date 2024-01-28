@@ -31,11 +31,11 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            label2 = new Label();
             metroControlBox1 = new ReaLTaiizor.Controls.MetroControlBox();
-            label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
-            label2 = new Label();
+            label1 = new Label();
             panel2 = new Panel();
             button1 = new Button();
             button2 = new Button();
@@ -59,13 +59,24 @@
             // 
             panel1.BackColor = Color.White;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(metroControlBox1);
-            panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1920, 50);
             panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("맑은 고딕", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            label2.ForeColor = Color.FromArgb(109, 133, 178);
+            label2.Location = new Point(18, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(93, 23);
+            label2.TabIndex = 4;
+            label2.Text = "Pong MES";
             // 
             // metroControlBox1
             // 
@@ -94,17 +105,6 @@
             metroControlBox1.ThemeAuthor = "Taiizor";
             metroControlBox1.ThemeName = "MetroLight";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label1.Location = new Point(74, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(137, 21);
-            label1.TabIndex = 0;
-            label1.Text = "최종프로젝트 3조";
-            label1.Click += label1_Click;
-            // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = Color.FromArgb(235, 238, 244);
@@ -126,23 +126,23 @@
             // panel3
             // 
             panel3.BackColor = Color.Transparent;
-            panel3.Controls.Add(label2);
+            panel3.Controls.Add(label1);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 66);
             panel3.TabIndex = 4;
             // 
-            // label2
+            // label1
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label2.ForeColor = Color.FromArgb(109, 133, 178);
-            label2.Location = new Point(18, 21);
-            label2.Name = "label2";
-            label2.Size = new Size(86, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Navigation";
+            label1.AutoSize = true;
+            label1.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            label1.ForeColor = Color.FromArgb(109, 133, 178);
+            label1.Location = new Point(8, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(76, 30);
+            label1.TabIndex = 5;
+            label1.Text = "MENU";
             // 
             // panel2
             // 
@@ -315,7 +315,6 @@
 
         private Panel panel1;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Label label1;
         private ContextMenuStrip contextMenuStrip1;
         private Panel panel2;
         private Button button1;
@@ -330,5 +329,6 @@
         private ContextMenuStrip contextMenuStrip2;
         private ReaLTaiizor.Controls.MetroControlBox metroControlBox1;
         private Label label4;
+        private Label label1;
     }
 }
