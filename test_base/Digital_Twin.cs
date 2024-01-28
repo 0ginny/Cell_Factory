@@ -34,7 +34,7 @@ namespace test_base
             DateTime startTime = DateTime.Now;
 
             // 초기 위치로 이동
-            pictureBox.Location = new Point(currentX, currentY);
+            //pictureBox.Location = new Point(currentX, currentY);
 
             timer.Tick += (sender, e) =>
             {
@@ -65,31 +65,6 @@ namespace test_base
             return (int)(start + (end - start) * progress);
         }
 
-        public void picConMove(PictureBox pictureBox, string dir, int dist, double seconds, int inter)
-        {
-            int startX = pictureBox.Location.X;
-            int startY = pictureBox.Location.Y;
-
-            int endX = startX;
-            int endY = startY;
-
-            // 지정된 방향에 따라 끝 좌표 결정
-            if (dir.ToLower() == "x")
-            {
-                endX += dist;
-            }
-            else if (dir.ToLower() == "y")
-            {
-                endY += dist;
-            }
-            else
-            {
-                // 잘못된 방향일 경우, 이에 대한 처리를 수행할 수 있습니다.
-                return;
-            }
-
-            picMove(pictureBox, startX, startY, endX, endY, seconds, inter);
-        }
 
         public void picConMove(PictureBox pictureBox, string dir, int dist, double seconds, int inter, int max_dist, bool visible =true)
         {
@@ -105,13 +80,13 @@ namespace test_base
                 endX += dist;
                 if (dist > 0 )
                 {
-                    if (max_dist < endX) { 
+                    if (max_dist <= endX) { 
                         endX = max_dist; 
                         pictureBox.Visible = visible;
                     }
                 } else
                 {
-                    if (max_dist > endX)
+                    if (max_dist >= endX)
                     {
                         endX = max_dist;
                         pictureBox.Visible = visible;
@@ -123,7 +98,7 @@ namespace test_base
                 endY += dist;
                 if (dist > 0)
                 {
-                    if (max_dist < endY)
+                    if (max_dist <= endY)
                     {
                         endY = max_dist;
                         pictureBox.Visible = visible;
@@ -132,7 +107,7 @@ namespace test_base
                 }
                 else
                 {
-                    if (max_dist > endY)
+                    if (max_dist >= endY)
                     {
                         endY = max_dist;
                         pictureBox.Visible = visible;
@@ -155,12 +130,18 @@ namespace test_base
             {
                 case 0:
                     pbox1.Image = Properties.Resources.A_cell_stacking;
-
+                    pbox2.Image = Properties.Resources.A_cell_stacking;
+                    pbox3.Image = Properties.Resources.A_cell_stacking;
                     break;
                 case 1:
-                    pbox2.Image = Properties.Resources.C_cell_stacking;
+                    pbox1.Image = Properties.Resources.B_cell_stacking;
+                    pbox2.Image = Properties.Resources.B_cell_stacking;
+                    pbox3.Image = Properties.Resources.B_cell_stacking;
+
                     break;
                 case 2:
+                    pbox1.Image = Properties.Resources.C_cell_stacking;
+                    pbox2.Image = Properties.Resources.C_cell_stacking;
                     pbox3.Image = Properties.Resources.C_cell_stacking;
                     break;
                 default:
@@ -192,8 +173,8 @@ namespace test_base
             } else if (floar == 5)
             {
                 pbox1.Visible = !pbox1.Visible;
-                pbox1.Visible = !pbox1.Visible;
-                pbox1.Visible = !pbox1.Visible;
+                pbox2.Visible = !pbox2.Visible;
+                pbox3.Visible = !pbox3.Visible;
             }
         }
 

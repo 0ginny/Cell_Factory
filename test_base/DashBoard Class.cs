@@ -15,7 +15,7 @@ namespace test_base
         // mysql에 접속하기 위한 전역 변수
         mysql my;
 
-        public string today { get; set; } = "2024-01-24";
+        public string today { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
         // 선택한 제품의 종류를 저장하기 위한 변수
         public string btn_state { get; set; } = null;
 

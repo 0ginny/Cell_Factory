@@ -91,8 +91,8 @@ namespace test_base
 
             //standard gauge
             solidGauge1.From = 0;
-            solidGauge1.To = 100;
-            solidGauge1.Value = 50;
+            solidGauge1.To = 0;
+            solidGauge1.Value = 0;
 
             // 설비운전 라벨 설정
             label13.Visible = false;
@@ -138,6 +138,8 @@ namespace test_base
             css.ApplyRoundedBorder(panel5, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
             css.ApplyRoundedBorder(panel6, 20, ColorTranslator.FromHtml("#D1D9E7"), 2); // 20은 반지름 값, 2는 테두리 굵기, 조절 가능
 
+
+            twin.anime_stacking(pB_1stack, pB_2stack, pB_3stack, 1);
             // 금일 발생 에러 리스트 표시
             dash.today_error_list(dataGridView1);
             // 금일 착수 예정 리스트 표시
@@ -354,13 +356,16 @@ namespace test_base
         {
             try
             {
+
+                solidGauge1.To = obj.plan;
+                solidGauge1.Value = obj.total;
                 if (obj.Y22 && mag_once1)
                 {
                     A_cell.Visible = true;
-                    twin.picMove(A_cell, 727, 437, 727, 397, 0.5, 50);
+                    twin.picMove(A_cell, 727, 437, 727, 397, 0.4, 1);
                     mag_once1 = false;
                     pic_select = 0;
-                    twin.change_stack_pic(A_cell, B_cell, C_cell, pic_select);
+                    twin.change_stack_pic(pB_1stack, pB_2stack, pB_3stack, pic_select);
 
                 }
                 else mag_once1 = true;
@@ -369,10 +374,11 @@ namespace test_base
                 {
                     B_cell.Visible = true;
 
-                    twin.picMove(B_cell, 781, 355, 781, 397, 0.5, 50);
+                    twin.picMove(B_cell, 781, 355, 781, 397, 0.4, 1);
                     mag_once2 = false;
                     pic_select = 1;
-                    twin.change_stack_pic(A_cell, B_cell, C_cell, pic_select);
+                    twin.change_stack_pic(pB_1stack, pB_2stack, pB_3stack, pic_select);
+
 
                 }
                 else mag_once2 = true;
@@ -381,7 +387,9 @@ namespace test_base
                 {
                     C_cell.Visible = true;
 
-                    twin.picMove(C_cell, 692, 355, 692, 397, 0.5, 50);
+                    twin.picMove(C_cell, 781, 355, 781, 397, 0.4, 1);
+
+
                     mag_once3 = false;
                     pic_select = 2;
                     twin.change_stack_pic(A_cell, B_cell, C_cell, pic_select);
@@ -397,7 +405,7 @@ namespace test_base
                     int end = 272;
                     bool vision = true;
 
-                    if (obj.M61 || obj.M63 || obj.M65)
+                    if (obj.D10 == 1)
                     {
                         end = 151;
                         vision = false;
@@ -481,7 +489,7 @@ namespace test_base
                             break;
                     }
 
-                    twin.anime_stacking(A_cell, B_cell, C_cell, obj.floar);
+                    twin.anime_stacking(pB_1stack, pB_2stack, pB_3stack, obj.floar);
                     picking = true;
                 }
 
@@ -539,7 +547,7 @@ namespace test_base
 
         public void anime_floar(int floar)
         {
-            if (floar == 1)
+            if (floar == 2)
             {
                 // Timer를 시작하기 전에 초기화
                 pictureBox1Y = 238;
@@ -552,7 +560,7 @@ namespace test_base
                 // Timer를 시작
                 timerPB1.Start();
             }
-            else if ( floar == 2 ) {
+            else if ( floar == 3 ) {
                 // Timer를 시작하기 전에 초기화
                 pictureBox5Y = 182;
                 pB_2stack.Location = new Point(600, pictureBox5Y);
@@ -564,7 +572,7 @@ namespace test_base
                 // Timer를 시작
                 timer1.Start();
             }
-            else if (floar == 3)
+            else if (floar == 4)
             {
                 // Timer를 시작하기 전에 초기화
                 pictureBox3Y = 131;
