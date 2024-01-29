@@ -22,6 +22,11 @@ namespace test_base
             obj = mq_obj;
         }
 
+        public void setPicture(PictureBox pbox, int x, int y)
+        {
+            pbox.Location = new Point(x, y);
+        }
+
 
         public void picMove(PictureBox pictureBox, int startX, int startY, int endX, int endY, double seconds, int inter)
         {
@@ -151,30 +156,29 @@ namespace test_base
 
         public void anime_stacking(PictureBox pbox1, PictureBox pbox2, PictureBox pbox3, int floar)
         {
-            if (floar == 1){
+            if (floar == 1)
+            {
                 pbox1.Visible = false;
                 pbox2.Visible = false;
                 pbox3.Visible = false;
-            } else if (floar == 2)
+            }
+            else if (floar == 2)
             {
                 pbox1.Visible = true;
                 pbox2.Visible = false;
                 pbox3.Visible = false;
-            } else if (floar == 3)
+            }
+            else if (floar == 3)
             {
                 pbox1.Visible = true;
                 pbox2.Visible = true;
                 pbox3.Visible = false;
-            } else if (floar == 4)
+            }
+            else if (floar == 4)
             {
                 pbox1.Visible = true;
                 pbox2.Visible = true;
                 pbox3.Visible = true;
-            } else if (floar == 5)
-            {
-                pbox1.Visible = !pbox1.Visible;
-                pbox2.Visible = !pbox2.Visible;
-                pbox3.Visible = !pbox3.Visible;
             }
         }
 

@@ -8,6 +8,7 @@ namespace test_base
 {
     internal class MqttObject
     {
+        public bool mag_start { get; set; } = false;
         public bool X0 { get; set; } = false;
         public bool X1 { get; set; } = false;
         public bool X2 { get; set; } = false;
@@ -82,5 +83,7 @@ namespace test_base
         public int prod_surface { get; set; } = 0;
         public int total { get; set; } = 0;
         public int plan { get; set; } = 0;
+        public int cell_id { get; set; } = 0;
+        public int stacking_id { get; set; } = 0;
     }
 }

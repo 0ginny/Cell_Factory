@@ -44,12 +44,18 @@
             DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
             panel1 = new Panel();
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox1 = new PictureBox();
+            C_cell2 = new PictureBox();
+            B_Cell2 = new PictureBox();
+            A_cell2 = new PictureBox();
             C_cell = new PictureBox();
             B_cell = new PictureBox();
-            label12 = new Label();
-            label11 = new Label();
-            label10 = new Label();
-            label9 = new Label();
+            lbl_ord_num = new Label();
+            lbl_prod_name = new Label();
+            lbl_company = new Label();
+            lbl_ord_id = new Label();
             A_cell = new PictureBox();
             label1 = new Label();
             panel8 = new Panel();
@@ -82,9 +88,9 @@
             pB_1stack = new PictureBox();
             Bt_1stack = new Button();
             Bt_2stack = new Button();
-            label8 = new Label();
+            lbl_content2 = new Label();
             label4 = new Label();
-            label7 = new Label();
+            lbl_content1 = new Label();
             pictureBox2 = new PictureBox();
             panel5 = new Panel();
             panel10 = new Panel();
@@ -98,17 +104,17 @@
             label6 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             DTTimer = new System.Windows.Forms.Timer(components);
-            A_cell2 = new PictureBox();
-            B_Cell2 = new PictureBox();
-            C_cell2 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)C_cell2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)B_Cell2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)A_cell2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)C_cell).BeginInit();
             ((System.ComponentModel.ISupportInitialize)B_cell).BeginInit();
             ((System.ComponentModel.ISupportInitialize)A_cell).BeginInit();
@@ -129,12 +135,6 @@
             panel10.SuspendLayout();
             panel6.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)A_cell2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)B_Cell2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)C_cell2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -169,10 +169,10 @@
             panel1.Controls.Add(A_cell2);
             panel1.Controls.Add(C_cell);
             panel1.Controls.Add(B_cell);
-            panel1.Controls.Add(label12);
-            panel1.Controls.Add(label11);
-            panel1.Controls.Add(label10);
-            panel1.Controls.Add(label9);
+            panel1.Controls.Add(lbl_ord_num);
+            panel1.Controls.Add(lbl_prod_name);
+            panel1.Controls.Add(lbl_company);
+            panel1.Controls.Add(lbl_ord_id);
             panel1.Controls.Add(A_cell);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
@@ -181,6 +181,90 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1116, 596);
             panel1.TabIndex = 1;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox4.ErrorImage = null;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.InitialImage = null;
+            pictureBox4.Location = new Point(727, 437);
+            pictureBox4.Margin = new Padding(0);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(42, 19);
+            pictureBox4.TabIndex = 13;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox3.ErrorImage = null;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.InitialImage = null;
+            pictureBox3.Location = new Point(692, 355);
+            pictureBox3.Margin = new Padding(0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(42, 19);
+            pictureBox3.TabIndex = 12;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.ErrorImage = null;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.InitialImage = null;
+            pictureBox1.Location = new Point(781, 355);
+            pictureBox1.Margin = new Padding(0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(42, 19);
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
+            // 
+            // C_cell2
+            // 
+            C_cell2.BackColor = Color.Transparent;
+            C_cell2.BorderStyle = BorderStyle.FixedSingle;
+            C_cell2.ErrorImage = null;
+            C_cell2.Image = (Image)resources.GetObject("C_cell2.Image");
+            C_cell2.InitialImage = null;
+            C_cell2.Location = new Point(781, 355);
+            C_cell2.Margin = new Padding(0);
+            C_cell2.Name = "C_cell2";
+            C_cell2.Size = new Size(42, 19);
+            C_cell2.TabIndex = 10;
+            C_cell2.TabStop = false;
+            // 
+            // B_Cell2
+            // 
+            B_Cell2.BackColor = Color.Transparent;
+            B_Cell2.BorderStyle = BorderStyle.FixedSingle;
+            B_Cell2.ErrorImage = null;
+            B_Cell2.Image = (Image)resources.GetObject("B_Cell2.Image");
+            B_Cell2.InitialImage = null;
+            B_Cell2.Location = new Point(692, 355);
+            B_Cell2.Margin = new Padding(0);
+            B_Cell2.Name = "B_Cell2";
+            B_Cell2.Size = new Size(42, 19);
+            B_Cell2.TabIndex = 9;
+            B_Cell2.TabStop = false;
+            // 
+            // A_cell2
+            // 
+            A_cell2.BackColor = Color.Transparent;
+            A_cell2.BorderStyle = BorderStyle.FixedSingle;
+            A_cell2.ErrorImage = null;
+            A_cell2.Image = (Image)resources.GetObject("A_cell2.Image");
+            A_cell2.InitialImage = null;
+            A_cell2.Location = new Point(726, 437);
+            A_cell2.Margin = new Padding(0);
+            A_cell2.Name = "A_cell2";
+            A_cell2.Size = new Size(42, 19);
+            A_cell2.TabIndex = 8;
+            A_cell2.TabStop = false;
             // 
             // C_cell
             // 
@@ -210,45 +294,45 @@
             B_cell.TabIndex = 6;
             B_cell.TabStop = false;
             // 
-            // label12
+            // lbl_ord_num
             // 
-            label12.AutoSize = true;
-            label12.ForeColor = Color.FromArgb(31, 107, 255);
-            label12.Location = new Point(1051, 24);
-            label12.Name = "label12";
-            label12.Size = new Size(31, 15);
-            label12.TabIndex = 5;
-            label12.Text = "갯수";
+            lbl_ord_num.AutoSize = true;
+            lbl_ord_num.ForeColor = Color.FromArgb(31, 107, 255);
+            lbl_ord_num.Location = new Point(1051, 24);
+            lbl_ord_num.Name = "lbl_ord_num";
+            lbl_ord_num.Size = new Size(31, 15);
+            lbl_ord_num.TabIndex = 5;
+            lbl_ord_num.Text = "갯수";
             // 
-            // label11
+            // lbl_prod_name
             // 
-            label11.AutoSize = true;
-            label11.ForeColor = Color.FromArgb(31, 107, 255);
-            label11.Location = new Point(980, 24);
-            label11.Name = "label11";
-            label11.Size = new Size(31, 15);
-            label11.TabIndex = 4;
-            label11.Text = "제품";
+            lbl_prod_name.AutoSize = true;
+            lbl_prod_name.ForeColor = Color.FromArgb(31, 107, 255);
+            lbl_prod_name.Location = new Point(980, 24);
+            lbl_prod_name.Name = "lbl_prod_name";
+            lbl_prod_name.Size = new Size(31, 15);
+            lbl_prod_name.TabIndex = 4;
+            lbl_prod_name.Text = "제품";
             // 
-            // label10
+            // lbl_company
             // 
-            label10.AutoSize = true;
-            label10.ForeColor = Color.FromArgb(31, 107, 255);
-            label10.Location = new Point(858, 24);
-            label10.Name = "label10";
-            label10.Size = new Size(55, 15);
-            label10.TabIndex = 3;
-            label10.Text = "기업이름";
+            lbl_company.AutoSize = true;
+            lbl_company.ForeColor = Color.FromArgb(31, 107, 255);
+            lbl_company.Location = new Point(858, 24);
+            lbl_company.Name = "lbl_company";
+            lbl_company.Size = new Size(55, 15);
+            lbl_company.TabIndex = 3;
+            lbl_company.Text = "기업이름";
             // 
-            // label9
+            // lbl_ord_id
             // 
-            label9.AutoSize = true;
-            label9.ForeColor = Color.FromArgb(31, 107, 255);
-            label9.Location = new Point(737, 24);
-            label9.Name = "label9";
-            label9.Size = new Size(49, 15);
-            label9.TabIndex = 2;
-            label9.Text = "OrderID";
+            lbl_ord_id.AutoSize = true;
+            lbl_ord_id.ForeColor = Color.FromArgb(31, 107, 255);
+            lbl_ord_id.Location = new Point(737, 24);
+            lbl_ord_id.Name = "lbl_ord_id";
+            lbl_ord_id.Size = new Size(49, 15);
+            lbl_ord_id.TabIndex = 2;
+            lbl_ord_id.Text = "OrderID";
             // 
             // A_cell
             // 
@@ -539,10 +623,6 @@
             dataGridViewTextBoxColumn2.Resizable = DataGridViewTriState.True;
             dataGridViewTextBoxColumn2.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
-            // noderedConnectBindingSource
-            // 
-            noderedConnectBindingSource.DataSource = typeof(NoderedConnect);
-            // 
             // panel4
             // 
             panel4.BackColor = Color.White;
@@ -557,9 +637,9 @@
             panel4.Controls.Add(pB_1stack);
             panel4.Controls.Add(Bt_1stack);
             panel4.Controls.Add(Bt_2stack);
-            panel4.Controls.Add(label8);
+            panel4.Controls.Add(lbl_content2);
             panel4.Controls.Add(label4);
-            panel4.Controls.Add(label7);
+            panel4.Controls.Add(lbl_content1);
             panel4.Controls.Add(pictureBox2);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(20, 0);
@@ -686,15 +766,15 @@
             Bt_2stack.Visible = false;
             Bt_2stack.Click += button2_Click_1;
             // 
-            // label8
+            // lbl_content2
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label8.Location = new Point(82, 240);
-            label8.Name = "label8";
-            label8.Size = new Size(111, 28);
-            label8.TabIndex = 3;
-            label8.Text = "작업 설명2";
+            lbl_content2.AutoSize = true;
+            lbl_content2.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            lbl_content2.Location = new Point(82, 240);
+            lbl_content2.Name = "lbl_content2";
+            lbl_content2.Size = new Size(111, 28);
+            lbl_content2.TabIndex = 3;
+            lbl_content2.Text = "작업 설명2";
             // 
             // label4
             // 
@@ -706,15 +786,15 @@
             label4.TabIndex = 0;
             label4.Text = "스택킹";
             // 
-            // label7
+            // lbl_content1
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label7.Location = new Point(82, 168);
-            label7.Name = "label7";
-            label7.Size = new Size(111, 28);
-            label7.TabIndex = 2;
-            label7.Text = "작업 설명1";
+            lbl_content1.AutoSize = true;
+            lbl_content1.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            lbl_content1.Location = new Point(82, 168);
+            lbl_content1.Name = "lbl_content1";
+            lbl_content1.Size = new Size(111, 28);
+            lbl_content1.TabIndex = 2;
+            lbl_content1.Text = "작업 설명1";
             // 
             // pictureBox2
             // 
@@ -876,93 +956,8 @@
             // 
             // DTTimer
             // 
-            DTTimer.Enabled = true;
             DTTimer.Interval = 500;
             DTTimer.Tick += DTTimer_Tick;
-            // 
-            // A_cell2
-            // 
-            A_cell2.BackColor = Color.Transparent;
-            A_cell2.BorderStyle = BorderStyle.FixedSingle;
-            A_cell2.ErrorImage = null;
-            A_cell2.Image = (Image)resources.GetObject("A_cell2.Image");
-            A_cell2.InitialImage = null;
-            A_cell2.Location = new Point(726, 437);
-            A_cell2.Margin = new Padding(0);
-            A_cell2.Name = "A_cell2";
-            A_cell2.Size = new Size(42, 19);
-            A_cell2.TabIndex = 8;
-            A_cell2.TabStop = false;
-            // 
-            // B_Cell2
-            // 
-            B_Cell2.BackColor = Color.Transparent;
-            B_Cell2.BorderStyle = BorderStyle.FixedSingle;
-            B_Cell2.ErrorImage = null;
-            B_Cell2.Image = (Image)resources.GetObject("B_Cell2.Image");
-            B_Cell2.InitialImage = null;
-            B_Cell2.Location = new Point(692, 355);
-            B_Cell2.Margin = new Padding(0);
-            B_Cell2.Name = "B_Cell2";
-            B_Cell2.Size = new Size(42, 19);
-            B_Cell2.TabIndex = 9;
-            B_Cell2.TabStop = false;
-            // 
-            // C_cell2
-            // 
-            C_cell2.BackColor = Color.Transparent;
-            C_cell2.BorderStyle = BorderStyle.FixedSingle;
-            C_cell2.ErrorImage = null;
-            C_cell2.Image = (Image)resources.GetObject("C_cell2.Image");
-            C_cell2.InitialImage = null;
-            C_cell2.Location = new Point(781, 355);
-            C_cell2.Margin = new Padding(0);
-            C_cell2.Name = "C_cell2";
-            C_cell2.Size = new Size(42, 19);
-            C_cell2.TabIndex = 10;
-            C_cell2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.ErrorImage = null;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(781, 355);
-            pictureBox1.Margin = new Padding(0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(42, 19);
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox3.ErrorImage = null;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.InitialImage = null;
-            pictureBox3.Location = new Point(692, 355);
-            pictureBox3.Margin = new Padding(0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(42, 19);
-            pictureBox3.TabIndex = 12;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox4.ErrorImage = null;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.InitialImage = null;
-            pictureBox4.Location = new Point(727, 437);
-            pictureBox4.Margin = new Padding(0);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(42, 19);
-            pictureBox4.TabIndex = 13;
-            pictureBox4.TabStop = false;
             // 
             // Dashboard
             // 
@@ -982,6 +977,12 @@
             splitContainer1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)C_cell2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)B_Cell2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)A_cell2).EndInit();
             ((System.ComponentModel.ISupportInitialize)C_cell).EndInit();
             ((System.ComponentModel.ISupportInitialize)B_cell).EndInit();
             ((System.ComponentModel.ISupportInitialize)A_cell).EndInit();
@@ -1008,12 +1009,6 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)A_cell2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)B_Cell2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)C_cell2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -1036,8 +1031,8 @@
         private DataGridView dataGridView1;
         private PictureBox A_cell;
         private PictureBox pictureBox2;
-        private Label label8;
-        private Label label7;
+        private Label lbl_content2;
+        private Label lbl_content1;
         private Button button3;
         private Button button1;
         private TextBox textBox1;
@@ -1047,10 +1042,10 @@
         private Panel panel7;
         private Panel panel8;
         private TableLayoutPanel tableLayoutPanel2;
-        private Label label12;
-        private Label label11;
-        private Label label10;
-        private Label label9;
+        private Label lbl_ord_num;
+        private Label lbl_prod_name;
+        private Label lbl_company;
+        private Label lbl_ord_id;
         private LiveCharts.WinForms.SolidGauge solidGauge1;
         private Panel panel10;
         private ReaLTaiizor.Controls.ParrotCircleProgressBar parrotCircleProgressBar1;

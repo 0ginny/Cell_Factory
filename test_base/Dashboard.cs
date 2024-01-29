@@ -79,7 +79,7 @@ namespace test_base
             dash = new DashBord_Class();
             css = new CSS();
             mqtt = new MQTT();
-
+            obj = new MqttObject();
 
             twin = new Digital_Twin(obj);
 
@@ -158,7 +158,10 @@ namespace test_base
         private void button1_Click(object sender, EventArgs e)
         {
 
-
+            // 금일 발생 에러 리스트 표시
+            dash.today_error_list(dataGridView1);
+            // 금일 착수 예정 리스트 표시
+            dash.plan_order_list(dataGridView2);
 
             button1.BackColor = ColorTranslator.FromHtml("#1F6BFF");
             button3.BackColor = ColorTranslator.FromHtml("#1FC695");
@@ -169,6 +172,7 @@ namespace test_base
             label13.Text = " 가동중";
 
             mqtt.Publish(publish_topic, "start");
+            DTTimer.Start();
 
         }
 
@@ -189,6 +193,7 @@ namespace test_base
             label13.Text = "  정지";
 
             mqtt.Publish(publish_topic, "stop");
+            DTTimer.Stop();
         }
 
         //-----------------------------------------------------------------디지털 트윈 시작
@@ -197,8 +202,15 @@ namespace test_base
         private void Mqtt_MessageReceived(object sender, MqttMessageEventArgs e)
         {
             // mqtt_obj에 JSON 메시지를 저장하기 위한 작업
-            obj = Newtonsoft.Json.JsonConvert.DeserializeObject<MqttObject>(e.Message);
-            Console.WriteLine(obj.floar);
+
+
+                obj = Newtonsoft.Json.JsonConvert.DeserializeObject<MqttObject>(e.Message);
+                Console.WriteLine(obj.D5);
+                Console.WriteLine(obj.mag_start);
+
+
+            
+
 
         }
 
@@ -354,15 +366,26 @@ namespace test_base
         int pic_select = 0;
         private void DTTimer_Tick(object sender, EventArgs e)
         {
+
             try
             {
+                if (obj.mag_start = true)
+                {
+                    lbl_ord_id.Text = obj.ord_id.ToString();
+                    lbl_ord_num.Text = obj.ord_num.ToString();
+                    lbl_prod_name.Text = obj.prod_name.ToString();
+                    lbl_company.Text = obj.company.ToString();
+                    lbl_content1.Text = $"stacking_{obj.stacking_id} 작업중";
+                    lbl_content2.Text = $"cell_{obj.cell_id} 작업중";
+                }
 
                 solidGauge1.To = obj.plan;
                 solidGauge1.Value = obj.total;
                 if (obj.Y22 && mag_once1)
                 {
                     A_cell.Visible = true;
-                    twin.picMove(A_cell, 727, 437, 727, 397, 0.4, 1);
+                    //twin.picMove(A_cell, 727, 437, 727, 397, 0.4, 1);
+                    twin.setPicture(A_cell, 727, 397);
                     mag_once1 = false;
                     pic_select = 0;
                     twin.change_stack_pic(pB_1stack, pB_2stack, pB_3stack, pic_select);
@@ -374,7 +397,9 @@ namespace test_base
                 {
                     B_cell.Visible = true;
 
-                    twin.picMove(B_cell, 781, 355, 781, 397, 0.4, 1);
+                    //twin.picMove(B_cell, 781, 355, 781, 397, 0.4, 1);
+                    twin.setPicture(A_cell, 727, 397);
+
                     mag_once2 = false;
                     pic_select = 1;
                     twin.change_stack_pic(pB_1stack, pB_2stack, pB_3stack, pic_select);
@@ -386,8 +411,9 @@ namespace test_base
                 if (obj.Y24 && mag_once3)
                 {
                     C_cell.Visible = true;
+                    twin.setPicture(A_cell, 727, 397);
 
-                    twin.picMove(C_cell, 781, 355, 781, 397, 0.4, 1);
+                    //twin.picMove(C_cell, 781, 355, 781, 397, 0.4, 1);
 
 
                     mag_once3 = false;
@@ -399,7 +425,7 @@ namespace test_base
                 else mag_once3 = true;
 
                 //컨베이어1 on
-                if (obj.Y2A)
+                if ((!obj.Y23 || !obj.Y24 || !obj.Y25) && obj.Y2A)
                 {
 
                     int end = 272;
@@ -415,13 +441,13 @@ namespace test_base
                     switch (pic_select)
                     {
                         case 0:
-                            twin.picConMove(A_cell, "x", -60, 0.5, 10, end, vision);
+                            twin.picConMove(A_cell, "x", -90, 0.5, 10, end, vision);
                             break;
                         case 1:
-                            twin.picConMove(B_cell, "x", -60, 0.5, 10, end, vision);
+                            twin.picConMove(B_cell, "x", -90, 0.5, 10, end, vision);
                             break;
                         case 2:
-                            twin.picConMove(C_cell, "x", -60, 0.5, 10, end, vision);
+                            twin.picConMove(C_cell, "x", -90, 0.5, 10, end, vision);
                             break;
                         default:
                             break;
@@ -536,12 +562,21 @@ namespace test_base
 
 
                 }
+
+
+                if (obj.X13)
+                {
+
+                    pB_1stack.Visible = !pB_1stack.Visible;
+                    pB_2stack.Visible = !pB_2stack.Visible;
+                    pB_3stack.Visible = !pB_3stack.Visible;
+            }
             }
             catch
             {
 
             }
-           
+
         }
 
 
