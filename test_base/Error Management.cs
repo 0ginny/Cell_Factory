@@ -126,6 +126,7 @@ namespace test_base
                             fault_test_time BETWEEN DATE('{start_date}') AND DATE_ADD(DATE('{end_date}'), INTERVAL 1 DAY);";
 
             DataTable dt = my.GetDataToTable(sql);
+            dgv.Rows.Clear();
 
             // DataGridView에 데이터 추가
             foreach (DataRow dr in dt.Rows)
@@ -179,7 +180,7 @@ namespace test_base
                         b_test2 = 1 and
                         fault_fin_time BETWEEN DATE('{start_date}') AND DATE_ADD(DATE('{end_date}'), INTERVAL 1 DAY);";
 
-
+            dgv.Rows.Clear();
             DataTable dt = my.GetDataToTable(sql);
 
             // DataGridView에 데이터 추가

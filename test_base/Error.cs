@@ -143,7 +143,7 @@ namespace test_base
                 panel17.Visible = false;
                 //목록 변경
                 err.Cell_Error_list(dgv_cell_error);
-                err.Cell_Error_list(dgv_stacking_error);
+                err.Stack_Error_list(dgv_stacking_error);
                 renewChart();
                 label2.Text = label6.Text + "  ~  " + label7.Text;
                 // 필요한 작업 수행
